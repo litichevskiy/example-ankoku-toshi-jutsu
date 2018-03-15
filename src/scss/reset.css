@@ -1,0 +1,28 @@
+html,body{
+	margin: 0;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	font-family: 'TitilliumWeb-Regular','sans-serif';
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4,h5{
+	margin: 0;
+	font-weight: 600;
+}
+
+p {
+	margin: 0;
+}

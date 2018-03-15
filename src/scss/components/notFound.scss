@@ -1,0 +1,28 @@
+.containerNotFound{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	position: fixed;
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: black;
+
+	.content{
+		color: white;
+		font-family: cursive;
+		font-size: -webkit-calc( (100vw - 480px)/(1280 - 480) * (32 - 14) + 14px);
+		font-size: calc( (100vw - 480px)/(1280 - 480) * (32 - 14) + 14px);
+	}
+}

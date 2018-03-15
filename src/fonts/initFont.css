@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "rajdhani";
+    src: url("rajdhani-semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "TitilliumWeb-Regular";
+    src: url("TitilliumWeb-Regular.ttf") format("ttf");
+}

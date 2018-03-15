@@ -1,0 +1,120 @@
+.containerApp{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background-color: lightgrey;*/
+	/*background-image: url(../../images/fake_BG.jpg);*/
+}
+
+.containerTgwoLogo{
+	position: fixed;
+	z-index: 2;
+	left: 4%;
+	top:6%;
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.containerAdidasLogo{
+	position: fixed;
+	z-index: 2;
+	left: 4%;
+	bottom: 6%;
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.containerShop{
+	position: fixed;
+	z-index: 2;
+	right: 4%;
+	top: 6%;
+	cursor: pointer;
+
+	.link{
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
+    	-webkit-box-pack: center;
+    	-webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
+    	color: white;
+    	text-decoration: none;
+
+    	.contentLink{
+    		@include content_small;
+    	}
+	}
+
+	.bg_icon{
+		background-color: white;
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
+    	-webkit-box-pack: center;
+    	-webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
+		width: 45px;
+		height: 45px;
+		margin-left: 7px;
+		-webkit-border-radius: 50%;
+		        border-radius: 50%;
+		img{
+			width: 25px;
+			height: 25px;
+		}
+	}
+}
+
+.containerSound{
+	position: fixed;
+	z-index: 2;
+	right: 4%;
+	bottom: 6%;
+	cursor: pointer;
+	width: 45px;
+	height: 25px;
+	overflow: hidden;
+
+	.sound{
+		max-width: 250px;
+		position: absolute;
+		-webkit-transition: 0.6s left, right;
+		-o-transition: 0.6s left, right;
+		transition: 0.6s left, right;
+
+		&.on{
+			left: 0;
+		}
+
+		&.off{
+			left: -90px;
+		}
+	}
+}
