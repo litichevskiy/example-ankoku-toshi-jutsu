@@ -1,0 +1,52 @@
+.galleryPage{
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+
+	.wrapperContentPage{
+		@include wrapperContentPage;
+	}
+
+	.blockTopLeft{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.headerLarge{
+		margin-top: 9em;
+	}
+
+	.white{
+		@include white;
+	}
+
+	.grey{
+		@include grey;
+	}
+
+	.topContentSmall{
+		@include content_small;
+	}
+
+	.blockBottomLeft{
+		position: absolute;
+		bottom: 3em;
+		left: 0;
+	}
+
+	.contentLarge{
+		@unclude content_large;
+		margin-bottom: 1em;
+	}
+
+	.contentSmall{
+		@include grey;
+		@include content_smaller;
+		line-height: 1.3;
+	}
+}

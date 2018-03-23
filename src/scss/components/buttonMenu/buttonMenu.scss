@@ -1,0 +1,79 @@
+.containerButtonMenu{
+	position: fixed;
+	z-index: 2;
+	width: 40px;
+	height: 30px;
+	left: 4%;
+	top: -webkit-calc(50% - 50px);
+	top: calc(50% - 50px);
+
+	.page{
+    	position: absolute;
+    	@include content_smaller;
+    	font-size: 13px;
+    	left: 0;
+
+    	&.current{
+    		top: -30px;
+    		@include white;
+    	}
+
+    	&.total{
+    		bottom: -30px;
+    		@include grey;
+    	}
+    }
+
+	.buttonMenu{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	    -webkit-flex-direction: column;
+	        -ms-flex-direction: column;
+	            flex-direction: column;
+	    -webkit-box-align: start;
+	    -webkit-align-items: flex-start;
+	        -ms-flex-align: start;
+	            align-items: flex-start;
+	    -webkit-justify-content: space-around;
+	        -ms-flex-pack: distribute;
+	            justify-content: space-around;
+		-webkit-transition: 0.35s;
+		-o-transition: 0.35s;
+		transition: 0.35s;
+
+		.line{
+			position: relative;
+			height: 2px;
+			background-color: white;
+			-webkit-transition: 0.35s;
+			-o-transition: 0.35s;
+			transition: 0.35s;
+
+			&.one{
+				width: 84%;
+			}
+
+			&.two{
+				width: 100%;
+			}
+
+			&.three{
+				width: 67%;
+			}
+		}
+
+		&:hover .line{
+	    	width: 100%;
+	    }
+	}
+}

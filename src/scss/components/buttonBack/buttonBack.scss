@@ -1,0 +1,33 @@
+.containerButtonBack{
+	position: fixed;
+	top: 6%;
+	right: 4%;
+	z-index: 2;
+	cursor: pointer;
+
+	.wrapperSvg{
+		padding: 10px;
+		background-color: white;
+		-webkit-border-radius: 10px;
+		        border-radius: 10px;
+		border: 2px solid;
+    	display: -webkit-inline-box;
+    	display: -webkit-inline-flex;
+    	display: -ms-inline-flexbox;
+    	display: inline-flex;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
+    	jusify-content: center;
+    	-webkit-transition: 0.2s;
+    	-o-transition: 0.2s;
+    	transition: 0.2s;
+
+    	&:hover{
+    		-webkit-transform: scale( 1.1 );
+    		    -ms-transform: scale( 1.1 );
+    		        transform: scale( 1.1 );
+    	}
+	}
+}

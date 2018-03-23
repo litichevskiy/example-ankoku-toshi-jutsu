@@ -7,3 +7,8 @@
     font-family: "TitilliumWeb-Regular";
     src: url("TitilliumWeb-Regular.ttf") format("ttf");
 }
+
+@font-face {
+    font-family: "DIN-Light";
+    src: url("DIN-Light.ttf") format("ttf");
+}

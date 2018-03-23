@@ -20,6 +20,10 @@
 	font-size: 17px;
 }
 
+@mixin content_smaller{
+	font-size: 15px;
+}
+
 @mixin content_medium{
 	font-size: 20px;
 }
@@ -36,6 +40,61 @@
 	color: #FFFFFF;
 }
 
+@mixin black{
+	color: #000000;
+}
+
 @mixin grey{
 	color: rgba(182, 188, 206, 0.7);
+}
+
+@mixin fixed_link($left, $top, $right, $bottom, $height, $width) {
+	position: fixed;
+	z-index: 2;
+	cursor: pointer;
+
+	left: $left;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+	width: $width;
+	height: $height;
+}
+
+@mixin animationItemMenu( $transition ) {
+	-webkit-animation: itemMenu $transition ease;
+	        animation: itemMenu $transition ease;
+	left: 0;
+	opacity: 1;
+}
+
+@mixin animation_bottom_border( $height: 1px, $bg_color: white ){
+	position: relative;
+	overflow: hidden;
+
+	&:after{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: -100%;
+		width: 100%;
+		height: $height;
+		background-color: $bg_color;
+		-webkit-transition: 0.3s;
+		-o-transition: 0.3s;
+		transition: 0.3s;
+	}
+
+	&:hover:after{
+		left: 0;
+	}
+}
+
+@mixin wrapperContentPage{
+    background-color: rgba(2, 2, 2, 0.14);
+	position: absolute;
+    top: 6%;
+    right: 15%;
+    bottom: 18%;
+    left: 16%;
 }

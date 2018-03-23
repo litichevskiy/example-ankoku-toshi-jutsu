@@ -13,7 +13,7 @@ let animationLetters = {
 		      	easing: "easeInOutQuad",
 		      	duration: 650,
 		      	delay: function(el, i) {
-		        	return 125 * (i+1)
+		        	return 75 * (i+1)
 		      	}
 		    }).add({
 		      	targets: key,

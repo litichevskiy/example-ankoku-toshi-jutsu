@@ -1,0 +1,70 @@
+.buttonScroll{
+	position: fixed;
+	bottom: -20px;
+	z-index: 2;
+	width: 40px;
+	background-color: transparent;
+	left: -webkit-calc(50% - 50px);
+	left: -webkit-calc(50% - 40px);
+	left: calc(50% - 40px);
+	height: 100px;
+	cursor: pointer;
+	-webkit-transition: 0.35s;
+	-o-transition: 0.35s;
+	transition: 0.35s;
+	overflow: hidden;
+	-webkit-box-shadow: 2px 0px 0px 0px grey inset;
+	        box-shadow: 2px 0px 0px 0px grey inset;
+
+	&:after{
+		content: '';
+		position: absolute;
+		height: 50%;
+		left: 0;
+		top: -100%;
+		background-color: white;
+		width: 2px;
+		-webkit-animation: scroll 2.5s infinite linear;
+		        animation: scroll 2.5s infinite linear;
+	}
+
+	&:hover{
+		bottom: 0;
+	}
+
+	.content{
+		@include content_small;
+		@include white;
+		display: block;
+	    background-color: transparent;
+    	-webkit-transform: rotate(-90deg);
+    	    -ms-transform: rotate(-90deg);
+    	        transform: rotate(-90deg);
+    	-webkit-transform-origin: bottom;
+    	    -ms-transform-origin: bottom;
+    	        transform-origin: bottom;
+    	position: absolute;
+    	left: 10px;
+    	top: 10px;
+	}
+}
+
+@-webkit-keyframes scroll {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes scroll {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 100%;
+  }
+}

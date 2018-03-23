@@ -1,0 +1,68 @@
+$width_animation_layer: 300%;
+$height_animation_layer: 300%;
+
+.containerSvgButton{
+
+	.wrapperSvgButton{
+		-webkit-box-shadow: 0 0 0 2px white inset;
+		        box-shadow: 0 0 0 2px white inset;
+		-webkit-box-sizing: content-box;
+		        box-sizing: content-box;
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		-webkit-transition: 0.5s -webkit-transform;
+		transition: 0.5s -webkit-transform;
+		-o-transition: 0.5s transform;
+		transition: 0.5s transform;
+		transition: 0.5s transform, 0.5s -webkit-transform;
+
+		&:hover{
+			-webkit-transform: scale(1.1);
+			    -ms-transform: scale(1.1);
+			        transform: scale(1.1);
+		}
+	}
+
+	.animationLayer{
+		width: $width_animation_layer;
+	    height: $height_animation_layer;
+	    position: absolute;
+	    top: -100%;
+	    left: -400%;
+	    -webkit-transition: 0.75s left, right, top, bottom;
+	    -o-transition: 0.75s left, right, top, bottom;
+	    transition: 0.75s left, right, top, bottom;
+	    background-color: white;
+	    -webkit-transform: rotate(15deg);
+	        -ms-transform: rotate(15deg);
+	            transform: rotate(15deg);
+	}
+
+	.wrapperSvgButton:hover .animationLayer{
+		left: -100%;
+		top: -100%;
+	}
+
+	.svg{
+		fill: transparent;
+	    -webkit-transition: 1s;
+	    -o-transition: 1s;
+	    transition: 1s;
+	    position: relative;
+	    z-index: 1;
+	}
+
+	.wrapperSvgButton:hover .svgContent{
+	    fill: black;
+	}
+
+	.btnText{
+		margin: 8px 0;
+	}
+
+	.contentSmall{
+		@include content_smaller;
+		line-height: 1.2;
+	}
+}

@@ -1,0 +1,67 @@
+.containerTgwoLogo{
+	@include fixed_link(4%, 6%, '', '', 60px, 60px);
+
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.containerAdidasLogo{
+	@include fixed_link(4%, '', '', 6%, 60px, 60px);
+
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.containerShop{
+	@include fixed_link('', 6%, 4%, '', '', '');
+
+	.link{
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
+    	-webkit-box-pack: center;
+    	-webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
+    	color: white;
+    	text-decoration: none;
+
+    	.contentLink{
+    		@include content_small;
+    	}
+	}
+
+	.bg_icon{
+		background-color: white;
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
+    	-webkit-box-pack: center;
+    	-webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
+		width: 45px;
+		height: 45px;
+		margin-left: 7px;
+		-webkit-border-radius: 50%;
+		        border-radius: 50%;
+		img{
+			width: 25px;
+			height: 25px;
+		}
+	}
+}

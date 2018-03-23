@@ -1,0 +1,58 @@
+.homePage{
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+
+	.wrapperContentPage{
+		@include wrapperContentPage;
+	}
+
+	.blockBottom{
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+
+	.headermiddle{
+		@include grey;
+		@include content_medium;
+		margin-top: 5px;
+	}
+
+	.blockTop{
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+	}
+
+	.contentMedium{
+	 	@include grey;
+	 	@include content_medium;
+	}
+
+	.contentMedium.white{
+	 	@include white;
+	 	@include content_medium;
+	}
+
+ 	.contentSmall{
+ 		@include content_small;
+ 		@include grey;
+ 	}
+
+ 	.blockBottomRight{
+ 		position: absolute;
+ 		bottom: 0;
+ 		right: 0;
+ 	}
+
+ 	.link{
+ 		@include white;
+ 	}
+}

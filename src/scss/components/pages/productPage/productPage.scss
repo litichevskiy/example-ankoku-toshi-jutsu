@@ -1,0 +1,60 @@
+.productPage{
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+
+	.wrapperContentPage{
+		@include wrapperContentPage;
+	}
+
+	.blockTop{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.white{
+		@include white;
+	}
+
+	.grey{
+		@include grey;
+	}
+
+	.header{
+		margin-top: 5.5em;
+	}
+
+	.blockBottom{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	.contentMedium{
+		@include content_large;
+		line-height: 1.4;
+	}
+
+	.blockBottomRight{
+		position: absolute;
+		bottom: 2em;
+		right: 0;
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-webkit-box-align: end;
+		-webkit-align-items: flex-end;
+		    -ms-flex-align: end;
+		        align-items: flex-end;
+	}
+
+	.wrapperButtonSvg{
+		margin-left: 4em;
+	}
+}

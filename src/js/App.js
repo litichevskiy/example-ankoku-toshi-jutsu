@@ -1,16 +1,37 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch, HashRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import Items from './components/Items';
-import Home from './components/Home';
-import Journey from './components/Journey';
-import NotFound from './components/NotFound';
+const pubsub = new ( require('./utils/PubSub.js') );
+const actionsApp = require('./actionsApp');
+const dataApp = require('../appData/index.js');
+const Store = require('./Store');
+Store.init();
+
+// pages
+import HomePage from './components/Pages/HomePage';
+import ProductPage from './components/Pages/ProductPage';
+import ItemsPage from './components/Pages/ItemsPage';
+import JourneyPage from './components/Pages/JourneyPage';
+import GalleryPage from './components/Pages/GalleryPage';
+import ImprintPage from './components/Pages/ImprintPage';
+import CreditsPage from './components/Pages/CreditsPage';
+import HowToBuyPage from './components/Pages/HowToBuyPage';
+import NotFoundPage from './components/Pages/NotFoundPage';
+//helpers
+import BlockSocialLinks from './components/BlockSocialLinks';
+import Indicator from './components/Indicator';
+import ButtonScroll from './components/ButtonScroll';
+import ButtonMenu from './components/ButtonMenu';
+import ButtonSound from './components/ButtonSound';
+import FixedLink from './components/FixedLink';
+import FixedButton from './components/FixedButton';
+import ContainerTabs from './components/ContainerTabs';
+import Menu from './components/Menu';
 
 const getConfirmation = (message, callback) => {
-  const allowTransition = window.confirm(message)
-  callback(allowTransition)
+  const allowTransition = window.confirm( message );
+  callback( allowTransition );
 }
 
 class App extends Component {
@@ -18,56 +39,72 @@ class App extends Component {
 	constructor( props ) {
 		super( props )
 
-		this.state = {
-			sound: true
-		}
+		this.state = {};
+		this.changeLocation = this.changeLocation.bind( this );
 	}
 
-	isSound() {
-		this.setState({sound: !this.state.sound});
+	componentDidMount() {
+		actionsApp.changeLocation( this.refs._ROUTER.history.location.pathname );
+   		this.refs._ROUTER.history.listen( this.changeLocation );
 	}
-				// <span><Link to="/items">Items</Link></span>
-		    	// <span><Link to="/journey">Journey</Link></span>
+
+	changeLocation( location ) {
+		actionsApp.changeLocation( location.pathname );
+	}
+
+	clickedButtonScroll() {
+		actionsApp.clickedScroll({history: this.refs._ROUTER.history});
+	}
 
   	render() {
 
-      	let is_one = ( this.state.sound ) ? "on" : "off";
-      	let classes = `sound ${is_one}`;
-
 	    return (
-	    	<main className="containerApp">
-		    	<HashRouter getUserConfirmation={getConfirmation}>
+	    	<main className="containerApp" >
+		    	<HashRouter ref="_ROUTER" getUserConfirmation={getConfirmation}>
 				    <div>
-				    	<div className="containerTgwoLogo">
-				    		<a href="#/">
-				    			<img src={"src/images/tgwo-logo.png"} alt={""} />
-				    		</a>
-				    	</div>
-				    	<div className="containerAdidasLogo">
-				    		<a href="#/">
-				    			<img src={"src/images/adidas-logo.png"} alt={""} />
-				    		</a>
-				    	</div>
-				    	<div className="containerShop">
-				    		<a href="#/" className="link">
-				    			<span className="contentLink">How to buy</span>
-				    			<div className="bg_icon">
-				    				<img src={"src/images/shop-icon.gif"} alt={""} />
-				    			</div>
-				    		</a>
-				    	</div>
-				    	<div className="containerSound">
-				    		<img
-				    			src={"src/images/sine.png"}
-				    			alt={""}
-				    			className={classes}
-				    			onClick={() => this.isSound()} />
-				    	</div>
+				    	<Menu />
+				    	<Indicator />
+				    	<FixedLink
+				    		classNameContainer={'containerTgwoLogo'}
+				    		href={''}
+				    		src={{white: 'src/images/tgwo-logo.png', black: 'src/images/tgwo-logo-black.png' }} />
+				    	<FixedLink
+				    		classNameContainer={'containerAdidasLogo'}
+				    		href={''}
+				    		src={{white: 'src/images/adidas-logo.png', black: 'src/images/adidas-logo-black.png' }} />
+				    	<FixedButton
+				    		classNameContainer={'containerShop'}
+				    		href={'howtobuy'}
+				    		srcImg={'src/images/shop-icon.gif'}
+				    		classNameLink={'link'}
+				    		classNameContent={'contentLink'}
+				    		content={'How to buy'}
+				    		classNameContainerImg={'bg_icon'}
+				    		srcImg={'src/images/shop-icon.gif'} />
+				    	<ButtonSound />
+				    	<BlockSocialLinks />
+				    	<ButtonScroll clikedHandler={this.clickedButtonScroll.bind( this )} />
+				    	<ButtonMenu />
 				      	<Switch>
-				     		<Route exact path="/" component={Home}/>
-				      		<Route path="/journey" component={Journey}/>
-				      		<Route path="/items" component={Items}/>
-				      		<Route component={NotFound}/>
+				     		<Route exact path="/" component={HomePage}/>
+				     		<Route exact path="/product" component={ProductPage}/>
+				      		<Route exact path="/items" component={ItemsPage}/>
+				      		<Route exact path="/journey" component={JourneyPage}/>
+				      		<Route exact path="/gallery" component={GalleryPage}/>
+				      		<Route exact path="/howtobuy" component={HowToBuyPage}/>
+				      		<Route exact path="/imprint" component={ImprintPage}/>
+				      		<Route exact path="/credits" component={CreditsPage}/>
+
+							<Route exact path='/product_detail' render={(props) => (
+  								<ContainerTabs {...props} data={dataApp.productDetailPage}/>
+							)}/>
+							<Route exact path='/items_detail' render={(props) => (
+  								<ContainerTabs {...props} data={dataApp.itemsDetailPage}/>
+							)}/>
+							<Route exact path='/journey_details' render={(props) => (
+  								<ContainerTabs {...props} data={dataApp.journeyDetailsPage}/>
+							)}/>
+				      		<Route component={NotFoundPage}/>
 				      	</Switch>
 				    </div>
 			  	</HashRouter>
