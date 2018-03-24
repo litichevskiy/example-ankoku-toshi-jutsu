@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import ButtonBack from '../ButtonBack';
 
@@ -54,7 +55,9 @@ class HowToBuyPage extends Component {
 	    						The adidas Consortium x The Good Will Out NMD CS1 ,Ankoku Toshi Jutsu' is available at selected adidas consortium stores worldwide.
 	    					</p>
 	    					<div className="containerButtonViewStoreList">
-	    						<div className="buttonViewStoreList">View store list</div>
+	    						<Link to="howtobuy/detail" className="buttonViewStoreList">
+	    							View store list
+	    						</Link>
 	    					</div>
 	    				</div>
 	    			</div>

@@ -1,5 +1,4 @@
 .HowToBuyPage{
-	background-color: #e5e6ff;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -9,7 +8,6 @@
 
 	.wrapperContentPage{
 		@include wrapperContentPage;
-		background-color: rgb(249, 246, 246);
 	}
 
 	.mainHeader{
@@ -17,6 +15,11 @@
 		display: inline-block;
 		position: relative;
 		margin: 5% 0 0 3%;
+
+		.contentLarge{
+			color: black;
+			letter-spacing: -3px;
+		}
 	}
 
 	.row{

@@ -21,7 +21,7 @@ class FixedButton extends Component {
 
     updateState() {
         let name = Store.name_current_page;
-        if( name === '/howtobuy' ) this.setState({showButton:false});
+        if( name === '/howtobuy' || name === '/howtobuy/detail' ) this.setState({showButton:false});
         else this.setState({showButton:true});
     }
 

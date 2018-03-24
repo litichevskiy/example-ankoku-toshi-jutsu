@@ -188,6 +188,120 @@ const data = {
 		    },
 		]
 	},
+
+	HowtobuyDetailPage: [
+		{
+			title: 'North America',
+			list: [
+				'Haven CAN',
+				'Livestock CAN',
+				'NRML CAN',
+				'OTH CAN',
+				'Addict USA',
+				'BAIT / Diamond Bar USA',
+				'Barneys NYC (Madison Ave + ecom) USA',
+				'Bodega USA',
+				'Concepts USA',
+				'Creme USA',
+				'Dover Street Market NY USA',
+				'Juice LA USA',
+				'Kith NYC USA',
+				'Mr. Porter USA',
+				'Nice Kicks USA',
+				'Packer Shoes, Inc. USA',
+				'Proper USA',
+				'RSVP Gallery USA',
+				'Shoe Gallery USA',
+				'Sneaker Politics USA',
+				'Sneakersnstuff USA USA',
+				'Social Status USA',
+				'St. Alfred USA',
+				'Ubiq / Mason USA',
+				'Undefeated USA',
+				'Wish Atlanta LLC USA',
+				'Xhibition USA',
+				'Commonwealth US Washington',
+			]
+		},
+
+		{
+			title: 'Europe',
+			list: [
+				'Avenue Belgium',
+				'Hunting & Collecting Belgium',
+				'Footshop Czech Republic',
+				'Naked Denmark',
+				'Norse Project Denmark',
+				'Wood Wood Denmark Denmark',
+				'Beamhill Finland',
+				'Acte2 France',
+				'Starcow France',
+				'Summer France',
+				'No. 74 Germany',
+				'Overkill Germany',
+				'Solebox Germany',
+				'The Good Will Out Germany',
+				'Uebervart Germany',
+				'Wood Wood Berlin Germany',
+				'Device1 Greece',
+				'PHAT SOLES Greece',
+				'Slam Jam Italy',
+				'Sneakers 76 Italy',
+				'Suede Italy',
+				'Patta Netherlands',
+				'YME Norway',
+				'limitEditions Spain',
+				'Sivas Des Calzo Spain',
+				'Sneakers n Stuff Sweden',
+				'Tres Bien Shop Sweden',
+				'Titolo Switzerland',
+				'Chmielna 20 Lab Store Warsaw',
+			]
+		},
+
+		{
+			title: 'Asia',
+			list: [
+				'Juice China',
+				'CONCEPTS DUBAI Dubai',
+				'THE GOOD LIFE Dubai',
+				'Level Shoedistrict Emirates',
+				'THE GOOD LIFE Lebanon',
+				'D-Mop / J-01 Hong Kong',
+				'EXI.T Hong Kong',
+				'Dice & Dice JP',
+				'DSM Ginza JP',
+				'Mita Sneakers JP',
+				'Styles / VA JP',
+				'Undefeated JP JP',
+				'United Arrows & Sons JP',
+				'CDG Seoul Korea',
+				'Kasina Korea Commonwealth Philippines',
+				'Brandshop Russia',
+				'KM20 Russia',
+				'DSM Singapore Singapore',
+				'LE Vault/ The Chamber Singapore',
+				'Invincible Taiwan',
+				'Juice Taiwan',
+			]
+		},
+		{
+			title: 'Australia',
+			list:[
+				'Highs & Lows Australia',
+				'Sneakerboy Australia',
+				'Loaded New Zealand',
+			]
+		},
+		{
+			title: 'Africa',
+			list: ['Shelflife South-Africa']
+		},
+		{
+			title: 'South America',
+			list:['Cartel Brazil']
+		}
+	]
 };
 
 module.exports = data;

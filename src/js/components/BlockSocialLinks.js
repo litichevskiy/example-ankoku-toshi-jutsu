@@ -23,7 +23,7 @@ class BlockSocialLinks extends Component {
 
     updateState() {
         let name = Store.name_current_page;
-        if( name === '/howtobuy' ) this.setState({showLinks:false});
+        if( name === '/howtobuy' || name === '/howtobuy/detail' ) this.setState({showLinks:false});
         else this.setState({showLinks:true});
     }
 

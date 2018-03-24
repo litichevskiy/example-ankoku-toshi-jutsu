@@ -1,0 +1,52 @@
+.howtobuyDetailPage{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	overflow: auto;
+	background-color: #e5f2f7;
+
+	.wrapperContent{
+		margin: 3.5em 10.5em 2em 10.5em;
+	}
+
+	.mainHeader{
+
+		.contentLarge{
+			color: black;
+			letter-spacing: -3px;
+		}
+	}
+
+	.grey{
+		@include darkGrey;
+		margin-left: 7px;
+	}
+
+	.containerLists{
+		margin-top: 2em;
+	}
+
+	.headerMiddle{
+		margin-bottom: 0.5em;
+    	font-weight: 400;
+    	display: inline-block;
+	}
+
+	.wrapperContainerLists{
+		display: inline-block;
+		width: 33.3%;
+		float: left;
+	}
+
+	.listCountries{
+
+	}
+
+	.itemListCountries{
+		@include content_smaller;
+		margin-bottom: 12px;
+	}
+}

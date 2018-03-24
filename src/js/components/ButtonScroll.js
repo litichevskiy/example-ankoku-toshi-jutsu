@@ -20,11 +20,12 @@ class ButtonScroll extends Component {
     }
 
     updateState() {
-
-        if( Store.name_current_page === '/howtobuy' ) this.setState({showButton:false});
-        else this.setState({showButton:true});
+        let name = Store.name_current_page;
 
         if( Store.total_pages === Store.index_current_page ) this.setState({showButton:false});
+        else this.setState({showButton:true});
+
+        if( name === '/howtobuy' || name === '/howtobuy/detail') this.setState({showButton:false});
         else this.setState({showButton:true});
     }
 
@@ -34,6 +35,7 @@ class ButtonScroll extends Component {
 
   	render() {
         let className = ( this.state.showButton ) ? 'buttonScroll' : 'hide';
+
     	return (
                 <div className={className} onClick={() => this._clickedButton()}>
                     <span className="content">scroll</span>

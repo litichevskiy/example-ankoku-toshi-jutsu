@@ -21,7 +21,7 @@ class FixedLink extends Component {
 
     updateState() {
         let name = Store.name_current_page;
-        if( name === '/howtobuy' ) this.setState({color:'black'});
+        if( name === '/howtobuy' || name === '/howtobuy/detail' ) this.setState({color:'black'});
         else this.setState({color:'white'});
     }
 

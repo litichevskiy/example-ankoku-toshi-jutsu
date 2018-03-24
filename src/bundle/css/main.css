@@ -34,13 +34,17 @@ a{
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: black; }
 
 .letter {
   opacity: 0; }
 
 .hide {
   display: none; }
+
+.HowToBuyPage {
+  background-color: lightblue; }
 
 /*helpers*/
 .blockSocialLinks {
@@ -359,13 +363,15 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #696969;
-  z-index: 3; }
+  z-index: 3;
+  background-color: black; }
   .containerTabs .containerNavBar {
     padding: 40px 50px; }
   .containerTabs .listTabs {
     display: inline-block; }
   .containerTabs .itemTab {
+    position: relative;
+    overflow: hidden;
     color: rgba(182, 188, 206, 0.7);
     font-size: 20px;
     display: inline-block;
@@ -379,21 +385,21 @@ a{
     overflow: hidden;
     -webkit-box-shadow: 0px -2px 0px 0px grey inset;
     box-shadow: 0px -2px 0px 0px grey inset; }
-    .containerTabs .itemTab:hover {
-      color: #FFFFFF; }
     .containerTabs .itemTab:after {
-      background-color: white;
       content: '';
       position: absolute;
-      left: -100%;
       bottom: 0;
+      left: -100%;
       width: 100%;
-      height: 2px;
+      height: 3px;
+      background-color: white;
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s; }
     .containerTabs .itemTab:hover:after {
       left: 0; }
+    .containerTabs .itemTab:hover {
+      color: #FFFFFF; }
   .containerTabs .itemTab:nth-child(1) {
     margin: 0; }
   .containerTabs .activeTab {
@@ -771,7 +777,6 @@ a{
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: black;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -824,8 +829,7 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  background-color: black; }
+  z-index: 1; }
   .creditsPage .contentCreditsPage {
     padding: 4em 2em;
     max-height: 100%;
@@ -883,7 +887,6 @@ a{
         color: #FFFFFF; }
 
 .HowToBuyPage {
-  background-color: #e5e6ff;
   position: fixed;
   top: 0;
   left: 0;
@@ -891,18 +894,19 @@ a{
   height: 100%;
   z-index: 1; }
   .HowToBuyPage .wrapperContentPage {
-    background-color: rgba(2, 2, 2, 0.14);
     position: absolute;
     top: 6%;
     right: 15%;
     bottom: 18%;
-    left: 16%;
-    background-color: #f9f6f6; }
+    left: 16%; }
   .HowToBuyPage .mainHeader {
     color: #000000;
     display: inline-block;
     position: relative;
     margin: 5% 0 0 3%; }
+    .HowToBuyPage .mainHeader .contentLarge {
+      color: black;
+      letter-spacing: -3px; }
   .HowToBuyPage .row {
     width: 100%;
     display: -webkit-inline-box;
@@ -950,8 +954,38 @@ a{
       -ms-transform: scale(1.1);
       transform: scale(1.1); }
 
+.howtobuyDetailPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: auto;
+  background-color: #e5f2f7; }
+  .howtobuyDetailPage .wrapperContent {
+    margin: 3.5em 10.5em 2em 10.5em; }
+  .howtobuyDetailPage .mainHeader .contentLarge {
+    color: black;
+    letter-spacing: -3px; }
+  .howtobuyDetailPage .grey {
+    color: grey;
+    margin-left: 7px; }
+  .howtobuyDetailPage .containerLists {
+    margin-top: 2em; }
+  .howtobuyDetailPage .headerMiddle {
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    display: inline-block; }
+  .howtobuyDetailPage .wrapperContainerLists {
+    display: inline-block;
+    width: 33.3%;
+    float: left; }
+  .howtobuyDetailPage .itemListCountries {
+    font-size: 15px;
+    margin-bottom: 12px; }
+
 .homePage {
-  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -959,7 +993,6 @@ a{
   height: 100%;
   z-index: 1; }
   .homePage .wrapperContentPage {
-    background-color: rgba(2, 2, 2, 0.14);
     position: absolute;
     top: 6%;
     right: 15%;
@@ -996,7 +1029,6 @@ a{
     color: #FFFFFF; }
 
 .productPage {
-  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -1004,7 +1036,6 @@ a{
   height: 100%;
   z-index: 1; }
   .productPage .wrapperContentPage {
-    background-color: rgba(2, 2, 2, 0.14);
     position: absolute;
     top: 6%;
     right: 15%;
@@ -1043,7 +1074,6 @@ a{
     margin-left: 4em; }
 
 .itemsPage {
-  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -1051,7 +1081,6 @@ a{
   height: 100%;
   z-index: 1; }
   .itemsPage .wrapperContentPage {
-    background-color: rgba(2, 2, 2, 0.14);
     position: absolute;
     top: 6%;
     right: 15%;
@@ -1089,7 +1118,6 @@ a{
     right: 0; }
 
 .journeyPage {
-  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -1097,7 +1125,6 @@ a{
   height: 100%;
   z-index: 1; }
   .journeyPage .wrapperContentPage {
-    background-color: rgba(2, 2, 2, 0.14);
     position: absolute;
     top: 6%;
     right: 15%;
@@ -1127,7 +1154,6 @@ a{
     right: 0; }
 
 .galleryPage {
-  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -1135,7 +1161,6 @@ a{
   height: 100%;
   z-index: 1; }
   .galleryPage .wrapperContentPage {
-    background-color: rgba(2, 2, 2, 0.14);
     position: absolute;
     top: 6%;
     right: 15%;

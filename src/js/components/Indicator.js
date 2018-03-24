@@ -24,7 +24,8 @@ class Indicator extends Component {
 	}
 
 	updateState() {
-		let isHow = ( Store.name_current_page === '/howtobuy' ) ? false : true;
+		let isHow = ( Store.name_current_page === '/howtobuy' ||
+					  Store.name_current_page === '/howtobuy/detail' ) ? false : true;
 		this.setState({
 			currentPage: Store.index_current_page,
 			showIndicator: isHow,

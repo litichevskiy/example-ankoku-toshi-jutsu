@@ -48,6 +48,10 @@
 	color: rgba(182, 188, 206, 0.7);
 }
 
+@mixin darkGrey{
+	color: grey;
+}
+
 @mixin fixed_link($left, $top, $right, $bottom, $height, $width) {
 	position: fixed;
 	z-index: 2;
@@ -91,7 +95,6 @@
 }
 
 @mixin wrapperContentPage{
-    background-color: rgba(2, 2, 2, 0.14);
 	position: absolute;
     top: 6%;
     right: 15%;

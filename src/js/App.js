@@ -17,6 +17,7 @@ import GalleryPage from './components/Pages/GalleryPage';
 import ImprintPage from './components/Pages/ImprintPage';
 import CreditsPage from './components/Pages/CreditsPage';
 import HowToBuyPage from './components/Pages/HowToBuyPage';
+import HowtobuyDetail from './components/Pages/HowtobuyDetail.jsx';
 import NotFoundPage from './components/Pages/NotFoundPage';
 //helpers
 import BlockSocialLinks from './components/BlockSocialLinks';
@@ -94,6 +95,7 @@ class App extends Component {
 				      		<Route exact path="/howtobuy" component={HowToBuyPage}/>
 				      		<Route exact path="/imprint" component={ImprintPage}/>
 				      		<Route exact path="/credits" component={CreditsPage}/>
+				      		<Route exact path="/howtobuy/detail" component={HowtobuyDetail}/>
 
 							<Route exact path='/product_detail' render={(props) => (
   								<ContainerTabs {...props} data={dataApp.productDetailPage}/>
