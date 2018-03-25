@@ -1,0 +1,45 @@
+@media screen and (max-width: 800px) {
+	.creditsPage{
+		background-image: url(../images/pages/credits_page_bg_mobile.jpg);
+		background-repeat: no-repeat;
+    	-webkit-background-size: cover;
+    	    background-size: cover;
+
+		.header{
+			font-size: 3em;
+		}
+
+		.listLinks{
+			margin: 2em auto;
+		}
+
+		.itemListLinks img{
+			max-height: 40px;
+		}
+
+		.containerDescription{
+			font-size: 17px;
+		}
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.creditsPage{
+
+		.header{
+			font-size: 2em;
+		}
+
+		.itemListLinks img{
+			max-height: 30px;
+		}
+
+		.containerDescription{
+			font-size: 15px;
+		}
+
+		.contentCreditsPage{
+			padding: 4em 1em;
+		}
+	}
+}

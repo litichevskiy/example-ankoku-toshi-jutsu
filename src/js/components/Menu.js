@@ -28,7 +28,7 @@ class Menu extends Component {
 	updateState() {
 		this.setState({
 			showMenu: Store.is_open_menu,
-			activeItem: Store.active_item_menu,
+			activeItem: Store.active_item_menu
 		});
 	}
 
@@ -49,6 +49,9 @@ class Menu extends Component {
     	<section className={( this.state.showMenu ) ? 'containerMenu' : 'hide'}>
     		<div className="backgroundLayer"></div>
     		<div ref="container" className="containerContentMenu">
+	    		<video className="video" preload="auto" loop="loop" autoPlay="" muted="" playsInline="" >
+	    			<source src="src/videos/01_start_overview.mp4" type="video/mp4" />
+	    		</video>
 	    		<nav className="blockMenu">
 	    			<ul className="listMenu" >
 	    				{this.listMenu.map( ( item, index ) => {

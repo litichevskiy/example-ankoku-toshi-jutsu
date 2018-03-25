@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
+const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class FixedButton extends Component {
 
@@ -20,8 +21,8 @@ class FixedButton extends Component {
     }
 
     updateState() {
-        let name = Store.name_current_page;
-        if( name === '/howtobuy' || name === '/howtobuy/detail' ) this.setState({showButton:false});
+        let index = links.indexOf( Store.name_current_page );
+        if( index > -1 ) this.setState({showButton:false});
         else this.setState({showButton:true});
     }
 
@@ -31,6 +32,7 @@ class FixedButton extends Component {
             <div className={className}>
                 <Link to={this.props.href} className={this.props.classNameLink}>
                     <span className={this.props.classNameContent}>{this.props.content}</span>
+                    <span className="mobileContent">Get it</span>
                     <div className={this.props.classNameContainerImg}>
                         <img src={this.props.srcImg} alt={this.props.alt || ""} />
                     </div>

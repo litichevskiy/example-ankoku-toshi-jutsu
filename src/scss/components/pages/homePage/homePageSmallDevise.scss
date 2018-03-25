@@ -1,0 +1,53 @@
+.homePage{
+	@media screen and (max-width:1150px) {
+		.headermiddle{
+			font-size: 15px;
+		}
+
+		.btnText{
+			font-size: 17px;
+		}
+
+		.headermiddle{
+			margin-top: 15px;
+		}
+	}
+
+	@media screen and (max-width:950px) {
+		.blockBottomRight{
+			right: -10%;
+		}
+	}
+
+	@media screen and (max-width:800px) {
+		.blockBottom{
+			bottom: 52%;
+			left: 0;
+		}
+
+		.blockBottomRight{
+			left: initial;
+			bottom: initial;
+    		right: initial;
+			bottom: 12%;
+			left: 0;
+		}
+
+		.headermiddle{
+			width: 225px;
+		}
+
+		.blockTop{
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width:800px){
+	.homePage{
+		background-image: url(../images/pages/home_page_bg_mobile.jpg);
+		background-repeat: no-repeat;
+    	-webkit-background-size: cover;
+    	        background-size: cover;
+	}
+}

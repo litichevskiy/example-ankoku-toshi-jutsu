@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import ButtonBack from '../ButtonBack';
 
 class CreditsPage extends Component {
 
     constructor( props ) {
         super( props )
+
+        this.history = props.history;
+        this._clickedBack = this._clickedBack.bind( this );
+    }
+
+    _clickedBack() {
+        this.history.goBack()
     }
 
   	render() {
@@ -11,9 +19,10 @@ class CreditsPage extends Component {
         return(
             <section className="creditsPage">
                 <div className="contentCreditsPage">
+                    <ButtonBack clickedHandler={this._clickedBack} />
                     <h1 className="header animated zoomIn">
-                        <div className="animated fadeInLeft">Ankokou</div>
-                        <div className="animated fadeInRight">Toshi Jutsu</div>
+                        <div className="animated fadeInDown">Ankokou</div>
+                        <div className="animated fadeInDown">Toshi Jutsu</div>
                     </h1>
                     <ul className="listLinks animated zoomIn">
                         <li className="itemListLinks">

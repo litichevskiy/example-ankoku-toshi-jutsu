@@ -2,6 +2,7 @@
 @import 'mixins.scss';
 
 @import 'components/containerApp.scss';
+
 /*helpers*/
 @import 'components/blockSocialLinks/blockSocialLinks.scss';
 @import 'components/buttonScroll/buttonScroll.scss';
@@ -15,13 +16,26 @@
 @import 'components/buttonBack/buttonBack.scss';
 @import 'components/indicator/indicator.scss';
 /*pages*/
+@import 'components/pages/homePage/homePage.scss';
 @import 'components/pages/pageNotFound/pageNotFound.scss';
 @import 'components/pages/imprintPage/imprintPage.scss';
 @import 'components/pages/creditsPage/creditsPage.scss';
 @import 'components/pages/howToBuyPage/howToBuyPage.scss';
 @import 'components/pages/howtobuyDetailPage/howtobuyDetailPage.scss';
-@import 'components/pages/homePage/homePage.scss';
 @import 'components/pages/productPage/productPage.scss';
 @import 'components/pages/itemsPage/itemsPage.scss';
 @import 'components/pages/journeyPage/journeyPage.scss';
 @import 'components/pages/galleryPage/galleryPage.scss';
+/*pages small device*/
+@import 'components/pages/homePage/homePageSmallDevise.scss';
+@import 'components/pages/imprintPage/impiritPageSmallDevice.scss';
+@import 'components/pages/creditsPage/creditsPageSmallDevice.scss';
+/*helpers small device*/
+@import 'components/fixedLink/fixedLinkSmallDevice.scss';
+@import 'components/blockSocialLinks/blockSocialLinksSmallDevice.scss';
+@import 'components/buttonSound/containerSoundSmalldevice.scss';
+@import 'components/indicator/indicatorSmallDevice.scss';
+@import 'components/buttonMenu/buttonMenuSmallDevice.scss';
+@import 'components/buttonScroll/buttonScrollSmallDevise.scss';
+@import 'components/menu/menuSmallDevice.scss';
+@import 'components/buttonBack/buttonBackSmallDevice.scss';

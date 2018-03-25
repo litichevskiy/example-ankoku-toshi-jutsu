@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
+const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class ButtonScroll extends Component {
 
@@ -20,12 +21,12 @@ class ButtonScroll extends Component {
     }
 
     updateState() {
-        let name = Store.name_current_page;
+        let index = links.indexOf(Store.name_current_page);
 
         if( Store.total_pages === Store.index_current_page ) this.setState({showButton:false});
         else this.setState({showButton:true});
 
-        if( name === '/howtobuy' || name === '/howtobuy/detail') this.setState({showButton:false});
+        if( index > -1 ) this.setState({showButton:false});
         else this.setState({showButton:true});
     }
 

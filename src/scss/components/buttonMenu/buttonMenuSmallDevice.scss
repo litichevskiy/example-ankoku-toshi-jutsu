@@ -1,0 +1,24 @@
+@media screen and (max-width:800px){
+	.containerButtonMenu{
+		top: 6%;
+		left: initial;
+		right: 4%;
+
+		.one, .two, .three{
+			width: 100% !important;
+		}
+
+		.page{
+			left: initial;
+    		right: 0px;
+		}
+
+		.page.current{
+			top: -25px;
+		}
+
+		.page.total{
+			bottom: -25px;
+		}
+	}
+}

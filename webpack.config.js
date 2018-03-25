@@ -52,15 +52,26 @@ module.exports = [
       ignored: /node_modules/
     },
     module: {
-      rules: [{
-        test: /\.scss$/,
-        use: extractSass.extract({
-          use: [
-            {loader: 'css-loader', options: {sourceMap: true}},
-            {loader: 'sass-loader', options: {sourceMap: true}}
-          ]
-        })
-      }]
+      rules: [
+        {
+          test: /\.scss$/,
+          use: extractSass.extract({
+            use: [
+              {loader: 'css-loader', options: {sourceMap: true}},
+              {loader: 'sass-loader', options: {sourceMap: true}}
+            ]
+          })
+        },
+        {
+            test: /\.(png|jp(e*)g|svg)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    name: 'images/[hash]-[name].[ext]'
+                }
+            }]
+        }
+      ]
     },
     output: {
       filename: '[name].css',
@@ -71,3 +82,5 @@ module.exports = [
     ]
   }
 ];
+
+

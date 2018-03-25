@@ -1,0 +1,20 @@
+@media screen and (max-width: 700px){
+	.containerButtonBack{
+
+		.svgBack{
+			width: 23px;
+			height: 23px;
+		}
+
+		.wrapperSvg{
+			padding: 7px;
+		}
+	}
+}
+
+@media screen and (max-device-width:480px){
+	.containerButtonBack{
+		top: 17px;
+		right: 17px;
+	}
+}

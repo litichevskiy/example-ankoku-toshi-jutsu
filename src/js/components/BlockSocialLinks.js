@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const appData = require('../../appData');
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
-
+const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class BlockSocialLinks extends Component {
 	constructor( props ) {
@@ -22,8 +22,8 @@ class BlockSocialLinks extends Component {
     }
 
     updateState() {
-        let name = Store.name_current_page;
-        if( name === '/howtobuy' || name === '/howtobuy/detail' ) this.setState({showLinks:false});
+        let index = links.indexOf( Store.name_current_page );
+        if( index > -1 ) this.setState({showLinks:false});
         else this.setState({showLinks:true});
     }
 
@@ -31,15 +31,13 @@ class BlockSocialLinks extends Component {
 		let className = ( this.state.showLinks ) ? 'blockSocialLinks' : 'hide';
     	return (
     		<ul className={className}>
-				{
-					appData.socialLinks.map( ( item, index ) => {
+				{appData.socialLinks.map( ( item, index ) => {
 						return(
 							<li className="itemLink" key={index} >
 								<Link className="link" to={item.link}>{item.content}</Link>
 							</li>
 						);
-					})
-				}
+				})}
 			</ul>
     	);
   	}

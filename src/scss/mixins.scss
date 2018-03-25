@@ -34,6 +34,18 @@
 
 @mixin content_largest{
 	font-size: 110px;
+
+	@media screen and (max-width:1250px) {
+		font-size: 70px;
+	}
+
+	@media screen and (max-height: 750px) {
+		font-size: 70px;
+	}
+
+	@media screen and (max-width:800px) {
+		font-size: 40px;
+	}
 }
 
 @mixin white{
@@ -100,4 +112,11 @@
     right: 15%;
     bottom: 18%;
     left: 16%;
+
+    @media screen and (max-width:800px){
+    	top: 4%;
+    	right: 11%;
+    	bottom: 11%;
+    	left: 11%;
+    }
 }

@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import ButtonBack from '../ButtonBack';
 
 class ImprintPage extends Component {
 
     constructor( props ) {
         super( props )
+
+        this.history = props.history;
+        this._clickedBack = this._clickedBack.bind( this );
+    }
+
+    _clickedBack() {
+        this.history.goBack()
     }
 
   	render() {
@@ -11,6 +19,7 @@ class ImprintPage extends Component {
         return(
             <section className="imprintPage">
                 <div className="containerContent">
+                    <ButtonBack clickedHandler={this._clickedBack} />
                     <h3 className="header">Imprint</h3>
                     <p className="content">
                         The Good Will Out <br />
