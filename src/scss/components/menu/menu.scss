@@ -259,6 +259,10 @@
 	@include animationItemMenu( 1.1s )
 }
 
+.itemMenu:nth-child(8) {
+	@include animationItemMenu( 1.2s )
+}
+
 @-webkit-keyframes itemMenu {
 	from { opacity: 0; left: -300%; }
 	60%  {opacity: 0.3;}

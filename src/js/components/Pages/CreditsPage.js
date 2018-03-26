@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ButtonBack from '../ButtonBack';
+import Video from './../Video.jsx';
 
 class CreditsPage extends Component {
 
@@ -18,6 +19,7 @@ class CreditsPage extends Component {
 
         return(
             <section className="creditsPage">
+                <Video src={'src/videos/credits_page.mp4'} />
                 <div className="contentCreditsPage">
                     <ButtonBack clickedHandler={this._clickedBack} />
                     <h1 className="header animated zoomIn">

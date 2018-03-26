@@ -1,0 +1,124 @@
+@media screen and (max-height: 570px){
+
+	.HowToBuyPage	.mainHeader{
+		margin-bottom: 0.6%;
+	}
+}
+
+@media screen and (max-width: 1450px){
+
+	.HowToBuyPage .wrapperContentPage{
+		right: 6%;
+		left: 11%;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.HowToBuyPage{
+
+		.row{
+			display: inline-block;
+		}
+
+		.cell{
+			width: 49%;
+			padding: 15px 30px 15px 5px;
+			display: inline-block;
+    		vertical-align: top;
+		}
+
+		.largeContent{
+			font-size: 19px;
+		}
+	}
+}
+
+@media screen and (max-width: 960px){
+	.HowToBuyPage{
+
+		.wrapperContentPage{
+			left: 5%;
+			top: 20%;
+		}
+
+		.cell:nth-child(1){display: none;}
+		.cell:nth-child(2){display: none;}
+		.cell:nth-child(3){display: none;}
+
+		.cell{
+			width: 100%;
+		}
+
+		.cell.mobile{
+			display: inline-block;
+			width: auto;
+			margin-right: 30px;
+
+			.largeContent{
+				width: auto;
+			}
+		}
+
+		.largeContent{
+			width: 300px;
+		}
+
+		.smallContent{
+			white-space: nowrap;
+		}
+	}
+}
+
+@media screen and (max-width: 800px){
+	.HowToBuyPage .containerVideo{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 650px){
+	.HowToBuyPage{
+
+		.wrapperContentPage{
+			left: 2%;
+			right: 2%;
+		}
+
+		.largeContent, .smallContent{
+			font-size: 15px;
+		}
+
+		.cell.mobile{
+			margin-right: 10px;
+		}
+	}
+}
+
+@media screen and (max-width: 650px){
+	.HowToBuyPage{
+		.cell.mobile{
+			margin-right: 3px;
+		}
+	}
+}
+
+@media screen and (max-width: 400px){
+	.HowToBuyPage{
+		.largeContent{
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-device-width:480px){
+	.HowToBuyPage{
+
+		.wrapperContentPage{
+			left: 5%;
+			right: 5%;
+		}
+
+		.cell.mobile{
+			margin-right: 15px;
+		}
+	}
+}

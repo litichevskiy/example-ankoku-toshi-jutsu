@@ -15,6 +15,7 @@
 @import 'components/menu/menu.scss';
 @import 'components/buttonBack/buttonBack.scss';
 @import 'components/indicator/indicator.scss';
+@import 'components/video/video.scss';
 /*pages*/
 @import 'components/pages/homePage/homePage.scss';
 @import 'components/pages/pageNotFound/pageNotFound.scss';
@@ -30,6 +31,12 @@
 @import 'components/pages/homePage/homePageSmallDevise.scss';
 @import 'components/pages/imprintPage/impiritPageSmallDevice.scss';
 @import 'components/pages/creditsPage/creditsPageSmallDevice.scss';
+@import 'components/pages/howtobuyDetailPage/howtobuyDetailPageSmallDevice.scss';
+@import 'components/pages/howToBuyPage/HowToBuyPageSmallDevice.scss';
+@import 'components/pages/productPage/productPageSmallDevice.scss';
+@import 'components/pages/itemsPage/itemsPageSmallDevice.scss';
+@import 'components/pages/journeyPage/journeyPageSmallDevice.scss';
+@import 'components/pages/galleryPage/galleryPageSmallDevice.scss';
 /*helpers small device*/
 @import 'components/fixedLink/fixedLinkSmallDevice.scss';
 @import 'components/blockSocialLinks/blockSocialLinksSmallDevice.scss';
@@ -39,3 +46,5 @@
 @import 'components/buttonScroll/buttonScrollSmallDevise.scss';
 @import 'components/menu/menuSmallDevice.scss';
 @import 'components/buttonBack/buttonBackSmallDevice.scss';
+@import 'components/video/videoSmallDevice.scss';
+@import 'components/containerTabs/containerTabsSmallDevice.scss';

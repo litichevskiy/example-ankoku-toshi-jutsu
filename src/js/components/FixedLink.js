@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
-const linksColors = ['/howtobuy','/howtobuy/detail','/credits'];
-const linksShow = ['/credits','imprint','/product_detail','/items_detail','/journey_details'];
 
 class FixedLink extends Component {
 
     constructor( props ) {
         super( props )
         this.state = {
-            color: 'white',
-            isShow: true,
+            color: Store.color_fixed_link,
+            isShow: Store.show_fixed_link,
         }
 
         this.updateState = this.updateState.bind( this );
@@ -23,13 +21,10 @@ class FixedLink extends Component {
     }
 
     updateState() {
-        let index = linksColors.indexOf( Store.name_current_page );
-        if( index > -1 ) this.setState({color:'black'});
-        else this.setState({color:'white'});
-
-        index = linksShow.indexOf( Store.name_current_page );
-        if( index > -1 ) this.setState({isShow: false});
-        else this.setState({isShow: true});
+        this.setState({
+            isShow: Store.show_fixed_link,
+            color: Store.color_fixed_link
+        });
     }
 
   	render() {

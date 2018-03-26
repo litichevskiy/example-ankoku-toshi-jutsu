@@ -9,7 +9,8 @@ class ButtonSound extends Component {
 
         this.state = {
             sound: true,
-            showButton: true,
+            showButton: Store.show_button_sound,
+            muted: false,
         }
 
         this.updateState = this.updateState.bind( this );
@@ -21,19 +22,17 @@ class ButtonSound extends Component {
     }
 
     updateState() {
-        let name = Store.name_current_page;
-        if( name === '/howtobuy' || name === '/howtobuy/detail' ) this.setState({showButton:false});
-        else this.setState({showButton:true});
+        this.setState({showButton:Store.show_button_sound});
     }
 
 	_clickedButton() {
-        this.setState({sound: !this.state.sound})
+        this.setState({sound: !this.state.sound, muted: !this.state.muted})
 	}
 
   	render() {
         let className = ( this.state.showButton ) ? 'containerSound' : 'hide';
-        let is_one = ( this.state.sound ) ? "on" : "off";
-        let classes = `sound ${is_one}`;
+        let is_on = ( this.state.sound ) ? "on" : "off";
+        let classes = `sound ${is_on}`;
 
     	return (
     		<div className={className}>
@@ -42,6 +41,13 @@ class ButtonSound extends Component {
                     alt={""}
                     className={classes}
                     onClick={() => this._clickedButton()} />
+                <audio
+                    ref="audio"
+                    src="src/audio/bg.mp3"
+                    autoPlay
+                    loop="true"
+                    muted={this.state.muted} >
+                </audio>
             </div>
     	);
   	}

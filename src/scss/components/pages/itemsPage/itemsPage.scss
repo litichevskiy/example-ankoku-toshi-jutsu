@@ -10,6 +10,10 @@
 		@include wrapperContentPage;
 	}
 
+	.blockMobileButton{
+		display: none;
+	}
+
 	.blockLeftTop{
 		position: absolute;
 		top: 0;

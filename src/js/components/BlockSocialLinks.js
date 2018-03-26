@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 const appData = require('../../appData');
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
-const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class BlockSocialLinks extends Component {
 	constructor( props ) {
         super( props )
 
         this.state = {
-        	showLinks: Store.index_current_page,
+        	showLinks: Store.show_social_link,
         }
 
         this.updateState = this.updateState.bind( this );
@@ -22,9 +21,7 @@ class BlockSocialLinks extends Component {
     }
 
     updateState() {
-        let index = links.indexOf( Store.name_current_page );
-        if( index > -1 ) this.setState({showLinks:false});
-        else this.setState({showLinks:true});
+        this.setState({showLinks:Store.show_social_link});
     }
 
   	render() {

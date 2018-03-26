@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Video from './Video.jsx';
 const dataApp = require('../../appData/index.js');
 const Store = require('../Store');
 const actionsApp = require('../actionsApp');
@@ -49,9 +50,7 @@ class Menu extends Component {
     	<section className={( this.state.showMenu ) ? 'containerMenu' : 'hide'}>
     		<div className="backgroundLayer"></div>
     		<div ref="container" className="containerContentMenu">
-	    		<video className="video" preload="auto" loop="loop" autoPlay="" muted="" playsInline="" >
-	    			<source src="src/videos/01_start_overview.mp4" type="video/mp4" />
-	    		</video>
+    			<Video src={'src/videos/flag_black.mp4'} />
 	    		<nav className="blockMenu">
 	    			<ul className="listMenu" >
 	    				{this.listMenu.map( ( item, index ) => {

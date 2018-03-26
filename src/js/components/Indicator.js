@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
-const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class Indicator extends Component {
 
@@ -13,7 +12,7 @@ class Indicator extends Component {
 
 		this.state = {
 			currentPage : Store.index_current_page,
-			showIndicator: Store.index_current_page,
+			showIndicator: Store.show_indicator,
 		}
 
 		this.updateState = this.updateState.bind( this );
@@ -25,10 +24,9 @@ class Indicator extends Component {
 	}
 
 	updateState() {
-		let index = links.indexOf( Store.name_current_page );
 		this.setState({
 			currentPage: Store.index_current_page,
-			showIndicator: ( index > -1 ) ? false : true,
+			showIndicator: Store.show_indicator,
 		});
 	}
 

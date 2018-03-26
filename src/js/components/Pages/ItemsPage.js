@@ -18,6 +18,7 @@ class ItemsPage extends Component {
   	render() {
   		let buttonKimoto = appData.itemsPage.svgButtonKimoto;
   		let buttonLongsleeve = appData.itemsPage.svgButtonLongsleeve;
+  		let buttonMobile = appData.itemsPage.svgButtonMobile;
 
 	    return (
 	    	<div className="itemsPage">
@@ -57,6 +58,16 @@ class ItemsPage extends Component {
 	    					Only available at <br />
 	    					The Good Will Out.
 	    				</div>
+	    			</div>
+	    			<div className="blockMobileButton animated fadeInUp">
+	    				<Link to="/items_detail" className="link">
+			    			<SvgButton
+			    				width={'120px'}
+			    				height={'50px'}
+			    				path={buttonMobile.path}
+			   					title={buttonMobile.title}
+		    					content={buttonMobile.content} />
+		   				</Link>
 	    			</div>
 	    		</div>
 	    	</div>

@@ -38,6 +38,36 @@
 	}
 }
 
+@media screen and (max-width:800px){
+	.containerMenu{
+		.containerVideo{
+			display: initial;
+		}
+
+		.bottomNavigation, .containerHowtobuy{
+			display: none;
+		}
+
+		.listMenu{
+			overflow: auto;
+			display: inline-block;
+			padding: 1em;
+		}
+
+		.blockMenu{
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		.itemMenu .link{
+			font-size: 2.1em;
+			padding: 0.55em 0;
+		}
+	}
+}
+
 @media screen and (max-width:770px) {
 	.containerMenu{
 
@@ -45,11 +75,11 @@
 			display: none;
 		}
 
-		.bottomNavigation{
+		/*.bottomNavigation{
 			bottom: 4%;
-		}
+		}*/
 
-		.containerHowtobuy{
+		/*.containerHowtobuy{
 			top: initial;
 			left: initial;
 			right: initial;
@@ -57,7 +87,7 @@
 			bottom: 3%;
 			left: 3%;
 			width: auto;
-		}
+		}*/
 
 		.containerLink{
 			padding: 7px 10px;

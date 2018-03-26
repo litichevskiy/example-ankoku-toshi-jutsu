@@ -20,6 +20,8 @@ class ProductPage extends Component {
   		let buttonDetails = appData.productPage.svgButtonDetails;
   		let buttonMaterials = appData.productPage.svgButtonMaterials;
 
+  		let buttonMobile  = appData.productPage.svgButtonMobile;
+
 	    return (
 	    	<div className="productPage">
 	    		<div className="wrapperContentPage">
@@ -70,6 +72,18 @@ class ProductPage extends Component {
 			    					path={buttonMaterials.path}
 			    					title={buttonMaterials.title}
 		    						content={buttonMaterials.content} />
+		    				</Link>
+	    				</div>
+	    			</div>
+	    			<div className="containerButton animated fadeInUp">
+	    				<div className="wrapperButtonSvg mobile"onClick={() => this._clikedLink(0)}>
+		    				<Link to="/product_detail" className="link">
+			    				<SvgButton
+			    					width={'120px'}
+			    					height={'50px'}
+			    					path={buttonMobile.path}
+			    					title={buttonMobile.title}
+		    						content={buttonMobile.content} />
 		    				</Link>
 	    				</div>
 	    			</div>

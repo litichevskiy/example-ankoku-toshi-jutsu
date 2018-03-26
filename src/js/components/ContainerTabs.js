@@ -53,7 +53,7 @@ class ContainerTabs extends Component {
         return (
             <section className="containerTabs">
                 <ButtonBack clickedHandler={this._clickedBack} />
-                <nav className="containerNavBar">
+                <nav className="containerNavBar" >
                     <ul className="listTabs">
                     {
                         this.data.map( ( item, index ) => {
@@ -67,7 +67,7 @@ class ContainerTabs extends Component {
                     }
                     </ul>
                 </nav>
-                <div className={( this.state.activeTab > -1 ) ?  'containerTabContent' : 'hidden'}>
+                <div className={( this.state.activeTab > -1 ) ?  'containerTabContent' : 'hidden'} >
                     <div ref="div" className={`descriptionTab animated ${ANIMATION_CLASS}`}>
                         {
                             this.data[this.state.activeTab].content.map( ( item, index ) => {
@@ -75,6 +75,22 @@ class ContainerTabs extends Component {
                             })
                         }
                     </div>
+                </div>
+                <div className="containerContentMobile">
+                    {
+                        this.data.map( ( item, index ) => {
+                            return(
+                                <div className="blockTabs" >
+                                    <h1 className="header" key={index}>{item.tabName}</h1>
+                                    {
+                                        item.content.map( ( item, index ) => {
+                                            return <p className="content" key={index}>{item}</p>
+                                        })
+                                    }
+                                </div>
+                            )
+                        })
+                    }
                 </div>
     		</section>
     	);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import ButtonBack from '../ButtonBack';
+import Video from './../Video.jsx';
 
 class HowToBuyPage extends Component {
 
@@ -20,6 +21,7 @@ class HowToBuyPage extends Component {
 
 	    return (
 	    	<div className="HowToBuyPage">
+	    		<Video src={'src/videos/flag_white.mp4'} />
 	    		<div className="wrapperContentPage">
 	    			<ButtonBack clickedHandler={this._clickedBack} />
 	    			<div className="mainHeader">
@@ -49,6 +51,16 @@ class HowToBuyPage extends Component {
 	    					<p className="smallContent black">US 4.5-13.0</p>
 	    					<p className="smallContent black">unisex</p>
 	    					<p className="smallContent black">Retail price: 220,-€</p>
+	    				</div>
+	    				<div className="cell mobile animated zoomIn">
+	    					<p className="smallContent">TGWO release</p>
+	    					<div className="separator"></div>
+	    					<p className="largeContent">16 — 09 — 17</p>
+	    				</div>
+	    				<div className="cell mobile animated zoomIn">
+	    					<p className="smallContent">worldwide release</p>
+	    					<div className="separator"></div>
+	    					<p className="largeContent">23 — 09 — 17</p>
 	    				</div>
 	    				<div className="cell animated zoomIn">
 	    					<p className="largeContent">

@@ -1,0 +1,33 @@
+@media screen and (max-width: 800px) {
+	.itemsPage{
+		background-image: url(../images/pages/items_page_bg_mobile.jpg);
+		background-repeat: no-repeat;
+    	-webkit-background-size: cover;
+    	        background-size: cover;
+
+
+    	.blockLeftBottom, .blockRightTop, .blockRightBottom{
+    		display: none;
+    	}
+
+    	.blockLeftTop .animated{
+    		display: none;
+    	}
+
+    	.blockMobileButton{
+    		display: inline-block;
+    		position: absolute;
+    		bottom: 18%;
+    		left: 10%;
+    	}
+
+    	.blockLeftTop{
+    		top: 30%;
+    		left: 10%;
+    	}
+
+    	.headerLarge{
+    		margin: 0;
+    	}
+	}
+}

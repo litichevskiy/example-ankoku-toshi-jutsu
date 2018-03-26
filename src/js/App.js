@@ -41,12 +41,35 @@ class App extends Component {
 		super( props )
 
 		this.state = {};
+		this.min_width = 800;
+		this.max_width = 800;
+		this.key_width;
 		this.changeLocation = this.changeLocation.bind( this );
+		this.resize = this.resize.bind( this );
+		window.addEventListener('resize', this.resize);
 	}
 
 	componentDidMount() {
 		actionsApp.changeLocation( this.refs._ROUTER.history.location.pathname );
    		this.refs._ROUTER.history.listen( this.changeLocation );
+	}
+
+	resize() {
+		let window_width = document.body.clientWidth;
+
+		if( window_width < this.min_width ) {
+			if( this.key_width != 'min' ) {
+				this.key_width = 'min';
+				console.log('min');
+			}
+		}
+		else
+			if( window_width > this.min_width ) {
+				if( this.key_width != 'max' ) {
+					this.key_width = 'max';
+					console.log('max');
+				}
+			}
 	}
 
 	changeLocation( location ) {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 const pubsub = new ( require('../utils/PubSub.js') );
 const actionsApp = require('../actionsApp');
 const Store = require('../Store');
-const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class ButtonMenu extends Component {
 
@@ -12,7 +11,7 @@ class ButtonMenu extends Component {
 		this.state = {
 			currentPage : Store.index_current_page,
 			totalPage : Store.total_pages,
-			showButton: Store.index_current_page,
+			showButton: Store.show_button_menu,
 		}
 
 		this.updateState = this.updateState.bind( this );
@@ -24,10 +23,9 @@ class ButtonMenu extends Component {
 	}
 
 	updateState() {
-		let index = links.indexOf( Store.name_current_page );
 		this.setState({
 			currentPage: Store.index_current_page,
-			showButton: ( index > -1 ) ? false : true,
+			showButton: Store.show_button_menu,
 		});
 	}
 

@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
-const links = ['/howtobuy','/howtobuy/detail','/credits','/imprint','/product_detail','/items_detail','/journey_details'];
 
 class FixedButton extends Component {
 
     constructor( props ) {
         super( props )
         this.state = {
-            showButton: true,
+            showButton: Store.show_fixed_button,
         }
 
         this.updateState = this.updateState.bind( this );
@@ -21,9 +20,7 @@ class FixedButton extends Component {
     }
 
     updateState() {
-        let index = links.indexOf( Store.name_current_page );
-        if( index > -1 ) this.setState({showButton:false});
-        else this.setState({showButton:true});
+        this.setState({ showButton: Store.show_fixed_button });
     }
 
   	render() {
