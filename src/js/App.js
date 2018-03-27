@@ -86,10 +86,6 @@ class App extends Component {
 	    	<main className="containerApp" >
 		    	<HashRouter ref="_ROUTER" getUserConfirmation={getConfirmation}>
 				    <div>
-				    	<div className="containerRotateIcon">
-				    		<img src='src/images/rotate_icon.png' alt="" />
-				    		<p className="content">Please rotate your device...</p>
-				    	</div>
 				    	<Menu />
 				    	<Indicator />
 				    	<FixedLink
@@ -135,6 +131,16 @@ class App extends Component {
 							)}/>
 				      		<Route component={NotFoundPage}/>
 				      	</Switch>
+				    	<div className="messageUser">
+				    		<div className="mobile">
+				    			<img src='src/images/rotate_icon.png' alt="" />
+				    			<p className="content">Please rotate your device...</p>
+				    		</div>
+				    		<div className="desktop">
+				    			<img src='src/images/fullScreen.png' alt="" />
+				    			<p className="content">please expand the viewport...</p>
+				    		</div>
+				    	</div>
 				    </div>
 			  	</HashRouter>
 	    	</main>

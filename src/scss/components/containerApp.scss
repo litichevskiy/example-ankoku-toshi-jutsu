@@ -6,7 +6,7 @@
 	height: 100%;
 	background-color: black;
 
-	.containerRotateIcon{
+	.messageUser{
 		position: fixed;
 	    width: 100%;
 	    height: 100%;
@@ -23,9 +23,6 @@
 	            justify-content: center;
 	    -webkit-box-orient: vertical;
 	    -webkit-box-direction: normal;
-	    -webkit-flex-direction: column;
-	        -ms-flex-direction: column;
-	            flex-direction: column;
 
 	    img{
 	    	max-width: 170px;
@@ -39,12 +36,78 @@
 	}
 }
 
+
 @media screen and (max-height: 450px){
-	.containerApp .containerRotateIcon{
-		display: -webkit-inline-box;
-		display: -webkit-inline-flex;
-		display: -ms-inline-flexbox;
-		display: inline-flex;
+	.containerApp{
+
+		.messageUser{
+			display: -webkit-inline-box;
+			display: -webkit-inline-flex;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+		}
+
+		.mobile{
+			display: none;
+		}
+
+		.desktop{
+			display: -webkit-inline-box;
+			display: -webkit-inline-flex;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+
+			-webkit-box-align: center;
+
+			-webkit-align-items: center;
+
+			    -ms-flex-align: center;
+
+			        align-items: center;
+    		-webkit-box-pack: baseline;
+    		-webkit-justify-content: baseline;
+    		    -ms-flex-pack: baseline;
+    		        justify-content: baseline;
+    		-webkit-box-orient: vertical;
+    		-webkit-box-direction: normal;
+    		-webkit-flex-direction: column;
+    		    -ms-flex-direction: column;
+    		        flex-direction: column;
+		}
+	}
+
+@media screen and (max-device-width: 760px){
+	.containerApp{
+		.messageUser{
+			display: -webkit-inline-box;
+			display: -webkit-inline-flex;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+		}
+
+		.desktop{
+			display: none;
+		}
+
+		.mobile{
+			display: -webkit-inline-box;
+			display: -webkit-inline-flex;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			    -ms-flex-align: center;
+			        align-items: center;
+    		-webkit-box-pack: baseline;
+    		-webkit-justify-content: baseline;
+    		    -ms-flex-pack: baseline;
+    		        justify-content: baseline;
+    		-webkit-box-orient: vertical;
+    		-webkit-box-direction: normal;
+    		-webkit-flex-direction: column;
+    		    -ms-flex-direction: column;
+    		        flex-direction: column;
+		}
 	}
 }
 
@@ -54,4 +117,5 @@
 
 .hide{
 	display: none;
+}
 }

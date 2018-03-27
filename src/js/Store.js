@@ -137,6 +137,30 @@ const Store = {
 			data.history.push( next_page );
 			pubsub.publish('change');
 		});
+
+		pubsub.subscribe('slider-full-screen', ( data ) => {
+			if( data.fullScreen ) {
+				this.show_indicator = false;
+				this.show_fixed_button = false;
+				this.show_button_sound = false;
+				this.show_button_scroll = false;
+				this.show_button_menu = false;
+				this.show_social_link = false;
+				this.show_fixed_link = false;
+			}
+
+			else{
+				this.show_indicator = true;
+				this.show_fixed_button = true;
+				this.show_button_sound = true;
+				this.show_button_scroll = true;
+				this.show_button_menu = true;
+				this.show_social_link = true;
+				this.show_fixed_link = true;
+			}
+
+			pubsub.publish('change');
+		});
 	}
 };
 

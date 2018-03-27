@@ -1,0 +1,14 @@
+@media screen and (max-width:800px) {
+	.containerSlider{
+		width: 100%;
+	}
+}
+
+@media screen and (max-device-width:760px) {
+	.swiper-container{
+
+		.swiperButton{
+			display: none;
+		}
+	}
+}

@@ -17,6 +17,10 @@ const actionsApp = {
     clickedScroll( data ) {
     	pubsub.publish( 'clicked-scroll', data );
     },
+
+    sliderFullScreen( data ) {
+        pubsub.publish( 'slider-full-screen', data );
+    },
 };
 
 module.exports = actionsApp;

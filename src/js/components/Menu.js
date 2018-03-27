@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Video from './Video.jsx';
+import ButtonClose from './ButtonClose.js';
 const dataApp = require('../../appData/index.js');
 const Store = require('../Store');
 const actionsApp = require('../actionsApp');
@@ -19,6 +20,7 @@ class Menu extends Component {
 		}
 
 		this.updateState = this.updateState.bind( this );
+		this._clikedCloseMenu = this._clikedCloseMenu.bind( this );
 		pubsub.subscribe('change', this.updateState );
 	}
 
@@ -49,6 +51,7 @@ class Menu extends Component {
     return (
     	<section className={( this.state.showMenu ) ? 'containerMenu' : 'hide'}>
     		<div className="backgroundLayer"></div>
+	    	<ButtonClose handler={this._clikedCloseMenu} />
     		<div ref="container" className="containerContentMenu">
     			<Video src={'src/videos/flag_black.mp4'} />
 	    		<nav className="blockMenu">
@@ -58,11 +61,6 @@ class Menu extends Component {
 	    				})}
 	    			</ul>
 	    		</nav>
-	    		<div className="containerClose" onClick={() => this._clikedCloseMenu()}>
-	    			<svg width="17px" height="17px" version="1.1" x="0px" y="0px" viewBox="0 0 371.23 371.23" >
-						<polygon fill="#000" points="371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23   185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 "/>
-					</svg>
-	    		</div>
 	    		<div className="containerHowtobuy">
 		    		<div className="blockHowtobuy animated fadeInUp">
 		    			<div className="headerLarge">

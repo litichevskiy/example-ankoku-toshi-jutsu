@@ -1,3 +1,17 @@
+@media screen and ( max-width: 1050px ) {
+	.galleryPage{
+		.blockBottomLeft{
+			bottom: 0;
+		}
+	}
+}
+
+@media screen and ( max-height: 550px ) {
+	.galleryPage .headerLarge{
+		margin-top: 5.5em;
+	}
+}
+
 @media screen and ( max-width: 800px ) {
 	.galleryPage{
 
@@ -5,11 +19,34 @@
 			display: none;
 		}
 
+		.containerSlider{
+			min-height: initial;
+			height: 45%;
+			bottom: 17%;
+		}
+
+		.containerSlider.fullScreen{
+			height: 100%;
+		}
+
 		.headerLarge{
 			margin: 0;
 			position: absolute;
 			left: 10%;
-			top: 30%;
+			top: 19%;
 		}
+	}
+}
+
+@media screen and ( max-device-width: 760px ) {
+	.galleryPage{
+		.containerClose{
+			top: 15px;
+			right: 15px;
+		}
+	}
+
+	.galleryPage.fullscreen ~ .messageUser{
+		display: none
 	}
 }

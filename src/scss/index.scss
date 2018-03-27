@@ -2,7 +2,6 @@
 @import 'mixins.scss';
 
 @import 'components/containerApp.scss';
-
 /*helpers*/
 @import 'components/blockSocialLinks/blockSocialLinks.scss';
 @import 'components/buttonScroll/buttonScroll.scss';
@@ -16,6 +15,8 @@
 @import 'components/buttonBack/buttonBack.scss';
 @import 'components/indicator/indicator.scss';
 @import 'components/video/video.scss';
+@import 'components/slider/slider.scss';
+@import 'components/buttonClose/buttonClose.scss';
 /*pages*/
 @import 'components/pages/homePage/homePage.scss';
 @import 'components/pages/pageNotFound/pageNotFound.scss';
@@ -48,3 +49,7 @@
 @import 'components/buttonBack/buttonBackSmallDevice.scss';
 @import 'components/video/videoSmallDevice.scss';
 @import 'components/containerTabs/containerTabsSmallDevice.scss';
+@import 'components/slider/sliderSmallDevice.scss';
+/*lib*/
+@import 'lib/swiper_4.2.0_swiper.min.css';
+@import 'lib/animate_css_v_3.5.2animate.min.css';
