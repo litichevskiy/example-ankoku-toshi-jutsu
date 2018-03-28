@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 172);
+/******/ 	return __webpack_require__(__webpack_require__.s = 173);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -120,9 +120,9 @@ module.exports = $export;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(377);
-} else {
   module.exports = __webpack_require__(378);
+} else {
+  module.exports = __webpack_require__(379);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
@@ -176,8 +176,8 @@ module.exports = function (it) {
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(66)('wks');
-var uid = __webpack_require__(42);
+var store = __webpack_require__(67)('wks');
+var uid = __webpack_require__(43);
 var Symbol = __webpack_require__(3).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
@@ -528,11 +528,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(389)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(390)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(390)();
+  module.exports = __webpack_require__(391)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
@@ -562,7 +562,7 @@ module.exports = function (it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(8);
-var createDesc = __webpack_require__(41);
+var createDesc = __webpack_require__(42);
 module.exports = __webpack_require__(7) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -578,7 +578,7 @@ module.exports = __webpack_require__(7) ? function (object, key, value) {
 var global = __webpack_require__(3);
 var hide = __webpack_require__(16);
 var has = __webpack_require__(15);
-var SRC = __webpack_require__(42)('src');
+var SRC = __webpack_require__(43)('src');
 var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
@@ -637,118 +637,6 @@ module.exports = function (NAME, exec) {
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(58);
-var defined = __webpack_require__(31);
-module.exports = function (it) {
-  return IObject(defined(it));
-};
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var pIE = __webpack_require__(59);
-var createDesc = __webpack_require__(41);
-var toIObject = __webpack_require__(19);
-var toPrimitive = __webpack_require__(30);
-var has = __webpack_require__(15);
-var IE8_DOM_DEFINE = __webpack_require__(121);
-var gOPD = Object.getOwnPropertyDescriptor;
-
-exports.f = __webpack_require__(7) ? gOPD : function getOwnPropertyDescriptor(O, P) {
-  O = toIObject(O);
-  P = toPrimitive(P, true);
-  if (IE8_DOM_DEFINE) try {
-    return gOPD(O, P);
-  } catch (e) { /* empty */ }
-  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
-};
-
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(15);
-var toObject = __webpack_require__(10);
-var IE_PROTO = __webpack_require__(87)('IE_PROTO');
-var ObjectProto = Object.prototype;
-
-module.exports = Object.getPrototypeOf || function (O) {
-  O = toObject(O);
-  if (has(O, IE_PROTO)) return O[IE_PROTO];
-  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
-    return O.constructor.prototype;
-  } return O instanceof Object ? ObjectProto : null;
-};
-
-
-/***/ }),
-/* 22 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(388);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(392);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(165);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(394);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(397);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(400);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(402);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(166);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(116);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(408);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(410);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(412);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(413);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
@@ -795,6 +683,118 @@ module.exports = function () {
 
     return PubSub;
 }();
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__(59);
+var defined = __webpack_require__(31);
+module.exports = function (it) {
+  return IObject(defined(it));
+};
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pIE = __webpack_require__(60);
+var createDesc = __webpack_require__(42);
+var toIObject = __webpack_require__(20);
+var toPrimitive = __webpack_require__(30);
+var has = __webpack_require__(15);
+var IE8_DOM_DEFINE = __webpack_require__(121);
+var gOPD = Object.getOwnPropertyDescriptor;
+
+exports.f = __webpack_require__(7) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+  O = toIObject(O);
+  P = toPrimitive(P, true);
+  if (IE8_DOM_DEFINE) try {
+    return gOPD(O, P);
+  } catch (e) { /* empty */ }
+  if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
+};
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+var has = __webpack_require__(15);
+var toObject = __webpack_require__(10);
+var IE_PROTO = __webpack_require__(87)('IE_PROTO');
+var ObjectProto = Object.prototype;
+
+module.exports = Object.getPrototypeOf || function (O) {
+  O = toObject(O);
+  if (has(O, IE_PROTO)) return O[IE_PROTO];
+  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectProto : null;
+};
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(389);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(393);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(165);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(395);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(398);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(401);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(403);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(166);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(116);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(409);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(411);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(413);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(414);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***/ }),
 /* 24 */
@@ -913,7 +913,7 @@ module.exports = invariant;
 "use strict";
 
 
-var pubsub = new (__webpack_require__(23))();
+var pubsub = new (__webpack_require__(19))();
 var pages = ['/', '/product', '/items', '/journey', '/gallery'];
 var linksColors = ['/howtobuy', '/howtobuy/detail', '/credits'];
 var pathName = {
@@ -990,9 +990,14 @@ var Store = {
 			pubsub.publish('change');
 		});
 
-		pubsub.subscribe('clicked-scroll', function (data) {
+		pubsub.subscribe('next-page', function (data) {
 			var next_page = pages[_this2.index_current_page];
 			data.history.push(next_page);
+			pubsub.publish('change');
+		});
+
+		pubsub.subscribe('previous-page', function (data) {
+			data.history.goBack();
 			pubsub.publish('change');
 		});
 
@@ -1099,7 +1104,7 @@ module.exports = function (KEY, exec) {
 // 5 -> Array#find
 // 6 -> Array#findIndex
 var ctx = __webpack_require__(24);
-var IObject = __webpack_require__(58);
+var IObject = __webpack_require__(59);
 var toObject = __webpack_require__(10);
 var toLength = __webpack_require__(9);
 var asc = __webpack_require__(104);
@@ -1144,44 +1149,44 @@ module.exports = function (TYPE, $create) {
 "use strict";
 
 if (__webpack_require__(7)) {
-  var LIBRARY = __webpack_require__(43);
+  var LIBRARY = __webpack_require__(44);
   var global = __webpack_require__(3);
   var fails = __webpack_require__(4);
   var $export = __webpack_require__(0);
-  var $typed = __webpack_require__(76);
+  var $typed = __webpack_require__(77);
   var $buffer = __webpack_require__(110);
   var ctx = __webpack_require__(24);
-  var anInstance = __webpack_require__(49);
-  var propertyDesc = __webpack_require__(41);
+  var anInstance = __webpack_require__(50);
+  var propertyDesc = __webpack_require__(42);
   var hide = __webpack_require__(16);
-  var redefineAll = __webpack_require__(51);
+  var redefineAll = __webpack_require__(52);
   var toInteger = __webpack_require__(32);
   var toLength = __webpack_require__(9);
   var toIndex = __webpack_require__(147);
-  var toAbsoluteIndex = __webpack_require__(45);
+  var toAbsoluteIndex = __webpack_require__(46);
   var toPrimitive = __webpack_require__(30);
   var has = __webpack_require__(15);
-  var classof = __webpack_require__(60);
+  var classof = __webpack_require__(61);
   var isObject = __webpack_require__(5);
   var toObject = __webpack_require__(10);
   var isArrayIter = __webpack_require__(101);
-  var create = __webpack_require__(46);
-  var getPrototypeOf = __webpack_require__(21);
-  var gOPN = __webpack_require__(47).f;
+  var create = __webpack_require__(47);
+  var getPrototypeOf = __webpack_require__(22);
+  var gOPN = __webpack_require__(48).f;
   var getIterFn = __webpack_require__(103);
-  var uid = __webpack_require__(42);
+  var uid = __webpack_require__(43);
   var wks = __webpack_require__(6);
   var createArrayMethod = __webpack_require__(34);
-  var createArrayIncludes = __webpack_require__(67);
-  var speciesConstructor = __webpack_require__(74);
+  var createArrayIncludes = __webpack_require__(68);
+  var speciesConstructor = __webpack_require__(75);
   var ArrayIterators = __webpack_require__(106);
   var Iterators = __webpack_require__(56);
-  var $iterDetect = __webpack_require__(71);
-  var setSpecies = __webpack_require__(48);
+  var $iterDetect = __webpack_require__(72);
+  var setSpecies = __webpack_require__(49);
   var arrayFill = __webpack_require__(105);
   var arrayCopyWithin = __webpack_require__(137);
   var $DP = __webpack_require__(8);
-  var $GOPD = __webpack_require__(20);
+  var $GOPD = __webpack_require__(21);
   var dP = $DP.f;
   var gOPD = $GOPD.f;
   var RangeError = global.RangeError;
@@ -1630,7 +1635,7 @@ if (__webpack_require__(7)) {
 
 var Map = __webpack_require__(142);
 var $export = __webpack_require__(0);
-var shared = __webpack_require__(66)('metadata');
+var shared = __webpack_require__(67)('metadata');
 var store = shared.store || (shared.store = new (__webpack_require__(145))());
 
 var getOrCreateMetadataMap = function (target, targetKey, create) {
@@ -1685,7 +1690,7 @@ module.exports = {
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META = __webpack_require__(42)('meta');
+var META = __webpack_require__(43)('meta');
 var isObject = __webpack_require__(5);
 var has = __webpack_require__(15);
 var setDesc = __webpack_require__(8).f;
@@ -1973,6 +1978,38 @@ module.exports = data;
 
 /***/ }),
 /* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var pubsub = new (__webpack_require__(19))();
+
+var actionsApp = {
+    setActiveTab: function setActiveTab(key) {
+        pubsub.publish('set-active-tab', { index: key });
+    },
+    setStateMenu: function setStateMenu(key) {
+        pubsub.publish('set-state-menu', { state: key });
+    },
+    changeLocation: function changeLocation(path) {
+        pubsub.publish('change-location', { path: path });
+    },
+    historyStepForward: function historyStepForward(data) {
+        pubsub.publish('next-page', data);
+    },
+    historyStepBack: function historyStepBack(data) {
+        pubsub.publish('previous-page', data);
+    },
+    sliderFullScreen: function sliderFullScreen(data) {
+        pubsub.publish('slider-full-screen', data);
+    }
+};
+
+module.exports = actionsApp;
+
+/***/ }),
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -1986,7 +2023,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -1997,14 +2034,14 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = false;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
@@ -2017,7 +2054,7 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(32);
@@ -2030,7 +2067,7 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
@@ -2077,7 +2114,7 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
@@ -2090,7 +2127,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2110,7 +2147,7 @@ module.exports = function (KEY) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = function (it, Constructor, name, forbiddenField) {
@@ -2121,7 +2158,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(24);
@@ -2152,7 +2189,7 @@ exports.RETURN = RETURN;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var redefine = __webpack_require__(17);
@@ -2163,7 +2200,7 @@ module.exports = function (target, src, safe) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2187,7 +2224,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var animatedLetters = __webpack_require__(171);
+var animatedLetters = __webpack_require__(425);
 
 var AnimatedText = function (_Component) {
   _inherits(AnimatedText, _Component);
@@ -2235,35 +2272,6 @@ var AnimatedText = function (_Component) {
 }(_react.Component);
 
 exports.default = AnimatedText;
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var pubsub = new (__webpack_require__(23))();
-
-var actionsApp = {
-    setActiveTab: function setActiveTab(key) {
-        pubsub.publish('set-active-tab', { index: key });
-    },
-    setStateMenu: function setStateMenu(key) {
-        pubsub.publish('set-state-menu', { state: key });
-    },
-    changeLocation: function changeLocation(path) {
-        pubsub.publish('change-location', { path: path });
-    },
-    clickedScroll: function clickedScroll(data) {
-        pubsub.publish('clicked-scroll', data);
-    },
-    sliderFullScreen: function sliderFullScreen(data) {
-        pubsub.publish('slider-full-screen', data);
-    }
-};
-
-module.exports = actionsApp;
 
 /***/ }),
 /* 54 */
@@ -2336,6 +2344,90 @@ module.exports = function (it, TYPE) {
 /* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Store = __webpack_require__(28);
+var pubsub = new (__webpack_require__(19))();
+
+var Video = function (_Component) {
+    _inherits(Video, _Component);
+
+    function Video(props) {
+        _classCallCheck(this, Video);
+
+        return _possibleConstructorReturn(this, (Video.__proto__ || Object.getPrototypeOf(Video)).call(this, props));
+
+        // this.is_play = Store.is_play_video;
+        // this.updateState = this.updateState.bind( this );
+        // pubsub.subscribe('change', this.updateState );
+    }
+
+    // componentWillUnmount() {
+    //     pubsub.unSubscribe('change', this.updateState );
+    // }
+
+    // updateState() {
+    //     this.is_play = Store.is_play_video;
+
+    //     if( Store.is_play_video && this.is_play ) return;
+    //         else if( !Store.is_play_video && !this.is_play ) return;
+    //             else{
+    //                 if( Store.is_play_video ) this.refs.video.play();
+    //                 else this.refs.video.pause();
+    //             }
+    // }
+
+    _createClass(Video, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'containerVideo' },
+                _react2.default.createElement(
+                    'video',
+                    {
+                        ref: 'video',
+                        className: 'video',
+                        preload: 'auto',
+                        loop: 'true',
+                        controls: '',
+                        muted: '',
+                        playsInline: '',
+                        autoPlay: 'autoplay' },
+                    _react2.default.createElement('source', { src: this.props.src, type: 'video/mp4' })
+                )
+            );
+        }
+    }]);
+
+    return Video;
+}(_react.Component);
+
+exports.default = Video;
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = __webpack_require__(25);
 // eslint-disable-next-line no-prototype-builtins
@@ -2345,14 +2437,14 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -2381,7 +2473,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2478,7 +2570,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2538,7 +2630,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2605,7 +2697,7 @@ var createPath = exports.createPath = function createPath(location) {
 };
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2676,7 +2768,7 @@ var createPath = function createPath(location) {
 };
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2692,7 +2784,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2745,7 +2837,7 @@ var ButtonBack = function (_Component) {
 exports.default = ButtonBack;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(3);
@@ -2757,14 +2849,14 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(19);
+var toIObject = __webpack_require__(20);
 var toLength = __webpack_require__(9);
-var toAbsoluteIndex = __webpack_require__(45);
+var toAbsoluteIndex = __webpack_require__(46);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -2786,14 +2878,14 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -2804,7 +2896,7 @@ module.exports = Array.isArray || function isArray(arg) {
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
@@ -2818,7 +2910,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR = __webpack_require__(6)('iterator');
@@ -2846,7 +2938,7 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2866,7 +2958,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2901,7 +2993,7 @@ module.exports = function (KEY, length, exec) {
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -2916,7 +3008,7 @@ module.exports = function (O, D) {
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2924,13 +3016,13 @@ module.exports = function (O, D) {
 var global = __webpack_require__(3);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(17);
-var redefineAll = __webpack_require__(51);
+var redefineAll = __webpack_require__(52);
 var meta = __webpack_require__(37);
-var forOf = __webpack_require__(50);
-var anInstance = __webpack_require__(49);
+var forOf = __webpack_require__(51);
+var anInstance = __webpack_require__(50);
 var isObject = __webpack_require__(5);
 var fails = __webpack_require__(4);
-var $iterDetect = __webpack_require__(71);
+var $iterDetect = __webpack_require__(72);
 var setToStringTag = __webpack_require__(54);
 var inheritIfRequired = __webpack_require__(92);
 
@@ -3008,12 +3100,12 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(3);
 var hide = __webpack_require__(16);
-var uid = __webpack_require__(42);
+var uid = __webpack_require__(43);
 var TYPED = uid('typed_array');
 var VIEW = uid('view');
 var ABV = !!(global.ArrayBuffer && global.DataView);
@@ -3042,13 +3134,13 @@ module.exports = {
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // Forced replacement prototype accessors methods
-module.exports = __webpack_require__(43) || !__webpack_require__(4)(function () {
+module.exports = __webpack_require__(44) || !__webpack_require__(4)(function () {
   var K = Math.random();
   // In FF throws only define methods
   // eslint-disable-next-line no-undef, no-useless-call
@@ -3058,7 +3150,7 @@ module.exports = __webpack_require__(43) || !__webpack_require__(4)(function () 
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3077,7 +3169,7 @@ module.exports = function (COLLECTION) {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3086,7 +3178,7 @@ module.exports = function (COLLECTION) {
 var $export = __webpack_require__(0);
 var aFunction = __webpack_require__(14);
 var ctx = __webpack_require__(24);
-var forOf = __webpack_require__(50);
+var forOf = __webpack_require__(51);
 
 module.exports = function (COLLECTION) {
   $export($export.S, COLLECTION, { from: function from(source /* , mapFn, thisArg */) {
@@ -3112,7 +3204,7 @@ module.exports = function (COLLECTION) {
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3136,7 +3228,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3205,7 +3297,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3213,7 +3305,7 @@ module.exports = warning;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return locationsAreEqual; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_value_equal__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(65);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -3281,7 +3373,7 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 };
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3364,90 +3456,6 @@ var SvgButton = function (_Component) {
 exports.default = SvgButton;
 
 /***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Store = __webpack_require__(28);
-var pubsub = new (__webpack_require__(23))();
-
-var Video = function (_Component) {
-    _inherits(Video, _Component);
-
-    function Video(props) {
-        _classCallCheck(this, Video);
-
-        return _possibleConstructorReturn(this, (Video.__proto__ || Object.getPrototypeOf(Video)).call(this, props));
-
-        // this.is_play = Store.is_play_video;
-        // this.updateState = this.updateState.bind( this );
-        // pubsub.subscribe('change', this.updateState );
-    }
-
-    // componentWillUnmount() {
-    //     pubsub.unSubscribe('change', this.updateState );
-    // }
-
-    // updateState() {
-    //     this.is_play = Store.is_play_video;
-
-    //     if( Store.is_play_video && this.is_play ) return;
-    //         else if( !Store.is_play_video && !this.is_play ) return;
-    //             else{
-    //                 if( Store.is_play_video ) this.refs.video.play();
-    //                 else this.refs.video.pause();
-    //             }
-    // }
-
-    _createClass(Video, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'containerVideo' },
-                _react2.default.createElement(
-                    'video',
-                    {
-                        ref: 'video',
-                        className: 'video',
-                        preload: 'auto',
-                        loop: 'true',
-                        controls: '',
-                        muted: '',
-                        playsInline: '',
-                        autoPlay: 'autoplay' },
-                    _react2.default.createElement('source', { src: this.props.src, type: 'video/mp4' })
-                )
-            );
-        }
-    }]);
-
-    return Video;
-}(_react.Component);
-
-exports.default = Video;
-
-/***/ }),
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3466,7 +3474,7 @@ module.exports = function (it) {
 
 var global = __webpack_require__(3);
 var core = __webpack_require__(29);
-var LIBRARY = __webpack_require__(43);
+var LIBRARY = __webpack_require__(44);
 var wksExt = __webpack_require__(122);
 var defineProperty = __webpack_require__(8).f;
 module.exports = function (name) {
@@ -3479,8 +3487,8 @@ module.exports = function (name) {
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(66)('keys');
-var uid = __webpack_require__(42);
+var shared = __webpack_require__(67)('keys');
+var uid = __webpack_require__(43);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
@@ -3520,7 +3528,7 @@ module.exports = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function (test, buggy, set) {
       try {
-        set = __webpack_require__(24)(Function.call, __webpack_require__(20).f(Object.prototype, '__proto__').set, 2);
+        set = __webpack_require__(24)(Function.call, __webpack_require__(21).f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch (e) { buggy = true; }
@@ -3633,7 +3641,7 @@ module.exports = function (TO_STRING) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(43);
+var LIBRARY = __webpack_require__(44);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(17);
 var hide = __webpack_require__(16);
@@ -3641,7 +3649,7 @@ var has = __webpack_require__(15);
 var Iterators = __webpack_require__(56);
 var $iterCreate = __webpack_require__(98);
 var setToStringTag = __webpack_require__(54);
-var getPrototypeOf = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var ITERATOR = __webpack_require__(6)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
@@ -3710,8 +3718,8 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 "use strict";
 
-var create = __webpack_require__(46);
-var descriptor = __webpack_require__(41);
+var create = __webpack_require__(47);
+var descriptor = __webpack_require__(42);
 var setToStringTag = __webpack_require__(54);
 var IteratorPrototype = {};
 
@@ -3729,7 +3737,7 @@ module.exports = function (Constructor, NAME, next) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(70);
+var isRegExp = __webpack_require__(71);
 var defined = __webpack_require__(31);
 
 module.exports = function (that, searchString, NAME) {
@@ -3777,7 +3785,7 @@ module.exports = function (it) {
 "use strict";
 
 var $defineProperty = __webpack_require__(8);
-var createDesc = __webpack_require__(41);
+var createDesc = __webpack_require__(42);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -3789,7 +3797,7 @@ module.exports = function (object, index, value) {
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(60);
+var classof = __webpack_require__(61);
 var ITERATOR = __webpack_require__(6)('iterator');
 var Iterators = __webpack_require__(56);
 module.exports = __webpack_require__(29).getIteratorMethod = function (it) {
@@ -3804,7 +3812,7 @@ module.exports = __webpack_require__(29).getIteratorMethod = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(265);
+var speciesConstructor = __webpack_require__(266);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -3819,7 +3827,7 @@ module.exports = function (original, length) {
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 
 var toObject = __webpack_require__(10);
-var toAbsoluteIndex = __webpack_require__(45);
+var toAbsoluteIndex = __webpack_require__(46);
 var toLength = __webpack_require__(9);
 module.exports = function fill(value /* , start = 0, end = @length */) {
   var O = toObject(this);
@@ -3842,7 +3850,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 var addToUnscopables = __webpack_require__(38);
 var step = __webpack_require__(138);
 var Iterators = __webpack_require__(56);
-var toIObject = __webpack_require__(19);
+var toIObject = __webpack_require__(20);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
@@ -4071,16 +4079,16 @@ module.exports.f = function (C) {
 
 var global = __webpack_require__(3);
 var DESCRIPTORS = __webpack_require__(7);
-var LIBRARY = __webpack_require__(43);
-var $typed = __webpack_require__(76);
+var LIBRARY = __webpack_require__(44);
+var $typed = __webpack_require__(77);
 var hide = __webpack_require__(16);
-var redefineAll = __webpack_require__(51);
+var redefineAll = __webpack_require__(52);
 var fails = __webpack_require__(4);
-var anInstance = __webpack_require__(49);
+var anInstance = __webpack_require__(50);
 var toInteger = __webpack_require__(32);
 var toLength = __webpack_require__(9);
 var toIndex = __webpack_require__(147);
-var gOPN = __webpack_require__(47).f;
+var gOPN = __webpack_require__(48).f;
 var dP = __webpack_require__(8).f;
 var arrayFill = __webpack_require__(105);
 var setToStringTag = __webpack_require__(54);
@@ -4371,8 +4379,8 @@ module.exports = navigator && navigator.userAgent || '';
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(62);
-  var warning = __webpack_require__(81);
+  var invariant = __webpack_require__(63);
+  var warning = __webpack_require__(82);
   var ReactPropTypesSecret = __webpack_require__(113);
   var loggedTypeFailures = {};
 }
@@ -4462,7 +4470,7 @@ var _valueEqual = __webpack_require__(163);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
-var _PathUtils = __webpack_require__(63);
+var _PathUtils = __webpack_require__(64);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4752,7 +4760,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(398);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(399);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -4957,8 +4965,8 @@ exports.f = __webpack_require__(6);
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(15);
-var toIObject = __webpack_require__(19);
-var arrayIndexOf = __webpack_require__(67)(false);
+var toIObject = __webpack_require__(20);
+var arrayIndexOf = __webpack_require__(68)(false);
 var IE_PROTO = __webpack_require__(87)('IE_PROTO');
 
 module.exports = function (object, names) {
@@ -4981,7 +4989,7 @@ module.exports = function (object, names) {
 
 var dP = __webpack_require__(8);
 var anObject = __webpack_require__(2);
-var getKeys = __webpack_require__(44);
+var getKeys = __webpack_require__(45);
 
 module.exports = __webpack_require__(7) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
@@ -4999,8 +5007,8 @@ module.exports = __webpack_require__(7) ? Object.defineProperties : function def
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(19);
-var gOPN = __webpack_require__(47).f;
+var toIObject = __webpack_require__(20);
+var gOPN = __webpack_require__(48).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -5026,11 +5034,11 @@ module.exports.f = function getOwnPropertyNames(it) {
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(44);
-var gOPS = __webpack_require__(68);
-var pIE = __webpack_require__(59);
+var getKeys = __webpack_require__(45);
+var gOPS = __webpack_require__(69);
+var pIE = __webpack_require__(60);
 var toObject = __webpack_require__(10);
-var IObject = __webpack_require__(58);
+var IObject = __webpack_require__(59);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -5229,7 +5237,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 var aFunction = __webpack_require__(14);
 var toObject = __webpack_require__(10);
-var IObject = __webpack_require__(58);
+var IObject = __webpack_require__(59);
 var toLength = __webpack_require__(9);
 
 module.exports = function (that, callbackfn, aLen, memo, isRight) {
@@ -5265,7 +5273,7 @@ module.exports = function (that, callbackfn, aLen, memo, isRight) {
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 
 var toObject = __webpack_require__(10);
-var toAbsoluteIndex = __webpack_require__(45);
+var toAbsoluteIndex = __webpack_require__(46);
 var toLength = __webpack_require__(9);
 
 module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /* = 0, end = @length */) {
@@ -5306,7 +5314,7 @@ module.exports = function (done, value) {
 // 21.2.5.3 get RegExp.prototype.flags()
 if (__webpack_require__(7) && /./g.flags != 'g') __webpack_require__(8).f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: __webpack_require__(72)
+  get: __webpack_require__(73)
 });
 
 
@@ -5352,7 +5360,7 @@ var validate = __webpack_require__(57);
 var MAP = 'Map';
 
 // 23.1 Map Objects
-module.exports = __webpack_require__(75)(MAP, function (get) {
+module.exports = __webpack_require__(76)(MAP, function (get) {
   return function Map() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
@@ -5374,14 +5382,14 @@ module.exports = __webpack_require__(75)(MAP, function (get) {
 "use strict";
 
 var dP = __webpack_require__(8).f;
-var create = __webpack_require__(46);
-var redefineAll = __webpack_require__(51);
+var create = __webpack_require__(47);
+var redefineAll = __webpack_require__(52);
 var ctx = __webpack_require__(24);
-var anInstance = __webpack_require__(49);
-var forOf = __webpack_require__(50);
+var anInstance = __webpack_require__(50);
+var forOf = __webpack_require__(51);
 var $iterDefine = __webpack_require__(97);
 var step = __webpack_require__(138);
-var setSpecies = __webpack_require__(48);
+var setSpecies = __webpack_require__(49);
 var DESCRIPTORS = __webpack_require__(7);
 var fastKey = __webpack_require__(37).fastKey;
 var validate = __webpack_require__(57);
@@ -5529,7 +5537,7 @@ var validate = __webpack_require__(57);
 var SET = 'Set';
 
 // 23.2 Set Objects
-module.exports = __webpack_require__(75)(SET, function (get) {
+module.exports = __webpack_require__(76)(SET, function (get) {
   return function Set() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
@@ -5582,7 +5590,7 @@ var methods = {
 };
 
 // 23.3 WeakMap Objects
-var $WeakMap = module.exports = __webpack_require__(75)(WEAK_MAP, wrapper, methods, weak, true, true);
+var $WeakMap = module.exports = __webpack_require__(76)(WEAK_MAP, wrapper, methods, weak, true, true);
 
 // IE11 WeakMap frozen keys fix
 if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7; })) {
@@ -5611,12 +5619,12 @@ if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp)
 
 "use strict";
 
-var redefineAll = __webpack_require__(51);
+var redefineAll = __webpack_require__(52);
 var getWeak = __webpack_require__(37).getWeak;
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
-var anInstance = __webpack_require__(49);
-var forOf = __webpack_require__(50);
+var anInstance = __webpack_require__(50);
+var forOf = __webpack_require__(51);
 var createArrayMethod = __webpack_require__(34);
 var $has = __webpack_require__(15);
 var validate = __webpack_require__(57);
@@ -5718,8 +5726,8 @@ module.exports = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
-var gOPN = __webpack_require__(47);
-var gOPS = __webpack_require__(68);
+var gOPN = __webpack_require__(48);
+var gOPS = __webpack_require__(69);
 var anObject = __webpack_require__(2);
 var Reflect = __webpack_require__(3).Reflect;
 module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
@@ -5736,7 +5744,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 "use strict";
 
 // https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
-var isArray = __webpack_require__(69);
+var isArray = __webpack_require__(70);
 var isObject = __webpack_require__(5);
 var toLength = __webpack_require__(9);
 var ctx = __webpack_require__(24);
@@ -5801,9 +5809,9 @@ module.exports = function (that, maxLength, fillString, left) {
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getKeys = __webpack_require__(44);
-var toIObject = __webpack_require__(19);
-var isEnum = __webpack_require__(59).f;
+var getKeys = __webpack_require__(45);
+var toIObject = __webpack_require__(20);
+var isEnum = __webpack_require__(60).f;
 module.exports = function (isEntries) {
   return function (it) {
     var O = toIObject(it);
@@ -5824,7 +5832,7 @@ module.exports = function (isEntries) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var classof = __webpack_require__(60);
+var classof = __webpack_require__(61);
 var from = __webpack_require__(153);
 module.exports = function (NAME) {
   return function toJSON() {
@@ -5838,7 +5846,7 @@ module.exports = function (NAME) {
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var forOf = __webpack_require__(50);
+var forOf = __webpack_require__(51);
 
 module.exports = function (iter, ITERATOR) {
   var result = [];
@@ -5910,9 +5918,9 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(379);
+  module.exports = __webpack_require__(380);
 } else {
-  module.exports = __webpack_require__(382);
+  module.exports = __webpack_require__(383);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
@@ -6166,7 +6174,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(380);
+var isTextNode = __webpack_require__(381);
 
 /*eslint-disable no-bitwise */
 
@@ -6743,34 +6751,25 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 };
 
 /***/ }),
-/* 169 */
+/* 169 */,
+/* 170 */,
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
 
-exports.__esModule = true;
-exports.EXITING = exports.ENTERED = exports.ENTERING = exports.EXITED = exports.UNMOUNTED = undefined;
 
-var _propTypes = __webpack_require__(13);
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
-var PropTypes = _interopRequireWildcard(_propTypes);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(155);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _PropTypes = __webpack_require__(170);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6778,658 +6777,164 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UNMOUNTED = exports.UNMOUNTED = 'unmounted';
-var EXITED = exports.EXITED = 'exited';
-var ENTERING = exports.ENTERING = 'entering';
-var ENTERED = exports.ENTERED = 'entered';
-var EXITING = exports.EXITING = 'exiting';
+var ButtonClose = function (_Component) {
+	_inherits(ButtonClose, _Component);
 
-/**
- * The Transition component lets you describe a transition from one component
- * state to another _over time_ with a simple declarative API. Most commonly
- * it's used to animate the mounting and unmounting of a component, but can also
- * be used to describe in-place transition states as well.
- *
- * By default the `Transition` component does not alter the behavior of the
- * component it renders, it only tracks "enter" and "exit" states for the components.
- * It's up to you to give meaning and effect to those states. For example we can
- * add styles to a component when it enters or exits:
- *
- * ```jsx
- * import Transition from 'react-transition-group/Transition';
- *
- * const duration = 300;
- *
- * const defaultStyle = {
- *   transition: `opacity ${duration}ms ease-in-out`,
- *   opacity: 0,
- * }
- *
- * const transitionStyles = {
- *   entering: { opacity: 0 },
- *   entered:  { opacity: 1 },
- * };
- *
- * const Fade = ({ in: inProp }) => (
- *   <Transition in={inProp} timeout={duration}>
- *     {(state) => (
- *       <div style={{
- *         ...defaultStyle,
- *         ...transitionStyles[state]
- *       }}>
- *         I'm A fade Transition!
- *       </div>
- *     )}
- *   </Transition>
- * );
- * ```
- *
- * As noted the `Transition` component doesn't _do_ anything by itself to its child component.
- * What it does do is track transition states over time so you can update the
- * component (such as by adding styles or classes) when it changes states.
- *
- * There are 4 main states a Transition can be in:
- *  - `ENTERING`
- *  - `ENTERED`
- *  - `EXITING`
- *  - `EXITED`
- *
- * Transition state is toggled via the `in` prop. When `true` the component begins the
- * "Enter" stage. During this stage, the component will shift from its current transition state,
- * to `'entering'` for the duration of the transition and then to the `'entered'` stage once
- * it's complete. Let's take the following example:
- *
- * ```jsx
- * state= { in: false };
- *
- * toggleEnterState = () => {
- *   this.setState({ in: true });
- * }
- *
- * render() {
- *   return (
- *     <div>
- *       <Transition in={this.state.in} timeout={500} />
- *       <button onClick={this.toggleEnterState}>Click to Enter</button>
- *     </div>
- *   );
- * }
- * ```
- *
- * When the button is clicked the component will shift to the `'entering'` state and
- * stay there for 500ms (the value of `timeout`) when finally switches to `'entered'`.
- *
- * When `in` is `false` the same thing happens except the state moves from `'exiting'` to `'exited'`.
- */
+	function ButtonClose(props) {
+		_classCallCheck(this, ButtonClose);
 
-var Transition = function (_React$Component) {
-  _inherits(Transition, _React$Component);
-
-  function Transition(props, context) {
-    _classCallCheck(this, Transition);
-
-    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
-
-    var parentGroup = context.transitionGroup;
-    // In the context of a TransitionGroup all enters are really appears
-    var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
-
-    var initialStatus = void 0;
-    _this.nextStatus = null;
-
-    if (props.in) {
-      if (appear) {
-        initialStatus = EXITED;
-        _this.nextStatus = ENTERING;
-      } else {
-        initialStatus = ENTERED;
-      }
-    } else {
-      if (props.unmountOnExit || props.mountOnEnter) {
-        initialStatus = UNMOUNTED;
-      } else {
-        initialStatus = EXITED;
-      }
-    }
-
-    _this.state = { status: initialStatus };
-
-    _this.nextCallback = null;
-    return _this;
-  }
-
-  Transition.prototype.getChildContext = function getChildContext() {
-    return { transitionGroup: null }; // allows for nested Transitions
-  };
-
-  Transition.prototype.componentDidMount = function componentDidMount() {
-    this.updateStatus(true);
-  };
-
-  Transition.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-    var _ref = this.pendingState || this.state,
-        status = _ref.status;
-
-    if (nextProps.in) {
-      if (status === UNMOUNTED) {
-        this.setState({ status: EXITED });
-      }
-      if (status !== ENTERING && status !== ENTERED) {
-        this.nextStatus = ENTERING;
-      }
-    } else {
-      if (status === ENTERING || status === ENTERED) {
-        this.nextStatus = EXITING;
-      }
-    }
-  };
-
-  Transition.prototype.componentDidUpdate = function componentDidUpdate() {
-    this.updateStatus();
-  };
-
-  Transition.prototype.componentWillUnmount = function componentWillUnmount() {
-    this.cancelNextCallback();
-  };
-
-  Transition.prototype.getTimeouts = function getTimeouts() {
-    var timeout = this.props.timeout;
-
-    var exit = void 0,
-        enter = void 0,
-        appear = void 0;
-
-    exit = enter = appear = timeout;
-
-    if (timeout != null && typeof timeout !== 'number') {
-      exit = timeout.exit;
-      enter = timeout.enter;
-      appear = timeout.appear;
-    }
-    return { exit: exit, enter: enter, appear: appear };
-  };
-
-  Transition.prototype.updateStatus = function updateStatus() {
-    var mounting = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-
-    var nextStatus = this.nextStatus;
-
-    if (nextStatus !== null) {
-      this.nextStatus = null;
-      // nextStatus will always be ENTERING or EXITING.
-      this.cancelNextCallback();
-      var node = _reactDom2.default.findDOMNode(this);
-
-      if (nextStatus === ENTERING) {
-        this.performEnter(node, mounting);
-      } else {
-        this.performExit(node);
-      }
-    } else if (this.props.unmountOnExit && this.state.status === EXITED) {
-      this.setState({ status: UNMOUNTED });
-    }
-  };
-
-  Transition.prototype.performEnter = function performEnter(node, mounting) {
-    var _this2 = this;
-
-    var enter = this.props.enter;
-
-    var appearing = this.context.transitionGroup ? this.context.transitionGroup.isMounting : mounting;
-
-    var timeouts = this.getTimeouts();
-
-    // no enter animation skip right to ENTERED
-    // if we are mounting and running this it means appear _must_ be set
-    if (!mounting && !enter) {
-      this.safeSetState({ status: ENTERED }, function () {
-        _this2.props.onEntered(node);
-      });
-      return;
-    }
-
-    this.props.onEnter(node, appearing);
-
-    this.safeSetState({ status: ENTERING }, function () {
-      _this2.props.onEntering(node, appearing);
-
-      // FIXME: appear timeout?
-      _this2.onTransitionEnd(node, timeouts.enter, function () {
-        _this2.safeSetState({ status: ENTERED }, function () {
-          _this2.props.onEntered(node, appearing);
-        });
-      });
-    });
-  };
-
-  Transition.prototype.performExit = function performExit(node) {
-    var _this3 = this;
-
-    var exit = this.props.exit;
-
-    var timeouts = this.getTimeouts();
-
-    // no exit animation skip right to EXITED
-    if (!exit) {
-      this.safeSetState({ status: EXITED }, function () {
-        _this3.props.onExited(node);
-      });
-      return;
-    }
-    this.props.onExit(node);
-
-    this.safeSetState({ status: EXITING }, function () {
-      _this3.props.onExiting(node);
-
-      _this3.onTransitionEnd(node, timeouts.exit, function () {
-        _this3.safeSetState({ status: EXITED }, function () {
-          _this3.props.onExited(node);
-        });
-      });
-    });
-  };
-
-  Transition.prototype.cancelNextCallback = function cancelNextCallback() {
-    if (this.nextCallback !== null) {
-      this.nextCallback.cancel();
-      this.nextCallback = null;
-    }
-  };
-
-  Transition.prototype.safeSetState = function safeSetState(nextState, callback) {
-    var _this4 = this;
-
-    // We need to track pending updates for instances where a cWRP fires quickly
-    // after cDM and before the state flushes, which would double trigger a
-    // transition
-    this.pendingState = nextState;
-
-    // This shouldn't be necessary, but there are weird race conditions with
-    // setState callbacks and unmounting in testing, so always make sure that
-    // we can cancel any pending setState callbacks after we unmount.
-    callback = this.setNextCallback(callback);
-    this.setState(nextState, function () {
-      _this4.pendingState = null;
-      callback();
-    });
-  };
-
-  Transition.prototype.setNextCallback = function setNextCallback(callback) {
-    var _this5 = this;
-
-    var active = true;
-
-    this.nextCallback = function (event) {
-      if (active) {
-        active = false;
-        _this5.nextCallback = null;
-
-        callback(event);
-      }
-    };
-
-    this.nextCallback.cancel = function () {
-      active = false;
-    };
-
-    return this.nextCallback;
-  };
-
-  Transition.prototype.onTransitionEnd = function onTransitionEnd(node, timeout, handler) {
-    this.setNextCallback(handler);
-
-    if (node) {
-      if (this.props.addEndListener) {
-        this.props.addEndListener(node, this.nextCallback);
-      }
-      if (timeout != null) {
-        setTimeout(this.nextCallback, timeout);
-      }
-    } else {
-      setTimeout(this.nextCallback, 0);
-    }
-  };
-
-  Transition.prototype.render = function render() {
-    var status = this.state.status;
-    if (status === UNMOUNTED) {
-      return null;
-    }
-
-    var _props = this.props,
-        children = _props.children,
-        childProps = _objectWithoutProperties(_props, ['children']);
-    // filter props for Transtition
-
-
-    delete childProps.in;
-    delete childProps.mountOnEnter;
-    delete childProps.unmountOnExit;
-    delete childProps.appear;
-    delete childProps.enter;
-    delete childProps.exit;
-    delete childProps.timeout;
-    delete childProps.addEndListener;
-    delete childProps.onEnter;
-    delete childProps.onEntering;
-    delete childProps.onEntered;
-    delete childProps.onExit;
-    delete childProps.onExiting;
-    delete childProps.onExited;
-
-    if (typeof children === 'function') {
-      return children(status, childProps);
-    }
-
-    var child = _react2.default.Children.only(children);
-    return _react2.default.cloneElement(child, childProps);
-  };
-
-  return Transition;
-}(_react2.default.Component);
-
-Transition.contextTypes = {
-  transitionGroup: PropTypes.object
-};
-Transition.childContextTypes = {
-  transitionGroup: function transitionGroup() {}
-};
-
-
-Transition.propTypes = process.env.NODE_ENV !== "production" ? {
-  /**
-   * A `function` child can be used instead of a React element.
-   * This function is called with the current transition status
-   * ('entering', 'entered', 'exiting', 'exited', 'unmounted'), which can used
-   * to apply context specific props to a component.
-   *
-   * ```jsx
-   * <Transition timeout={150}>
-   *   {(status) => (
-   *     <MyComponent className={`fade fade-${status}`} />
-   *   )}
-   * </Transition>
-   * ```
-   */
-  children: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.element.isRequired]).isRequired,
-
-  /**
-   * Show the component; triggers the enter or exit states
-   */
-  in: PropTypes.bool,
-
-  /**
-   * By default the child component is mounted immediately along with
-   * the parent `Transition` component. If you want to "lazy mount" the component on the
-   * first `in={true}` you can set `mountOnEnter`. After the first enter transition the component will stay
-   * mounted, even on "exited", unless you also specify `unmountOnExit`.
-   */
-  mountOnEnter: PropTypes.bool,
-
-  /**
-   * By default the child component stays mounted after it reaches the `'exited'` state.
-   * Set `unmountOnExit` if you'd prefer to unmount the component after it finishes exiting.
-   */
-  unmountOnExit: PropTypes.bool,
-
-  /**
-   * Normally a component is not transitioned if it is shown when the `<Transition>` component mounts.
-   * If you want to transition on the first mount set `appear` to `true`, and the
-   * component will transition in as soon as the `<Transition>` mounts.
-   *
-   * > Note: there are no specific "appear" states. `appear` only adds an additional `enter` transition.
-   */
-  appear: PropTypes.bool,
-
-  /**
-   * Enable or disable enter transitions.
-   */
-  enter: PropTypes.bool,
-
-  /**
-   * Enable or disable exit transitions.
-   */
-  exit: PropTypes.bool,
-
-  /**
-   * The duration of the transition, in milliseconds.
-   * Required unless `addEventListener` is provided
-   *
-   * You may specify a single timeout for all transitions like: `timeout={500}`,
-   * or individually like:
-   *
-   * ```jsx
-   * timeout={{
-   *  enter: 300,
-   *  exit: 500,
-   * }}
-   * ```
-   *
-   * @type {number | { enter?: number, exit?: number }}
-   */
-  timeout: function timeout(props) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var pt = _PropTypes.timeoutsShape;
-    if (!props.addEndListener) pt = pt.isRequired;
-    return pt.apply(undefined, [props].concat(args));
-  },
-
-  /**
-   * Add a custom transition end trigger. Called with the transitioning
-   * DOM node and a `done` callback. Allows for more fine grained transition end
-   * logic. **Note:** Timeouts are still used as a fallback if provided.
-   *
-   * ```jsx
-   * addEndListener={(node, done) => {
-   *   // use the css transitionend event to mark the finish of a transition
-   *   node.addEventListener('transitionend', done, false);
-   * }}
-   * ```
-   */
-  addEndListener: PropTypes.func,
-
-  /**
-   * Callback fired before the "entering" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool) -> void
-   */
-  onEnter: PropTypes.func,
-
-  /**
-   * Callback fired after the "entering" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntering: PropTypes.func,
-
-  /**
-   * Callback fired after the "entered" status is applied. An extra parameter
-   * `isAppearing` is supplied to indicate if the enter stage is occurring on the initial mount
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool) -> void
-   */
-  onEntered: PropTypes.func,
-
-  /**
-   * Callback fired before the "exiting" status is applied.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */
-  onExit: PropTypes.func,
-
-  /**
-   * Callback fired after the "exiting" status is applied.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */
-  onExiting: PropTypes.func,
-
-  /**
-   * Callback fired after the "exited" status is applied.
-   *
-   * @type Function(node: HtmlElement) -> void
-   */
-  onExited: PropTypes.func
-} : {};
-
-// Name the function so it is clearer in the documentation
-function noop() {}
-
-Transition.defaultProps = {
-  in: false,
-  mountOnEnter: false,
-  unmountOnExit: false,
-  appear: false,
-  enter: true,
-  exit: true,
-
-  onEnter: noop,
-  onEntering: noop,
-  onEntered: noop,
-
-  onExit: noop,
-  onExiting: noop,
-  onExited: noop
-};
-
-Transition.UNMOUNTED = 0;
-Transition.EXITED = 1;
-Transition.ENTERING = 2;
-Transition.ENTERED = 3;
-Transition.EXITING = 4;
-
-exports.default = Transition;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
-
-/***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.classNamesShape = exports.timeoutsShape = undefined;
-exports.transitionTimeout = transitionTimeout;
-
-var _propTypes = __webpack_require__(13);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function transitionTimeout(transitionType) {
-  var timeoutPropName = 'transition' + transitionType + 'Timeout';
-  var enabledPropName = 'transition' + transitionType;
-
-  return function (props) {
-    // If the transition is enabled
-    if (props[enabledPropName]) {
-      // If no timeout duration is provided
-      if (props[timeoutPropName] == null) {
-        return new Error(timeoutPropName + ' wasn\'t supplied to CSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
-
-        // If the duration isn't a number
-      } else if (typeof props[timeoutPropName] !== 'number') {
-        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
-      }
-    }
-
-    return null;
-  };
-}
-
-var timeoutsShape = exports.timeoutsShape = _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.shape({
-  enter: _propTypes2.default.number,
-  exit: _propTypes2.default.number
-}).isRequired]);
-
-var classNamesShape = exports.classNamesShape = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
-  enter: _propTypes2.default.string,
-  exit: _propTypes2.default.string,
-  active: _propTypes2.default.string
-}), _propTypes2.default.shape({
-  enter: _propTypes2.default.string,
-  enterActive: _propTypes2.default.string,
-  exit: _propTypes2.default.string,
-  exitActive: _propTypes2.default.string
-})]);
-
-/***/ }),
-/* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var anime = __webpack_require__(424);
-
-var animationLetters = {
-	animated: function animated(key) {
-
-		setTimeout(function () {
-			anime.timeline({ loop: false }).add({
-				targets: key + ' .letter',
-				opacity: [0, 1],
-				easing: "easeInOutQuad",
-				duration: 650,
-				delay: function delay(el, i) {
-					return 75 * (i + 1);
-				}
-			}).add({
-				targets: key
-			});
-		}, 0);
-	},
-	wrapLetters: function wrapLetters(list) {
-		list = list || [];
-
-		var result = list.map(function (item, index) {
-			return _react2.default.createElement(
-				'span',
-				{ key: index, className: 'letter' },
-				item
-			);
-		});
-
-		return result;
+		return _possibleConstructorReturn(this, (ButtonClose.__proto__ || Object.getPrototypeOf(ButtonClose)).call(this, props));
 	}
-};
 
-module.exports = animationLetters;
+	_createClass(ButtonClose, [{
+		key: "_clicedButton",
+		value: function _clicedButton() {
+			this.props.handler();
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var _this2 = this;
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "containerClose", onClick: function onClick() {
+						return _this2._clicedButton();
+					} },
+				_react2.default.createElement(
+					"svg",
+					{ width: "17px", height: "17px", version: "1.1", x: "0px", y: "0px", viewBox: "0 0 371.23 371.23" },
+					_react2.default.createElement("polygon", { fill: "#000", points: "371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23   185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 " })
+				)
+			);
+		}
+	}]);
+
+	return ButtonClose;
+}(_react.Component);
+
+exports.default = ButtonClose;
 
 /***/ }),
 /* 172 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(173);
-__webpack_require__(375);
-module.exports = __webpack_require__(376);
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return win; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return doc; });
+/**
+ * SSR Window 1.0.0
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2018, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: February 10, 2018
+ */
+var d;
+if (typeof document === 'undefined') {
+  d = {
+    body: {},
+    addEventListener: function addEventListener() {},
+    removeEventListener: function removeEventListener() {},
+    activeElement: {
+      blur: function blur() {},
+      nodeName: '',
+    },
+    querySelector: function querySelector() {
+      return null;
+    },
+    querySelectorAll: function querySelectorAll() {
+      return [];
+    },
+    getElementById: function getElementById() {
+      return null;
+    },
+    createEvent: function createEvent() {
+      return {
+        initEvent: function initEvent() {},
+      };
+    },
+    createElement: function createElement() {
+      return {
+        children: [],
+        childNodes: [],
+        style: {},
+        setAttribute: function setAttribute() {},
+        getElementsByTagName: function getElementsByTagName() {
+          return [];
+        },
+      };
+    },
+    location: { hash: '' },
+  };
+} else {
+  // eslint-disable-next-line
+  d = document;
+}
+
+var doc = d;
+
+var w;
+if (typeof window === 'undefined') {
+  w = {
+    document: doc,
+    navigator: {
+      userAgent: '',
+    },
+    location: {},
+    history: {},
+    CustomEvent: function CustomEvent() {
+      return this;
+    },
+    addEventListener: function addEventListener() {},
+    removeEventListener: function removeEventListener() {},
+    getComputedStyle: function getComputedStyle() {
+      return {
+        getPropertyValue: function getPropertyValue() {
+          return '';
+        },
+      };
+    },
+    Image: function Image() {},
+    Date: function Date() {},
+    screen: {},
+    setTimeout: function setTimeout() {},
+    clearTimeout: function clearTimeout() {},
+  };
+} else {
+  // eslint-disable-next-line
+  w = window;
+}
+
+var win = w;
+
+
 
 
 /***/ }),
 /* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(174);
+__webpack_require__(376);
+module.exports = __webpack_require__(377);
+
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(174);
-
-__webpack_require__(371);
+__webpack_require__(175);
 
 __webpack_require__(372);
+
+__webpack_require__(373);
 
 if (global._babelPolyfill) {
   throw new Error("only one instance of babel-polyfill is allowed");
@@ -7454,11 +6959,10 @@ define(String.prototype, "padRight", "".padEnd);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(120)))
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(175);
-__webpack_require__(177);
+__webpack_require__(176);
 __webpack_require__(178);
 __webpack_require__(179);
 __webpack_require__(180);
@@ -7473,7 +6977,7 @@ __webpack_require__(188);
 __webpack_require__(189);
 __webpack_require__(190);
 __webpack_require__(191);
-__webpack_require__(193);
+__webpack_require__(192);
 __webpack_require__(194);
 __webpack_require__(195);
 __webpack_require__(196);
@@ -7534,16 +7038,16 @@ __webpack_require__(250);
 __webpack_require__(251);
 __webpack_require__(252);
 __webpack_require__(253);
-__webpack_require__(255);
+__webpack_require__(254);
 __webpack_require__(256);
-__webpack_require__(258);
+__webpack_require__(257);
 __webpack_require__(259);
 __webpack_require__(260);
 __webpack_require__(261);
 __webpack_require__(262);
 __webpack_require__(263);
 __webpack_require__(264);
-__webpack_require__(266);
+__webpack_require__(265);
 __webpack_require__(267);
 __webpack_require__(268);
 __webpack_require__(269);
@@ -7556,19 +7060,19 @@ __webpack_require__(275);
 __webpack_require__(276);
 __webpack_require__(277);
 __webpack_require__(278);
-__webpack_require__(106);
 __webpack_require__(279);
+__webpack_require__(106);
 __webpack_require__(280);
-__webpack_require__(139);
 __webpack_require__(281);
+__webpack_require__(139);
 __webpack_require__(282);
 __webpack_require__(283);
 __webpack_require__(284);
 __webpack_require__(285);
+__webpack_require__(286);
 __webpack_require__(142);
 __webpack_require__(144);
 __webpack_require__(145);
-__webpack_require__(286);
 __webpack_require__(287);
 __webpack_require__(288);
 __webpack_require__(289);
@@ -7653,11 +7157,12 @@ __webpack_require__(367);
 __webpack_require__(368);
 __webpack_require__(369);
 __webpack_require__(370);
+__webpack_require__(371);
 module.exports = __webpack_require__(29);
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7670,24 +7175,24 @@ var $export = __webpack_require__(0);
 var redefine = __webpack_require__(17);
 var META = __webpack_require__(37).KEY;
 var $fails = __webpack_require__(4);
-var shared = __webpack_require__(66);
+var shared = __webpack_require__(67);
 var setToStringTag = __webpack_require__(54);
-var uid = __webpack_require__(42);
+var uid = __webpack_require__(43);
 var wks = __webpack_require__(6);
 var wksExt = __webpack_require__(122);
 var wksDefine = __webpack_require__(86);
-var enumKeys = __webpack_require__(176);
-var isArray = __webpack_require__(69);
+var enumKeys = __webpack_require__(177);
+var isArray = __webpack_require__(70);
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
-var toIObject = __webpack_require__(19);
+var toIObject = __webpack_require__(20);
 var toPrimitive = __webpack_require__(30);
-var createDesc = __webpack_require__(41);
-var _create = __webpack_require__(46);
+var createDesc = __webpack_require__(42);
+var _create = __webpack_require__(47);
 var gOPNExt = __webpack_require__(125);
-var $GOPD = __webpack_require__(20);
+var $GOPD = __webpack_require__(21);
 var $DP = __webpack_require__(8);
-var $keys = __webpack_require__(44);
+var $keys = __webpack_require__(45);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -7810,11 +7315,11 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(47).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(59).f = $propertyIsEnumerable;
-  __webpack_require__(68).f = $getOwnPropertySymbols;
+  __webpack_require__(48).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(60).f = $propertyIsEnumerable;
+  __webpack_require__(69).f = $getOwnPropertySymbols;
 
-  if (DESCRIPTORS && !__webpack_require__(43)) {
+  if (DESCRIPTORS && !__webpack_require__(44)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -7898,13 +7403,13 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(44);
-var gOPS = __webpack_require__(68);
-var pIE = __webpack_require__(59);
+var getKeys = __webpack_require__(45);
+var gOPS = __webpack_require__(69);
+var pIE = __webpack_require__(60);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -7919,16 +7424,16 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', { create: __webpack_require__(46) });
+$export($export.S, 'Object', { create: __webpack_require__(47) });
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -7937,7 +7442,7 @@ $export($export.S + $export.F * !__webpack_require__(7), 'Object', { definePrope
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -7946,12 +7451,12 @@ $export($export.S + $export.F * !__webpack_require__(7), 'Object', { definePrope
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-var toIObject = __webpack_require__(19);
-var $getOwnPropertyDescriptor = __webpack_require__(20).f;
+var toIObject = __webpack_require__(20);
+var $getOwnPropertyDescriptor = __webpack_require__(21).f;
 
 __webpack_require__(33)('getOwnPropertyDescriptor', function () {
   return function getOwnPropertyDescriptor(it, key) {
@@ -7961,12 +7466,12 @@ __webpack_require__(33)('getOwnPropertyDescriptor', function () {
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject = __webpack_require__(10);
-var $getPrototypeOf = __webpack_require__(21);
+var $getPrototypeOf = __webpack_require__(22);
 
 __webpack_require__(33)('getPrototypeOf', function () {
   return function getPrototypeOf(it) {
@@ -7976,12 +7481,12 @@ __webpack_require__(33)('getPrototypeOf', function () {
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
 var toObject = __webpack_require__(10);
-var $keys = __webpack_require__(44);
+var $keys = __webpack_require__(45);
 
 __webpack_require__(33)('keys', function () {
   return function keys(it) {
@@ -7991,7 +7496,7 @@ __webpack_require__(33)('keys', function () {
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
@@ -8001,7 +7506,7 @@ __webpack_require__(33)('getOwnPropertyNames', function () {
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -8016,7 +7521,7 @@ __webpack_require__(33)('freeze', function ($freeze) {
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -8031,7 +7536,7 @@ __webpack_require__(33)('seal', function ($seal) {
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -8046,7 +7551,7 @@ __webpack_require__(33)('preventExtensions', function ($preventExtensions) {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -8060,7 +7565,7 @@ __webpack_require__(33)('isFrozen', function ($isFrozen) {
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -8074,7 +7579,7 @@ __webpack_require__(33)('isSealed', function ($isSealed) {
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -8088,7 +7593,7 @@ __webpack_require__(33)('isExtensible', function ($isExtensible) {
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
@@ -8098,16 +7603,16 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(126) });
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', { is: __webpack_require__(192) });
+$export($export.S, 'Object', { is: __webpack_require__(193) });
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -8118,7 +7623,7 @@ module.exports = Object.is || function is(x, y) {
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
@@ -8127,13 +7632,13 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(90).set });
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.3.6 Object.prototype.toString()
-var classof = __webpack_require__(60);
+var classof = __webpack_require__(61);
 var test = {};
 test[__webpack_require__(6)('toStringTag')] = 'z';
 if (test + '' != '[object z]') {
@@ -8144,7 +7649,7 @@ if (test + '' != '[object z]') {
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
@@ -8154,7 +7659,7 @@ $export($export.P, 'Function', { bind: __webpack_require__(127) });
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(8).f;
@@ -8176,13 +7681,13 @@ NAME in FProto || __webpack_require__(7) && dP(FProto, NAME, {
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var isObject = __webpack_require__(5);
-var getPrototypeOf = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var HAS_INSTANCE = __webpack_require__(6)('hasInstance');
 var FunctionProto = Function.prototype;
 // 19.2.3.6 Function.prototype[@@hasInstance](V)
@@ -8196,7 +7701,7 @@ if (!(HAS_INSTANCE in FunctionProto)) __webpack_require__(8).f(FunctionProto, HA
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8206,7 +7711,7 @@ $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt }
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8216,7 +7721,7 @@ $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $pars
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8227,8 +7732,8 @@ var cof = __webpack_require__(25);
 var inheritIfRequired = __webpack_require__(92);
 var toPrimitive = __webpack_require__(30);
 var fails = __webpack_require__(4);
-var gOPN = __webpack_require__(47).f;
-var gOPD = __webpack_require__(20).f;
+var gOPN = __webpack_require__(48).f;
+var gOPD = __webpack_require__(21).f;
 var dP = __webpack_require__(8).f;
 var $trim = __webpack_require__(55).trim;
 var NUMBER = 'Number';
@@ -8236,7 +7741,7 @@ var $Number = global[NUMBER];
 var Base = $Number;
 var proto = $Number.prototype;
 // Opera ~12 has broken Object#toString
-var BROKEN_COF = cof(__webpack_require__(46)(proto)) == NUMBER;
+var BROKEN_COF = cof(__webpack_require__(47)(proto)) == NUMBER;
 var TRIM = 'trim' in String.prototype;
 
 // 7.1.3 ToNumber(argument)
@@ -8292,7 +7797,7 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8413,7 +7918,7 @@ $export($export.P + $export.F * (!!$toFixed && (
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8438,7 +7943,7 @@ $export($export.P + $export.F * ($fails(function () {
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -8448,7 +7953,7 @@ $export($export.S, 'Number', { EPSILON: Math.pow(2, -52) });
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -8463,7 +7968,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -8473,7 +7978,7 @@ $export($export.S, 'Number', { isInteger: __webpack_require__(132) });
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -8488,7 +7993,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
@@ -8504,7 +8009,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -8514,7 +8019,7 @@ $export($export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -8524,7 +8029,7 @@ $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8534,7 +8039,7 @@ $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { 
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8544,7 +8049,7 @@ $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { pars
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
@@ -8568,7 +8073,7 @@ $export($export.S + $export.F * !($acosh
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -8584,7 +8089,7 @@ $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh:
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -8600,7 +8105,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
@@ -8615,7 +8120,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -8629,7 +8134,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -8644,7 +8149,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -8655,7 +8160,7 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
@@ -8665,7 +8170,7 @@ $export($export.S, 'Math', { fround: __webpack_require__(134) });
 
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -8696,7 +8201,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -8719,7 +8224,7 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -8733,7 +8238,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -8743,7 +8248,7 @@ $export($export.S, 'Math', { log1p: __webpack_require__(133) });
 
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -8757,7 +8262,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
@@ -8767,7 +8272,7 @@ $export($export.S, 'Math', { sign: __webpack_require__(94) });
 
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
@@ -8788,7 +8293,7 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
@@ -8806,7 +8311,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -8820,11 +8325,11 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var toAbsoluteIndex = __webpack_require__(45);
+var toAbsoluteIndex = __webpack_require__(46);
 var fromCharCode = String.fromCharCode;
 var $fromCodePoint = String.fromCodePoint;
 
@@ -8849,11 +8354,11 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var toIObject = __webpack_require__(19);
+var toIObject = __webpack_require__(20);
 var toLength = __webpack_require__(9);
 
 $export($export.S, 'String', {
@@ -8873,7 +8378,7 @@ $export($export.S, 'String', {
 
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8887,7 +8392,7 @@ __webpack_require__(55)('trim', function ($trim) {
 
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8911,7 +8416,7 @@ __webpack_require__(97)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8927,7 +8432,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8954,7 +8459,7 @@ $export($export.P + $export.F * __webpack_require__(100)(ENDS_WITH), 'String', {
 
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8973,7 +8478,7 @@ $export($export.P + $export.F * __webpack_require__(100)(INCLUDES), 'String', {
 
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8985,7 +8490,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9010,7 +8515,7 @@ $export($export.P + $export.F * __webpack_require__(100)(STARTS_WITH), 'String',
 
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9024,7 +8529,7 @@ __webpack_require__(18)('anchor', function (createHTML) {
 
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9038,7 +8543,7 @@ __webpack_require__(18)('big', function (createHTML) {
 
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9052,7 +8557,7 @@ __webpack_require__(18)('blink', function (createHTML) {
 
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9066,7 +8571,7 @@ __webpack_require__(18)('bold', function (createHTML) {
 
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9080,7 +8585,7 @@ __webpack_require__(18)('fixed', function (createHTML) {
 
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9094,7 +8599,7 @@ __webpack_require__(18)('fontcolor', function (createHTML) {
 
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9108,7 +8613,7 @@ __webpack_require__(18)('fontsize', function (createHTML) {
 
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9122,7 +8627,7 @@ __webpack_require__(18)('italics', function (createHTML) {
 
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9136,7 +8641,7 @@ __webpack_require__(18)('link', function (createHTML) {
 
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9150,7 +8655,7 @@ __webpack_require__(18)('small', function (createHTML) {
 
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9164,7 +8669,7 @@ __webpack_require__(18)('strike', function (createHTML) {
 
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9178,7 +8683,7 @@ __webpack_require__(18)('sub', function (createHTML) {
 
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9192,7 +8697,7 @@ __webpack_require__(18)('sup', function (createHTML) {
 
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -9202,7 +8707,7 @@ $export($export.S, 'Date', { now: function () { return new Date().getTime(); } }
 
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9225,12 +8730,12 @@ $export($export.P + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var $export = __webpack_require__(0);
-var toISOString = __webpack_require__(254);
+var toISOString = __webpack_require__(255);
 
 // PhantomJS / old WebKit has a broken implementations
 $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'Date', {
@@ -9239,7 +8744,7 @@ $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'D
 
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9272,7 +8777,7 @@ module.exports = (fails(function () {
 
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var DateProto = Date.prototype;
@@ -9290,17 +8795,17 @@ if (new Date(NaN) + '' != INVALID_DATE) {
 
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(6)('toPrimitive');
 var proto = Date.prototype;
 
-if (!(TO_PRIMITIVE in proto)) __webpack_require__(16)(proto, TO_PRIMITIVE, __webpack_require__(257));
+if (!(TO_PRIMITIVE in proto)) __webpack_require__(16)(proto, TO_PRIMITIVE, __webpack_require__(258));
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9316,17 +8821,17 @@ module.exports = function (hint) {
 
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Array', { isArray: __webpack_require__(69) });
+$export($export.S, 'Array', { isArray: __webpack_require__(70) });
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9340,7 +8845,7 @@ var toLength = __webpack_require__(9);
 var createProperty = __webpack_require__(102);
 var getIterFn = __webpack_require__(103);
 
-$export($export.S + $export.F * !__webpack_require__(71)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(72)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -9370,7 +8875,7 @@ $export($export.S + $export.F * !__webpack_require__(71)(function (iter) { Array
 
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9396,18 +8901,18 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 22.1.3.13 Array.prototype.join(separator)
 var $export = __webpack_require__(0);
-var toIObject = __webpack_require__(19);
+var toIObject = __webpack_require__(20);
 var arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export($export.P + $export.F * (__webpack_require__(58) != Object || !__webpack_require__(26)(arrayJoin)), 'Array', {
+$export($export.P + $export.F * (__webpack_require__(59) != Object || !__webpack_require__(26)(arrayJoin)), 'Array', {
   join: function join(separator) {
     return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
   }
@@ -9415,7 +8920,7 @@ $export($export.P + $export.F * (__webpack_require__(58) != Object || !__webpack
 
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9423,7 +8928,7 @@ $export($export.P + $export.F * (__webpack_require__(58) != Object || !__webpack
 var $export = __webpack_require__(0);
 var html = __webpack_require__(89);
 var cof = __webpack_require__(25);
-var toAbsoluteIndex = __webpack_require__(45);
+var toAbsoluteIndex = __webpack_require__(46);
 var toLength = __webpack_require__(9);
 var arraySlice = [].slice;
 
@@ -9450,7 +8955,7 @@ $export($export.P + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9480,7 +8985,7 @@ $export($export.P + $export.F * (fails(function () {
 
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9498,11 +9003,11 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(5);
-var isArray = __webpack_require__(69);
+var isArray = __webpack_require__(70);
 var SPECIES = __webpack_require__(6)('species');
 
 module.exports = function (original) {
@@ -9520,7 +9025,7 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9537,7 +9042,7 @@ $export($export.P + $export.F * !__webpack_require__(26)([].map, true), 'Array',
 
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9554,7 +9059,7 @@ $export($export.P + $export.F * !__webpack_require__(26)([].filter, true), 'Arra
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9571,7 +9076,7 @@ $export($export.P + $export.F * !__webpack_require__(26)([].some, true), 'Array'
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9588,7 +9093,7 @@ $export($export.P + $export.F * !__webpack_require__(26)([].every, true), 'Array
 
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9605,7 +9110,7 @@ $export($export.P + $export.F * !__webpack_require__(26)([].reduce, true), 'Arra
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9622,13 +9127,13 @@ $export($export.P + $export.F * !__webpack_require__(26)([].reduceRight, true), 
 
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $indexOf = __webpack_require__(67)(false);
+var $indexOf = __webpack_require__(68)(false);
 var $native = [].indexOf;
 var NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
@@ -9644,13 +9149,13 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(26)($nati
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var toIObject = __webpack_require__(19);
+var toIObject = __webpack_require__(20);
 var toInteger = __webpack_require__(32);
 var toLength = __webpack_require__(9);
 var $native = [].lastIndexOf;
@@ -9673,7 +9178,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(26)($nati
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
@@ -9685,7 +9190,7 @@ __webpack_require__(38)('copyWithin');
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
@@ -9697,7 +9202,7 @@ __webpack_require__(38)('fill');
 
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9718,7 +9223,7 @@ __webpack_require__(38)(KEY);
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9739,22 +9244,22 @@ __webpack_require__(38)(KEY);
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(48)('Array');
+__webpack_require__(49)('Array');
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(3);
 var inheritIfRequired = __webpack_require__(92);
 var dP = __webpack_require__(8).f;
-var gOPN = __webpack_require__(47).f;
-var isRegExp = __webpack_require__(70);
-var $flags = __webpack_require__(72);
+var gOPN = __webpack_require__(48).f;
+var isRegExp = __webpack_require__(71);
+var $flags = __webpack_require__(73);
 var $RegExp = global.RegExp;
 var Base = $RegExp;
 var proto = $RegExp.prototype;
@@ -9791,18 +9296,18 @@ if (__webpack_require__(7) && (!CORRECT_NEW || __webpack_require__(4)(function (
   __webpack_require__(17)(global, 'RegExp', $RegExp);
 }
 
-__webpack_require__(48)('RegExp');
+__webpack_require__(49)('RegExp');
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 __webpack_require__(139);
 var anObject = __webpack_require__(2);
-var $flags = __webpack_require__(72);
+var $flags = __webpack_require__(73);
 var DESCRIPTORS = __webpack_require__(7);
 var TO_STRING = 'toString';
 var $toString = /./[TO_STRING];
@@ -9827,11 +9332,11 @@ if (__webpack_require__(4)(function () { return $toString.call({ source: 'a', fl
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
-__webpack_require__(73)('match', 1, function (defined, MATCH, $match) {
+__webpack_require__(74)('match', 1, function (defined, MATCH, $match) {
   // 21.1.3.11 String.prototype.match(regexp)
   return [function match(regexp) {
     'use strict';
@@ -9843,11 +9348,11 @@ __webpack_require__(73)('match', 1, function (defined, MATCH, $match) {
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
-__webpack_require__(73)('replace', 2, function (defined, REPLACE, $replace) {
+__webpack_require__(74)('replace', 2, function (defined, REPLACE, $replace) {
   // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
   return [function replace(searchValue, replaceValue) {
     'use strict';
@@ -9861,11 +9366,11 @@ __webpack_require__(73)('replace', 2, function (defined, REPLACE, $replace) {
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
-__webpack_require__(73)('search', 1, function (defined, SEARCH, $search) {
+__webpack_require__(74)('search', 1, function (defined, SEARCH, $search) {
   // 21.1.3.15 String.prototype.search(regexp)
   return [function search(regexp) {
     'use strict';
@@ -9877,13 +9382,13 @@ __webpack_require__(73)('search', 1, function (defined, SEARCH, $search) {
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
-__webpack_require__(73)('split', 2, function (defined, SPLIT, $split) {
+__webpack_require__(74)('split', 2, function (defined, SPLIT, $split) {
   'use strict';
-  var isRegExp = __webpack_require__(70);
+  var isRegExp = __webpack_require__(71);
   var _split = $split;
   var $push = [].push;
   var $SPLIT = 'split';
@@ -9954,21 +9459,21 @@ __webpack_require__(73)('split', 2, function (defined, SPLIT, $split) {
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(43);
+var LIBRARY = __webpack_require__(44);
 var global = __webpack_require__(3);
 var ctx = __webpack_require__(24);
-var classof = __webpack_require__(60);
+var classof = __webpack_require__(61);
 var $export = __webpack_require__(0);
 var isObject = __webpack_require__(5);
 var aFunction = __webpack_require__(14);
-var anInstance = __webpack_require__(49);
-var forOf = __webpack_require__(50);
-var speciesConstructor = __webpack_require__(74);
+var anInstance = __webpack_require__(50);
+var forOf = __webpack_require__(51);
+var speciesConstructor = __webpack_require__(75);
 var task = __webpack_require__(107).set;
 var microtask = __webpack_require__(108)();
 var newPromiseCapabilityModule = __webpack_require__(109);
@@ -10136,7 +9641,7 @@ if (!USE_NATIVE) {
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = __webpack_require__(51)($Promise.prototype, {
+  Internal.prototype = __webpack_require__(52)($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected) {
       var reaction = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -10168,7 +9673,7 @@ if (!USE_NATIVE) {
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
 __webpack_require__(54)($Promise, PROMISE);
-__webpack_require__(48)(PROMISE);
+__webpack_require__(49)(PROMISE);
 Wrapper = __webpack_require__(29)[PROMISE];
 
 // statics
@@ -10187,7 +9692,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return promiseResolve(LIBRARY && this === Wrapper ? $Promise : this, x);
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(71)(function (iter) {
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(72)(function (iter) {
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -10234,7 +9739,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(71)(function
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10244,7 +9749,7 @@ var validate = __webpack_require__(57);
 var WEAK_SET = 'WeakSet';
 
 // 23.4 WeakSet Objects
-__webpack_require__(75)(WEAK_SET, function (get) {
+__webpack_require__(76)(WEAK_SET, function (get) {
   return function WeakSet() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.4.3.1 WeakSet.prototype.add(value)
@@ -10255,20 +9760,20 @@ __webpack_require__(75)(WEAK_SET, function (get) {
 
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $typed = __webpack_require__(76);
+var $typed = __webpack_require__(77);
 var buffer = __webpack_require__(110);
 var anObject = __webpack_require__(2);
-var toAbsoluteIndex = __webpack_require__(45);
+var toAbsoluteIndex = __webpack_require__(46);
 var toLength = __webpack_require__(9);
 var isObject = __webpack_require__(5);
 var ArrayBuffer = __webpack_require__(3).ArrayBuffer;
-var speciesConstructor = __webpack_require__(74);
+var speciesConstructor = __webpack_require__(75);
 var $ArrayBuffer = buffer.ArrayBuffer;
 var $DataView = buffer.DataView;
 var $isView = $typed.ABV && ArrayBuffer.isView;
@@ -10304,21 +9809,21 @@ $export($export.P + $export.U + $export.F * __webpack_require__(4)(function () {
   }
 });
 
-__webpack_require__(48)(ARRAY_BUFFER);
+__webpack_require__(49)(ARRAY_BUFFER);
 
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-$export($export.G + $export.W + $export.F * !__webpack_require__(76).ABV, {
+$export($export.G + $export.W + $export.F * !__webpack_require__(77).ABV, {
   DataView: __webpack_require__(110).DataView
 });
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Int8', 1, function (init) {
@@ -10329,7 +9834,7 @@ __webpack_require__(35)('Int8', 1, function (init) {
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Uint8', 1, function (init) {
@@ -10340,7 +9845,7 @@ __webpack_require__(35)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Uint8', 1, function (init) {
@@ -10351,7 +9856,7 @@ __webpack_require__(35)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Int16', 2, function (init) {
@@ -10362,7 +9867,7 @@ __webpack_require__(35)('Int16', 2, function (init) {
 
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Uint16', 2, function (init) {
@@ -10373,7 +9878,7 @@ __webpack_require__(35)('Uint16', 2, function (init) {
 
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Int32', 4, function (init) {
@@ -10384,7 +9889,7 @@ __webpack_require__(35)('Int32', 4, function (init) {
 
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Uint32', 4, function (init) {
@@ -10395,7 +9900,7 @@ __webpack_require__(35)('Uint32', 4, function (init) {
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Float32', 4, function (init) {
@@ -10406,7 +9911,7 @@ __webpack_require__(35)('Float32', 4, function (init) {
 
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(35)('Float64', 8, function (init) {
@@ -10417,7 +9922,7 @@ __webpack_require__(35)('Float64', 8, function (init) {
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -10439,12 +9944,12 @@ $export($export.S + $export.F * !__webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
 var $export = __webpack_require__(0);
-var create = __webpack_require__(46);
+var create = __webpack_require__(47);
 var aFunction = __webpack_require__(14);
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
@@ -10492,7 +9997,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -10521,12 +10026,12 @@ $export($export.S + $export.F * __webpack_require__(4)(function () {
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
 var $export = __webpack_require__(0);
-var gOPD = __webpack_require__(20).f;
+var gOPD = __webpack_require__(21).f;
 var anObject = __webpack_require__(2);
 
 $export($export.S, 'Reflect', {
@@ -10538,7 +10043,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10571,12 +10076,12 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
-var gOPD = __webpack_require__(20);
-var getPrototypeOf = __webpack_require__(21);
+var gOPD = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var has = __webpack_require__(15);
 var $export = __webpack_require__(0);
 var isObject = __webpack_require__(5);
@@ -10598,11 +10103,11 @@ $export($export.S, 'Reflect', { get: get });
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
-var gOPD = __webpack_require__(20);
+var gOPD = __webpack_require__(21);
 var $export = __webpack_require__(0);
 var anObject = __webpack_require__(2);
 
@@ -10614,12 +10119,12 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
 var $export = __webpack_require__(0);
-var getProto = __webpack_require__(21);
+var getProto = __webpack_require__(22);
 var anObject = __webpack_require__(2);
 
 $export($export.S, 'Reflect', {
@@ -10630,7 +10135,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -10644,7 +10149,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -10661,7 +10166,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
@@ -10671,7 +10176,7 @@ $export($export.S, 'Reflect', { ownKeys: __webpack_require__(148) });
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -10693,16 +10198,16 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 var dP = __webpack_require__(8);
-var gOPD = __webpack_require__(20);
-var getPrototypeOf = __webpack_require__(21);
+var gOPD = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var has = __webpack_require__(15);
 var $export = __webpack_require__(0);
-var createDesc = __webpack_require__(41);
+var createDesc = __webpack_require__(42);
 var anObject = __webpack_require__(2);
 var isObject = __webpack_require__(5);
 
@@ -10730,7 +10235,7 @@ $export($export.S, 'Reflect', { set: set });
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -10751,14 +10256,14 @@ if (setProto) $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/Array.prototype.includes
 var $export = __webpack_require__(0);
-var $includes = __webpack_require__(67)(true);
+var $includes = __webpack_require__(68)(true);
 
 $export($export.P, 'Array', {
   includes: function includes(el /* , fromIndex = 0 */) {
@@ -10770,7 +10275,7 @@ __webpack_require__(38)('includes');
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10799,7 +10304,7 @@ __webpack_require__(38)('flatMap');
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10827,7 +10332,7 @@ __webpack_require__(38)('flatten');
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10844,7 +10349,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10863,7 +10368,7 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10882,7 +10387,7 @@ $export($export.P + $export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAge
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10896,7 +10401,7 @@ __webpack_require__(55)('trimLeft', function ($trim) {
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10910,7 +10415,7 @@ __webpack_require__(55)('trimRight', function ($trim) {
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10919,8 +10424,8 @@ __webpack_require__(55)('trimRight', function ($trim) {
 var $export = __webpack_require__(0);
 var defined = __webpack_require__(31);
 var toLength = __webpack_require__(9);
-var isRegExp = __webpack_require__(70);
-var getFlags = __webpack_require__(72);
+var isRegExp = __webpack_require__(71);
+var getFlags = __webpack_require__(73);
 var RegExpProto = RegExp.prototype;
 
 var $RegExpStringIterator = function (regexp, string) {
@@ -10947,28 +10452,28 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(86)('asyncIterator');
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(86)('observable');
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export = __webpack_require__(0);
 var ownKeys = __webpack_require__(148);
-var toIObject = __webpack_require__(19);
-var gOPD = __webpack_require__(20);
+var toIObject = __webpack_require__(20);
+var gOPD = __webpack_require__(21);
 var createProperty = __webpack_require__(102);
 
 $export($export.S, 'Object', {
@@ -10989,7 +10494,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
@@ -11004,7 +10509,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
@@ -11014,25 +10519,6 @@ var $entries = __webpack_require__(151)(true);
 $export($export.S, 'Object', {
   entries: function entries(it) {
     return $entries(it);
-  }
-});
-
-
-/***/ }),
-/* 326 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $export = __webpack_require__(0);
-var toObject = __webpack_require__(10);
-var aFunction = __webpack_require__(14);
-var $defineProperty = __webpack_require__(8);
-
-// B.2.2.2 Object.prototype.__defineGetter__(P, getter)
-__webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object', {
-  __defineGetter__: function __defineGetter__(P, getter) {
-    $defineProperty.f(toObject(this), P, { get: aFunction(getter), enumerable: true, configurable: true });
   }
 });
 
@@ -11048,10 +10534,10 @@ var toObject = __webpack_require__(10);
 var aFunction = __webpack_require__(14);
 var $defineProperty = __webpack_require__(8);
 
-// B.2.2.3 Object.prototype.__defineSetter__(P, setter)
-__webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object', {
-  __defineSetter__: function __defineSetter__(P, setter) {
-    $defineProperty.f(toObject(this), P, { set: aFunction(setter), enumerable: true, configurable: true });
+// B.2.2.2 Object.prototype.__defineGetter__(P, getter)
+__webpack_require__(7) && $export($export.P + __webpack_require__(78), 'Object', {
+  __defineGetter__: function __defineGetter__(P, getter) {
+    $defineProperty.f(toObject(this), P, { get: aFunction(getter), enumerable: true, configurable: true });
   }
 });
 
@@ -11064,19 +10550,13 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object',
 
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(10);
-var toPrimitive = __webpack_require__(30);
-var getPrototypeOf = __webpack_require__(21);
-var getOwnPropertyDescriptor = __webpack_require__(20).f;
+var aFunction = __webpack_require__(14);
+var $defineProperty = __webpack_require__(8);
 
-// B.2.2.4 Object.prototype.__lookupGetter__(P)
-__webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object', {
-  __lookupGetter__: function __lookupGetter__(P) {
-    var O = toObject(this);
-    var K = toPrimitive(P, true);
-    var D;
-    do {
-      if (D = getOwnPropertyDescriptor(O, K)) return D.get;
-    } while (O = getPrototypeOf(O));
+// B.2.2.3 Object.prototype.__defineSetter__(P, setter)
+__webpack_require__(7) && $export($export.P + __webpack_require__(78), 'Object', {
+  __defineSetter__: function __defineSetter__(P, setter) {
+    $defineProperty.f(toObject(this), P, { set: aFunction(setter), enumerable: true, configurable: true });
   }
 });
 
@@ -11090,11 +10570,36 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object',
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(10);
 var toPrimitive = __webpack_require__(30);
-var getPrototypeOf = __webpack_require__(21);
-var getOwnPropertyDescriptor = __webpack_require__(20).f;
+var getPrototypeOf = __webpack_require__(22);
+var getOwnPropertyDescriptor = __webpack_require__(21).f;
+
+// B.2.2.4 Object.prototype.__lookupGetter__(P)
+__webpack_require__(7) && $export($export.P + __webpack_require__(78), 'Object', {
+  __lookupGetter__: function __lookupGetter__(P) {
+    var O = toObject(this);
+    var K = toPrimitive(P, true);
+    var D;
+    do {
+      if (D = getOwnPropertyDescriptor(O, K)) return D.get;
+    } while (O = getPrototypeOf(O));
+  }
+});
+
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $export = __webpack_require__(0);
+var toObject = __webpack_require__(10);
+var toPrimitive = __webpack_require__(30);
+var getPrototypeOf = __webpack_require__(22);
+var getOwnPropertyDescriptor = __webpack_require__(21).f;
 
 // B.2.2.5 Object.prototype.__lookupSetter__(P)
-__webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object', {
+__webpack_require__(7) && $export($export.P + __webpack_require__(78), 'Object', {
   __lookupSetter__: function __lookupSetter__(P) {
     var O = toObject(this);
     var K = toPrimitive(P, true);
@@ -11107,7 +10612,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(77), 'Object',
 
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
@@ -11117,7 +10622,7 @@ $export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(152)('Map') 
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
@@ -11127,77 +10632,67 @@ $export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(152)('Set') 
 
 
 /***/ }),
-/* 332 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
-__webpack_require__(78)('Map');
-
-
-/***/ }),
 /* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
-__webpack_require__(78)('Set');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
+__webpack_require__(79)('Map');
 
 
 /***/ }),
 /* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
-__webpack_require__(78)('WeakMap');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
+__webpack_require__(79)('Set');
 
 
 /***/ }),
 /* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
-__webpack_require__(78)('WeakSet');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
+__webpack_require__(79)('WeakMap');
 
 
 /***/ }),
 /* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
-__webpack_require__(79)('Map');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
+__webpack_require__(79)('WeakSet');
 
 
 /***/ }),
 /* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
-__webpack_require__(79)('Set');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
+__webpack_require__(80)('Map');
 
 
 /***/ }),
 /* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
-__webpack_require__(79)('WeakMap');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
+__webpack_require__(80)('Set');
 
 
 /***/ }),
 /* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
-__webpack_require__(79)('WeakSet');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
+__webpack_require__(80)('WeakMap');
 
 
 /***/ }),
 /* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// https://github.com/tc39/proposal-global
-var $export = __webpack_require__(0);
-
-$export($export.G, { global: __webpack_require__(3) });
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
+__webpack_require__(80)('WeakSet');
 
 
 /***/ }),
@@ -11207,11 +10702,21 @@ $export($export.G, { global: __webpack_require__(3) });
 // https://github.com/tc39/proposal-global
 var $export = __webpack_require__(0);
 
-$export($export.S, 'System', { global: __webpack_require__(3) });
+$export($export.G, { global: __webpack_require__(3) });
 
 
 /***/ }),
 /* 342 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-global
+var $export = __webpack_require__(0);
+
+$export($export.S, 'System', { global: __webpack_require__(3) });
+
+
+/***/ }),
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-is-error
@@ -11226,7 +10731,7 @@ $export($export.S, 'Error', {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11240,7 +10745,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11250,7 +10755,7 @@ $export($export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11265,7 +10770,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11281,7 +10786,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -11298,7 +10803,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -11315,7 +10820,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -11337,7 +10842,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11347,7 +10852,7 @@ $export($export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11362,7 +10867,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -11372,7 +10877,7 @@ $export($export.S, 'Math', { scale: __webpack_require__(154) });
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -11394,7 +10899,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // http://jfbastien.github.io/papers/Math.signbit.html
@@ -11407,7 +10912,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11416,7 +10921,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
 var $export = __webpack_require__(0);
 var core = __webpack_require__(29);
 var global = __webpack_require__(3);
-var speciesConstructor = __webpack_require__(74);
+var speciesConstructor = __webpack_require__(75);
 var promiseResolve = __webpack_require__(141);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
@@ -11434,7 +10939,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11453,7 +10958,7 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
@@ -11467,7 +10972,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
@@ -11488,12 +10993,12 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
 var anObject = __webpack_require__(2);
-var getPrototypeOf = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var ordinaryHasOwnMetadata = metadata.has;
 var ordinaryGetOwnMetadata = metadata.get;
 var toMetaKey = metadata.key;
@@ -11511,14 +11016,14 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Set = __webpack_require__(144);
 var from = __webpack_require__(153);
 var metadata = __webpack_require__(36);
 var anObject = __webpack_require__(2);
-var getPrototypeOf = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var ordinaryOwnMetadataKeys = metadata.keys;
 var toMetaKey = metadata.key;
 
@@ -11536,7 +11041,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
 
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
@@ -11551,7 +11056,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
@@ -11565,12 +11070,12 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
 
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
 var anObject = __webpack_require__(2);
-var getPrototypeOf = __webpack_require__(21);
+var getPrototypeOf = __webpack_require__(22);
 var ordinaryHasOwnMetadata = metadata.has;
 var toMetaKey = metadata.key;
 
@@ -11587,7 +11092,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(36);
@@ -11602,7 +11107,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $metadata = __webpack_require__(36);
@@ -11623,7 +11128,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
 
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
@@ -11641,7 +11146,7 @@ $export($export.G, {
 
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11654,10 +11159,10 @@ var microtask = __webpack_require__(108)();
 var OBSERVABLE = __webpack_require__(6)('observable');
 var aFunction = __webpack_require__(14);
 var anObject = __webpack_require__(2);
-var anInstance = __webpack_require__(49);
-var redefineAll = __webpack_require__(51);
+var anInstance = __webpack_require__(50);
+var redefineAll = __webpack_require__(52);
 var hide = __webpack_require__(16);
-var forOf = __webpack_require__(50);
+var forOf = __webpack_require__(51);
 var RETURN = forOf.RETURN;
 
 var getMethod = function (fn) {
@@ -11843,11 +11348,11 @@ hide($Observable.prototype, OBSERVABLE, function () { return this; });
 
 $export($export.G, { Observable: $Observable });
 
-__webpack_require__(48)('Observable');
+__webpack_require__(49)('Observable');
 
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
@@ -11873,7 +11378,7 @@ $export($export.G + $export.B + $export.F * MSIE, {
 
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -11885,11 +11390,11 @@ $export($export.G + $export.B, {
 
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators = __webpack_require__(106);
-var getKeys = __webpack_require__(44);
+var getKeys = __webpack_require__(45);
 var redefine = __webpack_require__(17);
 var global = __webpack_require__(3);
 var hide = __webpack_require__(16);
@@ -11949,7 +11454,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -12692,26 +12197,26 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(120)))
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(373);
+__webpack_require__(374);
 module.exports = __webpack_require__(29).RegExp.escape;
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/benjamingr/RexExp.escape
 var $export = __webpack_require__(0);
-var $re = __webpack_require__(374)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+var $re = __webpack_require__(375)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
 $export($export.S, 'RegExp', { escape: function escape(it) { return $re(it); } });
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports) {
 
 module.exports = function (regExp, replace) {
@@ -12725,7 +12230,7 @@ module.exports = function (regExp, replace) {
 
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports) {
 
 /*
@@ -12971,7 +12476,7 @@ if (objCtr.defineProperty) {
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12985,7 +12490,7 @@ var _reactDom = __webpack_require__(155);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(387);
+var _App = __webpack_require__(388);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -12994,7 +12499,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13007,7 +12512,7 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(61),n=__webpack_require__(80),p=__webpack_require__(39),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(62),n=__webpack_require__(81),p=__webpack_require__(39),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -13022,7 +12527,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13043,10 +12548,10 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(61);
-var emptyObject = __webpack_require__(80);
-var invariant = __webpack_require__(62);
-var warning = __webpack_require__(81);
+var _assign = __webpack_require__(62);
+var emptyObject = __webpack_require__(81);
+var invariant = __webpack_require__(63);
+var warning = __webpack_require__(82);
 var emptyFunction = __webpack_require__(39);
 var checkPropTypes = __webpack_require__(112);
 
@@ -14387,7 +13892,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14403,7 +13908,7 @@ module.exports = react;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),l=__webpack_require__(156),B=__webpack_require__(61),C=__webpack_require__(39),ba=__webpack_require__(157),da=__webpack_require__(158),ea=__webpack_require__(159),fa=__webpack_require__(160),ia=__webpack_require__(161),D=__webpack_require__(80);
+var aa=__webpack_require__(1),l=__webpack_require__(156),B=__webpack_require__(62),C=__webpack_require__(39),ba=__webpack_require__(157),da=__webpack_require__(158),ea=__webpack_require__(159),fa=__webpack_require__(160),ia=__webpack_require__(161),D=__webpack_require__(81);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -14623,7 +14128,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14638,7 +14143,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(381);
+var isNode = __webpack_require__(382);
 
 /**
  * @param {*} object The object to check.
@@ -14651,7 +14156,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14679,7 +14184,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14701,20 +14206,20 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(1);
-var invariant = __webpack_require__(62);
-var warning = __webpack_require__(81);
+var invariant = __webpack_require__(63);
+var warning = __webpack_require__(82);
 var ExecutionEnvironment = __webpack_require__(156);
-var _assign = __webpack_require__(61);
+var _assign = __webpack_require__(62);
 var emptyFunction = __webpack_require__(39);
 var EventListener = __webpack_require__(157);
 var getActiveElement = __webpack_require__(158);
 var shallowEqual = __webpack_require__(159);
 var containsNode = __webpack_require__(160);
 var focusNode = __webpack_require__(161);
-var emptyObject = __webpack_require__(80);
+var emptyObject = __webpack_require__(81);
 var checkPropTypes = __webpack_require__(112);
-var hyphenateStyleName = __webpack_require__(383);
-var camelizeStyleName = __webpack_require__(385);
+var hyphenateStyleName = __webpack_require__(384);
+var camelizeStyleName = __webpack_require__(386);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -30081,7 +29586,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30096,7 +29601,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(384);
+var hyphenate = __webpack_require__(385);
 
 var msPattern = /^ms-/;
 
@@ -30123,7 +29628,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30159,7 +29664,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30174,7 +29679,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(386);
+var camelize = __webpack_require__(387);
 
 var msPattern = /^-ms-/;
 
@@ -30202,7 +29707,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30237,7 +29742,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30255,83 +29760,81 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
-var _reactTransitionGroup = __webpack_require__(416);
-
-var _HomePage = __webpack_require__(423);
+var _HomePage = __webpack_require__(424);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _ProductPage = __webpack_require__(425);
+var _ProductPage = __webpack_require__(427);
 
 var _ProductPage2 = _interopRequireDefault(_ProductPage);
 
-var _ItemsPage = __webpack_require__(426);
+var _ItemsPage = __webpack_require__(428);
 
 var _ItemsPage2 = _interopRequireDefault(_ItemsPage);
 
-var _JourneyPage = __webpack_require__(427);
+var _JourneyPage = __webpack_require__(429);
 
 var _JourneyPage2 = _interopRequireDefault(_JourneyPage);
 
-var _GalleryPage = __webpack_require__(428);
+var _GalleryPage = __webpack_require__(430);
 
 var _GalleryPage2 = _interopRequireDefault(_GalleryPage);
 
-var _ImprintPage = __webpack_require__(430);
+var _ImprintPage = __webpack_require__(434);
 
 var _ImprintPage2 = _interopRequireDefault(_ImprintPage);
 
-var _CreditsPage = __webpack_require__(431);
+var _CreditsPage = __webpack_require__(435);
 
 var _CreditsPage2 = _interopRequireDefault(_CreditsPage);
 
-var _HowToBuyPage = __webpack_require__(432);
+var _HowToBuyPage = __webpack_require__(436);
 
 var _HowToBuyPage2 = _interopRequireDefault(_HowToBuyPage);
 
-var _HowtobuyDetail = __webpack_require__(433);
+var _HowtobuyDetail = __webpack_require__(437);
 
 var _HowtobuyDetail2 = _interopRequireDefault(_HowtobuyDetail);
 
-var _NotFoundPage = __webpack_require__(434);
+var _NotFoundPage = __webpack_require__(438);
 
 var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
-var _BlockSocialLinks = __webpack_require__(435);
+var _BlockSocialLinks = __webpack_require__(439);
 
 var _BlockSocialLinks2 = _interopRequireDefault(_BlockSocialLinks);
 
-var _Indicator = __webpack_require__(436);
+var _Indicator = __webpack_require__(440);
 
 var _Indicator2 = _interopRequireDefault(_Indicator);
 
-var _ButtonScroll = __webpack_require__(437);
+var _ButtonScroll = __webpack_require__(441);
 
 var _ButtonScroll2 = _interopRequireDefault(_ButtonScroll);
 
-var _ButtonMenu = __webpack_require__(438);
+var _ButtonMenu = __webpack_require__(442);
 
 var _ButtonMenu2 = _interopRequireDefault(_ButtonMenu);
 
-var _ButtonSound = __webpack_require__(439);
+var _ButtonSound = __webpack_require__(443);
 
 var _ButtonSound2 = _interopRequireDefault(_ButtonSound);
 
-var _FixedLink = __webpack_require__(440);
+var _FixedLink = __webpack_require__(444);
 
 var _FixedLink2 = _interopRequireDefault(_FixedLink);
 
-var _FixedButton = __webpack_require__(441);
+var _FixedButton = __webpack_require__(445);
 
 var _FixedButton2 = _interopRequireDefault(_FixedButton);
 
-var _ContainerTabs = __webpack_require__(442);
+var _ContainerTabs = __webpack_require__(446);
 
 var _ContainerTabs2 = _interopRequireDefault(_ContainerTabs);
 
-var _Menu = __webpack_require__(443);
+var _Menu = __webpack_require__(447);
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -30345,8 +29848,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var pubsub = new (__webpack_require__(23))();
-var actionsApp = __webpack_require__(53);
+var MIN_TIME_TO_NEXT_SCROLL = 750; // ms
+var pubsub = new (__webpack_require__(19))();
+var actionsApp = __webpack_require__(41);
 var dataApp = __webpack_require__(40);
 var Store = __webpack_require__(28);
 Store.init();
@@ -30369,13 +29873,30 @@ var App = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-		_this.state = {};
-		_this.min_width = 800;
-		_this.max_width = 800;
-		_this.key_width;
+		_this.state = {
+			load: false
+		};
+		// this.min_width = 800;
+		// this.max_width = 800;
+		// this.key_width;
+		_this.time_last_scroll = 0;
+		_this.index_current_page;
+		_this.total_pages = Store.total_pages;
 		_this.changeLocation = _this.changeLocation.bind(_this);
-		_this.resize = _this.resize.bind(_this);
-		window.addEventListener('resize', _this.resize);
+		// this.resize = this.resize.bind( this );
+		// window.addEventListener('resize', this.resize);
+
+		window.addEventListener('load', function () {
+			var loader = document.querySelector('.containerLoading');
+			loader.style.opacity = '0';
+			setTimeout(function () {
+				loader.classList.add('hide');
+			}, 300);
+		});
+
+		_this.updateState = _this.updateState.bind(_this);
+		_this.scrollHandler = _this.scrollHandler.bind(_this);
+		pubsub.subscribe('change', _this.updateState);
 		return _this;
 	}
 
@@ -30384,23 +29905,37 @@ var App = function (_Component) {
 		value: function componentDidMount() {
 			actionsApp.changeLocation(this.refs._ROUTER.history.location.pathname);
 			this.refs._ROUTER.history.listen(this.changeLocation);
+			this.refs.container.addEventListener("wheel", this.scrollHandler);
 		}
 	}, {
-		key: 'resize',
-		value: function resize() {
-			var window_width = document.body.clientWidth;
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			pubsub.unSubscribe('change', this.updateState);
+			this.refs.container.removeEventListener("wheel", this.scrollHandler);
+		}
 
-			if (window_width < this.min_width) {
-				if (this.key_width != 'min') {
-					this.key_width = 'min';
-					console.log('min');
-				}
-			} else if (window_width > this.min_width) {
-				if (this.key_width != 'max') {
-					this.key_width = 'max';
-					console.log('max');
-				}
-			}
+		// resize() {
+		// 	let window_width = document.body.clientWidth;
+
+		// 	if( window_width < this.min_width ) {
+		// 		if( this.key_width != 'min' ) {
+		// 			this.key_width = 'min';
+		// 			console.log('min');
+		// 		}
+		// 	}
+		// 	else
+		// 		if( window_width > this.min_width ) {
+		// 			if( this.key_width != 'max' ) {
+		// 				this.key_width = 'max';
+		// 				console.log('max');
+		// 			}
+		// 		}
+		// }
+
+	}, {
+		key: 'updateState',
+		value: function updateState() {
+			this.index_current_page = Store.index_current_page;
 		}
 	}, {
 		key: 'changeLocation',
@@ -30410,7 +29945,29 @@ var App = function (_Component) {
 	}, {
 		key: 'clickedButtonScroll',
 		value: function clickedButtonScroll() {
-			actionsApp.clickedScroll({ history: this.refs._ROUTER.history });
+			actionsApp.historyStepForward({ history: this.refs._ROUTER.history });
+		}
+	}, {
+		key: 'scrollHandler',
+		value: function scrollHandler(event) {
+			var currentTime = Date.now();
+			var total = this.time_last_scroll + MIN_TIME_TO_NEXT_SCROLL;
+
+			if (currentTime > total) {
+				this.time_last_scroll = currentTime;
+
+				if (event.deltaY > 0) {
+					if (this.index_current_page < this.total_pages) {
+						console.log('next');
+						actionsApp.historyStepForward({ history: this.refs._ROUTER.history });
+					}
+				} else {
+					if (this.index_current_page > 0) {
+						console.log('previous');
+						actionsApp.historyStepBack({ history: this.refs._ROUTER.history });
+					}
+				}
+			}
 		}
 	}, {
 		key: 'render',
@@ -30418,7 +29975,7 @@ var App = function (_Component) {
 
 			return _react2.default.createElement(
 				'main',
-				{ className: 'containerApp' },
+				{ ref: 'container', className: 'containerApp' },
 				_react2.default.createElement(
 					_reactRouterDom.HashRouter,
 					{ ref: '_ROUTER', getUserConfirmation: getConfirmation },
@@ -30507,7 +30064,7 @@ var App = function (_Component) {
 exports.default = App;
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30517,7 +30074,7 @@ exports.default = App;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(392);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(116);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30574,7 +30131,7 @@ BrowserRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30588,9 +30145,9 @@ BrowserRouter.propTypes = {
 
 
 var emptyFunction = __webpack_require__(39);
-var invariant = __webpack_require__(62);
-var warning = __webpack_require__(81);
-var assign = __webpack_require__(61);
+var invariant = __webpack_require__(63);
+var warning = __webpack_require__(82);
+var assign = __webpack_require__(62);
 
 var ReactPropTypesSecret = __webpack_require__(113);
 var checkPropTypes = __webpack_require__(112);
@@ -31124,7 +30681,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31138,7 +30695,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 var emptyFunction = __webpack_require__(39);
-var invariant = __webpack_require__(62);
+var invariant = __webpack_require__(63);
 var ReactPropTypesSecret = __webpack_require__(113);
 
 module.exports = function() {
@@ -31189,7 +30746,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31211,7 +30768,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(114);
 
-var _PathUtils = __webpack_require__(63);
+var _PathUtils = __webpack_require__(64);
 
 var _createTransitionManager = __webpack_require__(115);
 
@@ -31502,7 +31059,7 @@ var createBrowserHistory = function createBrowserHistory() {
 exports.default = createBrowserHistory;
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31512,7 +31069,7 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(394);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(116);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31568,7 +31125,7 @@ HashRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (HashRouter);
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31588,7 +31145,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(114);
 
-var _PathUtils = __webpack_require__(63);
+var _PathUtils = __webpack_require__(64);
 
 var _createTransitionManager = __webpack_require__(115);
 
@@ -31898,18 +31455,18 @@ var createHashHistory = function createHashHistory() {
 exports.default = createHashHistory;
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(396);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31919,7 +31476,7 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(397);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(117);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31976,7 +31533,7 @@ MemoryRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (MemoryRouter);
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31992,7 +31549,7 @@ var _warning = __webpack_require__(12);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _PathUtils = __webpack_require__(63);
+var _PathUtils = __webpack_require__(64);
 
 var _LocationUtils = __webpack_require__(114);
 
@@ -32152,7 +31709,7 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32233,10 +31790,10 @@ NavLink.defaultProps = {
 /* harmony default export */ __webpack_exports__["a"] = (NavLink);
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(399)
+var isarray = __webpack_require__(400)
 
 /**
  * Expose `pathToRegexp`.
@@ -32665,7 +32222,7 @@ function pathToRegexp (path, keys, options) {
 
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -32674,18 +32231,18 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(401);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(402);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32776,18 +32333,18 @@ Prompt.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Prompt);
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(404);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32799,7 +32356,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(405);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -32895,20 +32452,20 @@ Redirect.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Redirect);
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(406);
 /* unused harmony reexport createBrowserHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(407);
 /* unused harmony reexport createHashHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(408);
 /* unused harmony reexport createMemoryHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(83);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(65);
 /* unused harmony reexport parsePath */
 /* unused harmony reexport createPath */
 
@@ -32922,7 +32479,7 @@ Redirect.contextTypes = {
 
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32930,8 +32487,8 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(168);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -33226,7 +32783,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createBrowserHistory);
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33234,8 +32791,8 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(168);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -33547,14 +33104,14 @@ var createHashHistory = function createHashHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createHashHistory);
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(119);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -33715,18 +33272,18 @@ var createMemoryHistory = function createMemoryHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createMemoryHistory);
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(410);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33738,7 +33295,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(117);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -33909,18 +33466,18 @@ StaticRouter.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (StaticRouter);
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(412);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34014,7 +33571,7 @@ Switch.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Switch);
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34025,18 +33582,18 @@ Switch.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(414);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(415);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34044,7 +33601,7 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(415);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(416);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(167);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -34081,7 +33638,7 @@ var withRouter = function withRouter(Component) {
 /* harmony default export */ __webpack_exports__["a"] = (withRouter);
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -34159,798 +33716,14 @@ var withRouter = function withRouter(Component) {
 
 
 /***/ }),
-/* 416 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _CSSTransition = __webpack_require__(417);
-
-var _CSSTransition2 = _interopRequireDefault(_CSSTransition);
-
-var _TransitionGroup = __webpack_require__(421);
-
-var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
-
-var _Transition = __webpack_require__(169);
-
-var _Transition2 = _interopRequireDefault(_Transition);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = {
-  Transition: _Transition2.default,
-  TransitionGroup: _TransitionGroup2.default,
-  CSSTransition: _CSSTransition2.default
-};
-
-/***/ }),
-/* 417 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _propTypes = __webpack_require__(13);
-
-var PropTypes = _interopRequireWildcard(_propTypes);
-
-var _addClass = __webpack_require__(418);
-
-var _addClass2 = _interopRequireDefault(_addClass);
-
-var _removeClass = __webpack_require__(420);
-
-var _removeClass2 = _interopRequireDefault(_removeClass);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Transition = __webpack_require__(169);
-
-var _Transition2 = _interopRequireDefault(_Transition);
-
-var _PropTypes = __webpack_require__(170);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var addClass = function addClass(node, classes) {
-  return classes && classes.split(' ').forEach(function (c) {
-    return (0, _addClass2.default)(node, c);
-  });
-};
-var removeClass = function removeClass(node, classes) {
-  return classes && classes.split(' ').forEach(function (c) {
-    return (0, _removeClass2.default)(node, c);
-  });
-};
-
-var propTypes = _extends({}, _Transition2.default.propTypes, {
-
-  /**
-   * The animation classNames applied to the component as it enters or exits.
-   * A single name can be provided and it will be suffixed for each stage: e.g.
-   *
-   * `classNames="fade"` applies `fade-enter`, `fade-enter-active`,
-   * `fade-exit`, `fade-exit-active`, `fade-appear`, and `fade-appear-active`.
-   * Each individual classNames can also be specified independently like:
-   *
-   * ```js
-   * classNames={{
-   *  appear: 'my-appear',
-   *  appearActive: 'my-active-appear',
-   *  enter: 'my-enter',
-   *  enterActive: 'my-active-enter',
-   *  exit: 'my-exit',
-   *  exitActive: 'my-active-exit',
-   * }}
-   * ```
-   *
-   * @type {string | {
-   *  appear?: string,
-   *  appearActive?: string,
-   *  enter?: string,
-   *  enterActive?: string,
-   *  exit?: string,
-   *  exitActive?: string,
-   * }}
-   */
-  classNames: _PropTypes.classNamesShape,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
-   * applied.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEnter: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter-active' or
-   * 'appear-active' class is applied.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntering: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'enter' or
-   * 'appear' classes are **removed** from the DOM node.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */
-  onEntered: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit' class is
-   * applied.
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExit: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
-   *
-   * @type Function(node: HtmlElement
-   */
-  onExiting: PropTypes.func,
-
-  /**
-   * A `<Transition>` callback fired immediately after the 'exit' classes
-   * are **removed** from the DOM node.
-   *
-   * @type Function(node: HtmlElement)
-   */
-  onExited: PropTypes.func
-});
-
-/**
- * A `Transition` component using CSS transitions and animations.
- * It's inspired by the excellent [ng-animate](http://www.nganimate.org/) library.
- *
- * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
- * and `exit` stages of the transition. The first class is applied and then a
- * second "active" class in order to activate the css animation.
- *
- * When the `in` prop is toggled to `true` the Component will get
- * the `example-enter` CSS class and the `example-enter-active` CSS class
- * added in the next tick. This is a convention based on the `classNames` prop.
- *
- * ```js
- * import CSSTransition from 'react-transition-group/CSSTransition';
- *
- * const Fade = ({ children, ...props }) => (
- *  <CSSTransition
- *    {...props}
- *    timeout={500}
- *    classNames="fade"
- *  >
- *   {children}
- *  </CSSTransition>
- * );
- *
- * class FadeInAndOut extends React.Component {
- *   constructor(...args) {
- *     super(...args);
- *     this.state= { show: false }
- *
- *     setInterval(() => {
- *       this.setState({ show: !this.state.show })
- *     }, 5000)
- *   }
- *   render() {
- *     return (
- *       <Fade in={this.state.show}>
- *         <div>Hello world</div>
- *       </Fade>
- *     )
- *   }
- * }
- * ```
- *
- * And the coorresponding CSS for the `<Fade>` component:
- *
- * ```css
- * .fade-enter {
- *   opacity: 0.01;
- * }
- *
- * .fade-enter.fade-enter-active {
- *   opacity: 1;
- *   transition: opacity 500ms ease-in;
- * }
- *
- * .fade-exit {
- *   opacity: 1;
- * }
- *
- * .fade-exit.fade-exit-active {
- *   opacity: 0.01;
- *   transition: opacity 300ms ease-in;
- * }
- * ```
- */
-
-var CSSTransition = function (_React$Component) {
-  _inherits(CSSTransition, _React$Component);
-
-  function CSSTransition() {
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, CSSTransition);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.onEnter = function (node, appearing) {
-      var _this$getClassNames = _this.getClassNames(appearing ? 'appear' : 'enter'),
-          className = _this$getClassNames.className;
-
-      _this.removeClasses(node, 'exit');
-      addClass(node, className);
-
-      if (_this.props.onEnter) {
-        _this.props.onEnter(node);
-      }
-    }, _this.onEntering = function (node, appearing) {
-      var _this$getClassNames2 = _this.getClassNames(appearing ? 'appear' : 'enter'),
-          activeClassName = _this$getClassNames2.activeClassName;
-
-      _this.reflowAndAddClass(node, activeClassName);
-
-      if (_this.props.onEntering) {
-        _this.props.onEntering(node);
-      }
-    }, _this.onEntered = function (node, appearing) {
-      _this.removeClasses(node, appearing ? 'appear' : 'enter');
-
-      if (_this.props.onEntered) {
-        _this.props.onEntered(node);
-      }
-    }, _this.onExit = function (node) {
-      var _this$getClassNames3 = _this.getClassNames('exit'),
-          className = _this$getClassNames3.className;
-
-      _this.removeClasses(node, 'appear');
-      _this.removeClasses(node, 'enter');
-      addClass(node, className);
-
-      if (_this.props.onExit) {
-        _this.props.onExit(node);
-      }
-    }, _this.onExiting = function (node) {
-      var _this$getClassNames4 = _this.getClassNames('exit'),
-          activeClassName = _this$getClassNames4.activeClassName;
-
-      _this.reflowAndAddClass(node, activeClassName);
-
-      if (_this.props.onExiting) {
-        _this.props.onExiting(node);
-      }
-    }, _this.onExited = function (node) {
-      _this.removeClasses(node, 'exit');
-
-      if (_this.props.onExited) {
-        _this.props.onExited(node);
-      }
-    }, _this.getClassNames = function (type) {
-      var classNames = _this.props.classNames;
-
-
-      var className = typeof classNames !== 'string' ? classNames[type] : classNames + '-' + type;
-
-      var activeClassName = typeof classNames !== 'string' ? classNames[type + 'Active'] : className + '-active';
-
-      return { className: className, activeClassName: activeClassName };
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  CSSTransition.prototype.removeClasses = function removeClasses(node, type) {
-    var _getClassNames = this.getClassNames(type),
-        className = _getClassNames.className,
-        activeClassName = _getClassNames.activeClassName;
-
-    className && removeClass(node, className);
-    activeClassName && removeClass(node, activeClassName);
-  };
-
-  CSSTransition.prototype.reflowAndAddClass = function reflowAndAddClass(node, className) {
-    // This is for to force a repaint,
-    // which is necessary in order to transition styles when adding a class name.
-    /* eslint-disable no-unused-expressions */
-    node.scrollTop;
-    /* eslint-enable no-unused-expressions */
-    addClass(node, className);
-  };
-
-  CSSTransition.prototype.render = function render() {
-    var props = _extends({}, this.props);
-
-    delete props.classNames;
-
-    return _react2.default.createElement(_Transition2.default, _extends({}, props, {
-      onEnter: this.onEnter,
-      onEntered: this.onEntered,
-      onEntering: this.onEntering,
-      onExit: this.onExit,
-      onExiting: this.onExiting,
-      onExited: this.onExited
-    }));
-  };
-
-  return CSSTransition;
-}(_react2.default.Component);
-
-CSSTransition.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
-
-exports.default = CSSTransition;
-module.exports = exports['default'];
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
-
-/***/ }),
-/* 418 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = addClass;
-
-var _hasClass = __webpack_require__(419);
-
-var _hasClass2 = _interopRequireDefault(_hasClass);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function addClass(element, className) {
-  if (element.classList) element.classList.add(className);else if (!(0, _hasClass2.default)(element, className)) if (typeof element.className === 'string') element.className = element.className + ' ' + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + ' ' + className);
-}
-module.exports = exports['default'];
-
-/***/ }),
-/* 419 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = hasClass;
-function hasClass(element, className) {
-  if (element.classList) return !!className && element.classList.contains(className);else return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
-}
-module.exports = exports["default"];
-
-/***/ }),
-/* 420 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function replaceClassName(origClass, classToRemove) {
-  return origClass.replace(new RegExp('(^|\\s)' + classToRemove + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
-}
-
-module.exports = function removeClass(element, className) {
-  if (element.classList) element.classList.remove(className);else if (typeof element.className === 'string') element.className = replaceClassName(element.className, className);else element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
-};
-
-/***/ }),
-/* 421 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _propTypes = __webpack_require__(13);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ChildMapping = __webpack_require__(422);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var values = Object.values || function (obj) {
-  return Object.keys(obj).map(function (k) {
-    return obj[k];
-  });
-};
-
-var propTypes = {
-  /**
-   * `<TransitionGroup>` renders a `<div>` by default. You can change this
-   * behavior by providing a `component` prop.
-   */
-  component: _propTypes2.default.any,
-  /**
-   * A set of `<Transition>` components, that are toggled `in` and out as they
-   * leave. the `<TransitionGroup>` will inject specific transition props, so
-   * remember to spread them through if you are wrapping the `<Transition>` as
-   * with our `<Fade>` example.
-   */
-  children: _propTypes2.default.node,
-
-  /**
-   * A convenience prop that enables or disabled appear animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */
-  appear: _propTypes2.default.bool,
-  /**
-   * A convenience prop that enables or disabled enter animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */
-  enter: _propTypes2.default.bool,
-  /**
-    * A convenience prop that enables or disabled exit animations
-    * for all children. Note that specifying this will override any defaults set
-    * on individual children Transitions.
-    */
-  exit: _propTypes2.default.bool,
-
-  /**
-   * You may need to apply reactive updates to a child as it is exiting.
-   * This is generally done by using `cloneElement` however in the case of an exiting
-   * child the element has already been removed and not accessible to the consumer.
-   *
-   * If you do need to update a child as it leaves you can provide a `childFactory`
-   * to wrap every child, even the ones that are leaving.
-   *
-   * @type Function(child: ReactElement) -> ReactElement
-   */
-  childFactory: _propTypes2.default.func
-};
-
-var defaultProps = {
-  component: 'div',
-  childFactory: function childFactory(child) {
-    return child;
-  }
-};
-
-/**
- * The `<TransitionGroup>` component manages a set of `<Transition>` components
- * in a list. Like with the `<Transition>` component, `<TransitionGroup>`, is a
- * state machine for managing the mounting and unmounting of components over
- * time.
- *
- * Consider the example below using the `Fade` CSS transition from before.
- * As items are removed or added to the TodoList the `in` prop is toggled
- * automatically by the `<TransitionGroup>`. You can use _any_ `<Transition>`
- * component in a `<TransitionGroup>`, not just css.
- *
- * ```jsx
- * import TransitionGroup from 'react-transition-group/TransitionGroup';
- *
- * class TodoList extends React.Component {
- *   constructor(props) {
- *     super(props)
- *     this.state = {items: ['hello', 'world', 'click', 'me']}
- *   }
- *   handleAdd() {
- *     const newItems = this.state.items.concat([
- *       prompt('Enter some text')
- *     ]);
- *     this.setState({ items: newItems });
- *   }
- *   handleRemove(i) {
- *     let newItems = this.state.items.slice();
- *     newItems.splice(i, 1);
- *     this.setState({items: newItems});
- *   }
- *   render() {
- *     return (
- *       <div>
- *         <button onClick={() => this.handleAdd()}>Add Item</button>
- *         <TransitionGroup>
- *           {this.state.items.map((item, i) => (
- *             <FadeTransition key={item}>
- *               <div>
- *                 {item}{' '}
- *                 <button onClick={() => this.handleRemove(i)}>
- *                   remove
- *                 </button>
- *               </div>
- *             </FadeTransition>
- *           ))}
- *         </TransitionGroup>
- *       </div>
- *     );
- *   }
- * }
- * ```
- *
- * Note that `<TransitionGroup>`  does not define any animation behavior!
- * Exactly _how_ a list item animates is up to the individual `<Transition>`
- * components. This means you can mix and match animations across different
- * list items.
- */
-
-var TransitionGroup = function (_React$Component) {
-  _inherits(TransitionGroup, _React$Component);
-
-  function TransitionGroup(props, context) {
-    _classCallCheck(this, TransitionGroup);
-
-    // Initial children should all be entering, dependent on appear
-    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
-
-    _this.handleExited = function (key, node, originalHandler) {
-      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
-
-      if (key in currentChildMapping) return;
-
-      if (originalHandler) originalHandler(node);
-
-      _this.setState(function (state) {
-        var children = _extends({}, state.children);
-
-        delete children[key];
-        return { children: children };
-      });
-    };
-
-    _this.state = {
-      children: (0, _ChildMapping.getChildMapping)(props.children, function (child) {
-        var onExited = function onExited(node) {
-          _this.handleExited(child.key, node, child.props.onExited);
-        };
-
-        return (0, _react.cloneElement)(child, {
-          onExited: onExited,
-          in: true,
-          appear: _this.getProp(child, 'appear'),
-          enter: _this.getProp(child, 'enter'),
-          exit: _this.getProp(child, 'exit')
-        });
-      })
-    };
-    return _this;
-  }
-
-  TransitionGroup.prototype.getChildContext = function getChildContext() {
-    return {
-      transitionGroup: { isMounting: !this.appeared }
-    };
-  };
-  // use child config unless explictly set by the Group
-
-
-  TransitionGroup.prototype.getProp = function getProp(child, prop) {
-    var props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.props;
-
-    return props[prop] != null ? props[prop] : child.props[prop];
-  };
-
-  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
-    this.appeared = true;
-  };
-
-  TransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-    var _this2 = this;
-
-    var prevChildMapping = this.state.children;
-    var nextChildMapping = (0, _ChildMapping.getChildMapping)(nextProps.children);
-
-    var children = (0, _ChildMapping.mergeChildMappings)(prevChildMapping, nextChildMapping);
-
-    Object.keys(children).forEach(function (key) {
-      var child = children[key];
-
-      if (!(0, _react.isValidElement)(child)) return;
-
-      var onExited = function onExited(node) {
-        _this2.handleExited(child.key, node, child.props.onExited);
-      };
-
-      var hasPrev = key in prevChildMapping;
-      var hasNext = key in nextChildMapping;
-
-      var prevChild = prevChildMapping[key];
-      var isLeaving = (0, _react.isValidElement)(prevChild) && !prevChild.props.in;
-
-      // item is new (entering)
-      if (hasNext && (!hasPrev || isLeaving)) {
-        // console.log('entering', key)
-        children[key] = (0, _react.cloneElement)(child, {
-          onExited: onExited,
-          in: true,
-          exit: _this2.getProp(child, 'exit', nextProps),
-          enter: _this2.getProp(child, 'enter', nextProps)
-        });
-      }
-      // item is old (exiting)
-      else if (!hasNext && hasPrev && !isLeaving) {
-          // console.log('leaving', key)
-          children[key] = (0, _react.cloneElement)(child, { in: false });
-        }
-        // item hasn't changed transition states
-        // copy over the last transition props;
-        else if (hasNext && hasPrev && (0, _react.isValidElement)(prevChild)) {
-            // console.log('unchanged', key)
-            children[key] = (0, _react.cloneElement)(child, {
-              onExited: onExited,
-              in: prevChild.props.in,
-              exit: _this2.getProp(child, 'exit', nextProps),
-              enter: _this2.getProp(child, 'enter', nextProps)
-            });
-          }
-    });
-
-    this.setState({ children: children });
-  };
-
-  TransitionGroup.prototype.render = function render() {
-    var _props = this.props,
-        Component = _props.component,
-        childFactory = _props.childFactory,
-        props = _objectWithoutProperties(_props, ['component', 'childFactory']);
-
-    var children = this.state.children;
-
-
-    delete props.appear;
-    delete props.enter;
-    delete props.exit;
-
-    return _react2.default.createElement(
-      Component,
-      props,
-      values(children).map(childFactory)
-    );
-  };
-
-  return TransitionGroup;
-}(_react2.default.Component);
-
-TransitionGroup.childContextTypes = {
-  transitionGroup: _propTypes2.default.object.isRequired
-};
-
-
-TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
-TransitionGroup.defaultProps = defaultProps;
-
-exports.default = TransitionGroup;
-module.exports = exports['default'];
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
-
-/***/ }),
-/* 422 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.getChildMapping = getChildMapping;
-exports.mergeChildMappings = mergeChildMappings;
-
-var _react = __webpack_require__(1);
-
-/**
- * Given `this.props.children`, return an object mapping key to child.
- *
- * @param {*} children `this.props.children`
- * @return {object} Mapping of key to child
- */
-function getChildMapping(children, mapFn) {
-  var mapper = function mapper(child) {
-    return mapFn && (0, _react.isValidElement)(child) ? mapFn(child) : child;
-  };
-
-  var result = Object.create(null);
-  if (children) _react.Children.map(children, function (c) {
-    return c;
-  }).forEach(function (child) {
-    // run the map function here instead so that the key is the computed one
-    result[child.key] = mapper(child);
-  });
-  return result;
-}
-
-/**
- * When you're adding or removing children some may be added or removed in the
- * same render pass. We want to show *both* since we want to simultaneously
- * animate elements in and out. This function takes a previous set of keys
- * and a new set of keys and merges them with its best guess of the correct
- * ordering. In the future we may expose some of the utilities in
- * ReactMultiChild to make this easy, but for now React itself does not
- * directly have this concept of the union of prevChildren and nextChildren
- * so we implement it here.
- *
- * @param {object} prev prev children as returned from
- * `ReactTransitionChildMapping.getChildMapping()`.
- * @param {object} next next children as returned from
- * `ReactTransitionChildMapping.getChildMapping()`.
- * @return {object} a key set that contains all keys in `prev` and all keys
- * in `next` in a reasonable order.
- */
-function mergeChildMappings(prev, next) {
-  prev = prev || {};
-  next = next || {};
-
-  function getValueForKey(key) {
-    return key in next ? next[key] : prev[key];
-  }
-
-  // For each key of `next`, the list of keys to insert before that key in
-  // the combined list
-  var nextKeysPending = Object.create(null);
-
-  var pendingKeys = [];
-  for (var prevKey in prev) {
-    if (prevKey in next) {
-      if (pendingKeys.length) {
-        nextKeysPending[prevKey] = pendingKeys;
-        pendingKeys = [];
-      }
-    } else {
-      pendingKeys.push(prevKey);
-    }
-  }
-
-  var i = void 0;
-  var childMapping = {};
-  for (var nextKey in next) {
-    if (nextKeysPending[nextKey]) {
-      for (i = 0; i < nextKeysPending[nextKey].length; i++) {
-        var pendingNextKey = nextKeysPending[nextKey][i];
-        childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
-      }
-    }
-    childMapping[nextKey] = getValueForKey(nextKey);
-  }
-
-  // Finally, add the keys which didn't appear before any key in `next`
-  for (i = 0; i < pendingKeys.length; i++) {
-    childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
-  }
-
-  return childMapping;
-}
-
-/***/ }),
-/* 423 */
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34966,15 +33739,19 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
-var _AnimatedText = __webpack_require__(52);
+var _AnimatedText = __webpack_require__(53);
 
 var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
 
-var _SvgButton = __webpack_require__(83);
+var _SvgButton = __webpack_require__(84);
 
 var _SvgButton2 = _interopRequireDefault(_SvgButton);
+
+var _Video = __webpack_require__(58);
+
+var _Video2 = _interopRequireDefault(_Video);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35003,6 +33780,7 @@ var HomePage = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'homePage' },
+				_react2.default.createElement(_Video2.default, { src: 'src/videos/home_page.mp4' }),
 				_react2.default.createElement(
 					'div',
 					{ className: 'wrapperContentPage' },
@@ -35056,7 +33834,56 @@ var HomePage = function (_Component) {
 exports.default = HomePage;
 
 /***/ }),
-/* 424 */
+/* 425 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var anime = __webpack_require__(426);
+
+var animationLetters = {
+	animated: function animated(key) {
+
+		setTimeout(function () {
+			anime.timeline({ loop: false }).add({
+				targets: key + ' .letter',
+				opacity: [0, 1],
+				easing: "easeInOutQuad",
+				duration: 650,
+				delay: function delay(el, i) {
+					return 75 * (i + 1);
+				}
+			}).add({
+				targets: key
+			});
+		}, 0);
+	},
+	wrapLetters: function wrapLetters(list) {
+		list = list || [];
+
+		var result = list.map(function (item, index) {
+			return _react2.default.createElement(
+				'span',
+				{ key: index, className: 'letter' },
+				item
+			);
+		});
+
+		return result;
+	}
+};
+
+module.exports = animationLetters;
+
+/***/ }),
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35417,7 +34244,7 @@ var $jscomp$this = undefined;
 });
 
 /***/ }),
-/* 425 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35433,13 +34260,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
-var _AnimatedText = __webpack_require__(52);
+var _AnimatedText = __webpack_require__(53);
 
 var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
 
-var _SvgButton = __webpack_require__(83);
+var _SvgButton = __webpack_require__(84);
 
 var _SvgButton2 = _interopRequireDefault(_SvgButton);
 
@@ -35452,7 +34279,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var appData = __webpack_require__(40);
-var actionsApp = __webpack_require__(53);
+var actionsApp = __webpack_require__(41);
 
 var ProductPage = function (_Component) {
 	_inherits(ProductPage, _Component);
@@ -35607,7 +34434,7 @@ var ProductPage = function (_Component) {
 exports.default = ProductPage;
 
 /***/ }),
-/* 426 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35623,13 +34450,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
-var _AnimatedText = __webpack_require__(52);
+var _AnimatedText = __webpack_require__(53);
 
 var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
 
-var _SvgButton = __webpack_require__(83);
+var _SvgButton = __webpack_require__(84);
 
 var _SvgButton2 = _interopRequireDefault(_SvgButton);
 
@@ -35642,7 +34469,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var appData = __webpack_require__(40);
-var actionsApp = __webpack_require__(53);
+var actionsApp = __webpack_require__(41);
 
 var ItemsPage = function (_Component) {
 	_inherits(ItemsPage, _Component);
@@ -35766,7 +34593,7 @@ var ItemsPage = function (_Component) {
 exports.default = ItemsPage;
 
 /***/ }),
-/* 427 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35782,13 +34609,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
-var _AnimatedText = __webpack_require__(52);
+var _AnimatedText = __webpack_require__(53);
 
 var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
 
-var _SvgButton = __webpack_require__(83);
+var _SvgButton = __webpack_require__(84);
 
 var _SvgButton2 = _interopRequireDefault(_SvgButton);
 
@@ -35801,7 +34628,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var appData = __webpack_require__(40);
-var actionsApp = __webpack_require__(53);
+var actionsApp = __webpack_require__(41);
 
 var JourneyPage = function (_Component) {
 	_inherits(JourneyPage, _Component);
@@ -35894,7 +34721,7 @@ var JourneyPage = function (_Component) {
 exports.default = JourneyPage;
 
 /***/ }),
-/* 428 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35910,13 +34737,13 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(22);
+var _reactRouterDom = __webpack_require__(23);
 
-var _AnimatedText = __webpack_require__(52);
+var _AnimatedText = __webpack_require__(53);
 
 var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
 
-var _Slider = __webpack_require__(429);
+var _Slider = __webpack_require__(431);
 
 var _Slider2 = _interopRequireDefault(_Slider);
 
@@ -35929,7 +34756,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var appData = __webpack_require__(40);
-var actionsApp = __webpack_require__(53);
+var actionsApp = __webpack_require__(41);
 
 var GalleryPage = function (_Component) {
 	_inherits(GalleryPage, _Component);
@@ -36010,7 +34837,7 @@ var GalleryPage = function (_Component) {
 exports.default = GalleryPage;
 
 /***/ }),
-/* 429 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36026,11 +34853,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ButtonClose = __webpack_require__(447);
+var _ButtonClose = __webpack_require__(171);
 
 var _ButtonClose2 = _interopRequireDefault(_ButtonClose);
 
-var _swiper = __webpack_require__(445);
+var _swiper = __webpack_require__(432);
 
 var _swiper2 = _interopRequireDefault(_swiper);
 
@@ -36042,7 +34869,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var actionsApp = __webpack_require__(53);
+var actionsApp = __webpack_require__(41);
 var TIME_SET_FULLSCREEN = 350; //ms
 
 
@@ -36101,6 +34928,7 @@ var Slider = function (_Component) {
 
 			if (targetName === 'IMG') {
 				actionsApp.sliderFullScreen({ fullScreen: true });
+				this.swiper.params.slidesPerView = 1;
 				this.refs.container.classList.add('fullScreen');
 				this.props.handler(true);
 				this._resize();
@@ -36113,6 +34941,7 @@ var Slider = function (_Component) {
 			this.refs.container.classList.remove('fullScreen');
 			this.props.handler(false);
 			this._resize();
+			this._windowResize();
 		}
 	}, {
 		key: '_windowResize',
@@ -36194,3112 +35023,13 @@ function _initSlideChange() {
 exports.default = Slider;
 
 /***/ }),
-/* 430 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ButtonBack = __webpack_require__(65);
-
-var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ImprintPage = function (_Component) {
-    _inherits(ImprintPage, _Component);
-
-    function ImprintPage(props) {
-        _classCallCheck(this, ImprintPage);
-
-        var _this = _possibleConstructorReturn(this, (ImprintPage.__proto__ || Object.getPrototypeOf(ImprintPage)).call(this, props));
-
-        _this.history = props.history;
-        _this._clickedBack = _this._clickedBack.bind(_this);
-        return _this;
-    }
-
-    _createClass(ImprintPage, [{
-        key: '_clickedBack',
-        value: function _clickedBack() {
-            this.history.goBack();
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-
-            return _react2.default.createElement(
-                'section',
-                { className: 'imprintPage' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'containerContent' },
-                    _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
-                    _react2.default.createElement(
-                        'h3',
-                        { className: 'header' },
-                        'Imprint'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        { className: 'content' },
-                        'The Good Will Out ',
-                        _react2.default.createElement('br', null),
-                        'Burmann & Imiela GmbH  ',
-                        _react2.default.createElement('br', null),
-                        'District court K\xF6ln HRB83370  ',
-                        _react2.default.createElement('br', null),
-                        'Registered Office: K\xF6ln  ',
-                        _react2.default.createElement('br', null),
-                        'Managing Directors: Alexander Imiela, Oliver Burmann  ',
-                        _react2.default.createElement('br', null),
-                        'H\xE4ndelstr. 41  ',
-                        _react2.default.createElement('br', null),
-                        '50674 K\xF6ln  ',
-                        _react2.default.createElement('br', null),
-                        'Germany  ',
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
-                        'Phone: 0221 993 907 22 / 10:00-16:30 Uhr (10 am - 4:30 pm)',
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                            'span',
-                            { style: { display: 'inline-flex' } },
-                            'Email:',
-                            _react2.default.createElement(
-                                'a',
-                                { className: 'link', href: 'mailto:info@thegoodwillout.com' },
-                                ' info@thegoodwillout.com'
-                            )
-                        ),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
-                        'VAT number: DE 298 464 986',
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
-                        'Production, Design and Development:',
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                            'a',
-                            { className: 'link', href: 'http://www.dayy.de', target: '_blank' },
-                            'www.dayy.de'
-                        ),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                            'a',
-                            { className: 'link', href: 'mailto:hi@dayy.de' },
-                            'hi@dayy.de'
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return ImprintPage;
-}(_react.Component);
-
-exports.default = ImprintPage;
-
-/***/ }),
-/* 431 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ButtonBack = __webpack_require__(65);
-
-var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
-
-var _Video = __webpack_require__(84);
-
-var _Video2 = _interopRequireDefault(_Video);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CreditsPage = function (_Component) {
-    _inherits(CreditsPage, _Component);
-
-    function CreditsPage(props) {
-        _classCallCheck(this, CreditsPage);
-
-        var _this = _possibleConstructorReturn(this, (CreditsPage.__proto__ || Object.getPrototypeOf(CreditsPage)).call(this, props));
-
-        _this.history = props.history;
-        _this._clickedBack = _this._clickedBack.bind(_this);
-        return _this;
-    }
-
-    _createClass(CreditsPage, [{
-        key: '_clickedBack',
-        value: function _clickedBack() {
-            this.history.goBack();
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-
-            return _react2.default.createElement(
-                'section',
-                { className: 'creditsPage' },
-                _react2.default.createElement(_Video2.default, { src: 'src/videos/credits_page.mp4' }),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'contentCreditsPage' },
-                    _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
-                    _react2.default.createElement(
-                        'h1',
-                        { className: 'header animated zoomIn' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'animated fadeInDown' },
-                            'Ankokou'
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'animated fadeInDown' },
-                            'Toshi Jutsu'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'ul',
-                        { className: 'listLinks animated zoomIn' },
-                        _react2.default.createElement(
-                            'li',
-                            { className: 'itemListLinks' },
-                            _react2.default.createElement(
-                                'a',
-                                { href: 'http://www.dayy.de/', className: 'link', target: '_blank' },
-                                _react2.default.createElement('img', { src: 'src/images/dayy-logo.png', alt: '' })
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            { className: 'itemListLinks' },
-                            _react2.default.createElement(
-                                'a',
-                                { href: 'http://www.adidas.de/', className: 'link', target: '_blank' },
-                                _react2.default.createElement('img', { src: 'src/images/adidas-logo.png', alt: '' })
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            { className: 'itemListLinks' },
-                            _react2.default.createElement(
-                                'a',
-                                { href: 'https://www.thegoodwillout.de/', className: 'link', target: '_blank' },
-                                _react2.default.createElement('img', { src: 'src/images/tgwo-logo.png', alt: '' })
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'containerDescription' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Client'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'The Good Will Out, adidas'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Agency'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'dayy'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Project Owner TGWO'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Alex Imiela'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Creative Direction'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Oliver Ecker, Robin Gurski'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Producer'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Konstantinos Sampanis'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Executive Producer'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Oliver Ecker, Robin Gurski'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Art Director'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Ren\xE9 Martens'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Project Manager'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Astrid Spiering'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Actor'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Masatoshi Ueno'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Director'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Konstantinos Sampanis'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Assistant Director'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Sina Burmester'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Cameraman/DoP'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Leif Thomas'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Drone Camera Operator'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Sascha Nee\xDFe'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                '1st Assistant Cameraman'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Javier Palicio'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                '2nd Assistant Cameraman'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Christina Chalkidou'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Editor'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Konstantinos Sampanis'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Assistant Editor'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Sina Burmester'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Gaffer'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Andy Stein'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Make-up Artist'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Julia Alexandra Glaser'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Special Effects Supervisor'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Eike von Schlichting'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Sound Editor'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Simon H\xFCging'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Location Scout'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                '\xC1rni T\xF3masson'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Developer'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Christian Ehrhart, Christian Potthast'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Music & Sounddesign Web'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Jonas W\xFCllner'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Drums Web'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Jakob W\xFCllner'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Mastering Web'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Pl\xE4tlin Mastering'
-                            )
-                        ),
-                        _react2.default.createElement('div', { className: 'separator' }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Production Company'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'dayy, Moodboard'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Costumes'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'FTA Film- und Theaterausstattung GmbH'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Special Effects'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'CFX Spezialeffekte GbR.'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Camera Equipment'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'well done'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Light Equipment'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Amp-light Film&TV Service GmbH'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Light installation'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Robin Gurski, Ioannis Mihailidis, Rene Martens, Jens Heinen'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'left' },
-                                'Sound (Post Production)'
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                { className: 'right' },
-                                'Defacto Sound'
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return CreditsPage;
-}(_react.Component);
-
-exports.default = CreditsPage;
-
-{/*<video
-       className="cover-video"
-       preload="auto" loop="" muted="" playsinline=""
-       style={{width: '100%', height: '100%'}} >
-       <source src="https://1626536920.rsc.cdn77.org/assets/videos/05_credits.mp4" type="video/mp4" />
-    </video>*/}
-
-/***/ }),
 /* 432 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(22);
-
-var _AnimatedText = __webpack_require__(52);
-
-var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
-
-var _ButtonBack = __webpack_require__(65);
-
-var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
-
-var _Video = __webpack_require__(84);
-
-var _Video2 = _interopRequireDefault(_Video);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var HowToBuyPage = function (_Component) {
-	_inherits(HowToBuyPage, _Component);
-
-	function HowToBuyPage(props) {
-		_classCallCheck(this, HowToBuyPage);
-
-		var _this = _possibleConstructorReturn(this, (HowToBuyPage.__proto__ || Object.getPrototypeOf(HowToBuyPage)).call(this, props));
-
-		_this.history = props.history;
-		_this._clickedBack = _this._clickedBack.bind(_this);
-		return _this;
-	}
-
-	_createClass(HowToBuyPage, [{
-		key: '_clickedBack',
-		value: function _clickedBack() {
-			this.history.goBack();
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-
-			return _react2.default.createElement(
-				'div',
-				{ className: 'HowToBuyPage' },
-				_react2.default.createElement(_Video2.default, { src: 'src/videos/flag_white.mp4' }),
-				_react2.default.createElement(
-					'div',
-					{ className: 'wrapperContentPage' },
-					_react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'mainHeader' },
-						_react2.default.createElement(_AnimatedText2.default, { contents: ['How to buy'] })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'row' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'cell animated zoomIn' },
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent' },
-								'TGWO release'
-							),
-							_react2.default.createElement('div', { className: 'separator' }),
-							_react2.default.createElement(
-								'p',
-								{ className: 'largeContent' },
-								'16 \u2014 09 \u2014 17'
-							),
-							_react2.default.createElement('div', { className: 'separator' }),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallerContent' },
-								'In a contemporary homage to the covert agents of feudal Japan, the adidas Consortium x The Good Will Out MO CS1 Ankoku Toshi Jut, arrives in fulPon stealth mode.'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent' },
-								'\u2014 The Art of Seeing through Darkness '
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'cell animated zoomIn' },
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent' },
-								'worldwide release'
-							),
-							_react2.default.createElement('div', { className: 'separator' }),
-							_react2.default.createElement(
-								'p',
-								{ className: 'largeContent' },
-								'23 \u2014 09 \u2014 17'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'cell animated zoomIn' },
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent' },
-								'Article ID:'
-							),
-							_react2.default.createElement('div', { className: 'separator' }),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent black' },
-								'BB5994'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent black' },
-								'Black'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent black' },
-								'US 4.5-13.0'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent black' },
-								'unisex'
-							),
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent black' },
-								'Retail price: 220,-\u20AC'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'cell mobile animated zoomIn' },
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent' },
-								'TGWO release'
-							),
-							_react2.default.createElement('div', { className: 'separator' }),
-							_react2.default.createElement(
-								'p',
-								{ className: 'largeContent' },
-								'16 \u2014 09 \u2014 17'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'cell mobile animated zoomIn' },
-							_react2.default.createElement(
-								'p',
-								{ className: 'smallContent' },
-								'worldwide release'
-							),
-							_react2.default.createElement('div', { className: 'separator' }),
-							_react2.default.createElement(
-								'p',
-								{ className: 'largeContent' },
-								'23 \u2014 09 \u2014 17'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'cell animated zoomIn' },
-							_react2.default.createElement(
-								'p',
-								{ className: 'largeContent' },
-								'The adidas Consortium x The Good Will Out NMD CS1 ,Ankoku Toshi Jutsu\' is available at selected adidas consortium stores worldwide.'
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'containerButtonViewStoreList' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'howtobuy/detail', className: 'buttonViewStoreList' },
-									'View store list'
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return HowToBuyPage;
-}(_react.Component);
-
-exports.default = HowToBuyPage;
-
-/***/ }),
-/* 433 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _AnimatedText = __webpack_require__(52);
-
-var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
-
-var _ButtonBack = __webpack_require__(65);
-
-var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
-
-var _Video = __webpack_require__(84);
-
-var _Video2 = _interopRequireDefault(_Video);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var HowtobuyDetail = function (_Component) {
-    _inherits(HowtobuyDetail, _Component);
-
-    function HowtobuyDetail(props) {
-        _classCallCheck(this, HowtobuyDetail);
-
-        var _this = _possibleConstructorReturn(this, (HowtobuyDetail.__proto__ || Object.getPrototypeOf(HowtobuyDetail)).call(this, props));
-
-        _this.history = props.history;
-        _this._clickedBack = _this._clickedBack.bind(_this);
-        return _this;
-    }
-
-    _createClass(HowtobuyDetail, [{
-        key: '_clickedBack',
-        value: function _clickedBack() {
-            this.history.goBack();
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'howtobuyDetailPage' },
-                _react2.default.createElement(_Video2.default, { src: 'src/videos/flag_white.mp4' }),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'wrapperContent' },
-                    _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'mainHeader' },
-                        _react2.default.createElement(_AnimatedText2.default, { contents: ['adidas'] }),
-                        _react2.default.createElement(_AnimatedText2.default, { contents: ['consortium stores'] })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'containerLists' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'wrapperContainerLists' },
-                            _react2.default.createElement(
-                                'h3',
-                                { className: 'headerMiddle' },
-                                'North America'
-                            ),
-                            _react2.default.createElement(
-                                'ul',
-                                { className: 'listCountries' },
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Haven ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'CAN'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Livestock ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'CAN'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'NRML ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'CAN'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'OTH ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'CAN'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Addict ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'BAIT / Diamond Bar ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Barneys NYC (Madison Ave + ecom) ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Bodega ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Concepts ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Creme ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Dover Street Market NY ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Juice LA ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Kith NYC ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Mr. Porter ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Nice Kicks ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Packer Shoes, Inc. ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Proper ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'RSVP Gallery ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Shoe Gallery ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Sneaker Politics ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Sneakersnstuff  USA',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Social Status ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'St. Alfred ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Ubiq / Mason ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Undefeated ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Wish Atlanta LLC ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Xhibition ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'USA'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Commonwealth US ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Washington'
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'wrapperContainerLists' },
-                            _react2.default.createElement(
-                                'h3',
-                                { className: 'headerMiddle' },
-                                'Europe'
-                            ),
-                            _react2.default.createElement(
-                                'ul',
-                                { className: 'listCountries' },
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Avenue ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Belgium'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Hunting & Collecting ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Belgium'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Footshop Czech ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Republic'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Naked ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Denmark'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Norse Project ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Denmark'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Wood Wood  Denmark',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Denmark'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Beamhill ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Finland'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Acte2 ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'France'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Starcow ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'France'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Summer ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'France'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'No. 74 ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Germany'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Overkill ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Germany'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Solebox ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Germany'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'The Good Will Out ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Germany'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Uebervart ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Germany'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Wood Wood Berlin ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Germany'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Device1 ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Greece'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'PHAT SOLES ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Greece'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Slam Jam ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Italy'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Sneakers 76 ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Italy'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Suede ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Italy'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Patta ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Netherlands'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'YME ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Norway'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'limitEditions ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Spain'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Sivas Des Calzo ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Spain'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Sneakers n Stuff ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Sweden'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Tres Bien Shop ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Sweden'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Titolo ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Switzerland'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Chmielna 20 Lab Store ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Warsaw'
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'wrapperContainerLists' },
-                            _react2.default.createElement(
-                                'h3',
-                                { className: 'headerMiddle' },
-                                'Asia'
-                            ),
-                            _react2.default.createElement(
-                                'ul',
-                                { className: 'listCountries' },
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Juice ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'China'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'CONCEPTS DUBAI ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Dubai'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'THE GOOD LIFE ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Dubai'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Level Shoedistrict ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Emirates'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'THE GOOD LIFE ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Lebanon'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'D-Mop / J-01 Hong ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Kong'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'EXI.T Hong ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Kong'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Dice & Dice ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'JP'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'DSM Ginza ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'JP'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Mita Sneakers ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'JP'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Styles / VA ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'JP'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Undefeated  JP',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'JP'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'United Arrows & Sons ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'JP'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'CDG Seoul ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Korea'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Kasina Korea Commonwealth ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Philippines'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Brandshop ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Russia'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'KM20 ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Russia'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'DSM  Singapore',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Singapore'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'LE Vault/ The Chamber ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Singapore'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Invincible ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Taiwan'
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'itemListCountries' },
-                                    'Juice ',
-                                    _react2.default.createElement(
-                                        'span',
-                                        { className: 'grey' },
-                                        'Taiwan'
-                                    )
-                                )
-                            ),
-                            '  ',
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement(
-                                    'h3',
-                                    { className: 'headerMiddle' },
-                                    'South America'
-                                ),
-                                _react2.default.createElement(
-                                    'ul',
-                                    { className: 'listCountries' },
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'itemListCountries' },
-                                        'Cartel ',
-                                        _react2.default.createElement(
-                                            'span',
-                                            { className: 'grey' },
-                                            'Brazil'
-                                        )
-                                    )
-                                )
-                            ),
-                            ' ',
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement(
-                                    'h3',
-                                    { className: 'headerMiddle' },
-                                    'Africa'
-                                ),
-                                _react2.default.createElement(
-                                    'ul',
-                                    { className: 'listCountries' },
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'itemListCountries' },
-                                        'Shelflife South-',
-                                        _react2.default.createElement(
-                                            'span',
-                                            { className: 'grey' },
-                                            'Africa'
-                                        )
-                                    )
-                                )
-                            ),
-                            '  ',
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                _react2.default.createElement(
-                                    'h3',
-                                    { className: 'headerMiddle' },
-                                    'Australia'
-                                ),
-                                _react2.default.createElement(
-                                    'ul',
-                                    { className: 'listCountries' },
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'itemListCountries' },
-                                        'Highs & Lows ',
-                                        _react2.default.createElement(
-                                            'span',
-                                            { className: 'grey' },
-                                            'Australia'
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'itemListCountries' },
-                                        'Sneakerboy ',
-                                        _react2.default.createElement(
-                                            'span',
-                                            { className: 'grey' },
-                                            'Australia'
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'itemListCountries' },
-                                        'Loaded New ',
-                                        _react2.default.createElement(
-                                            'span',
-                                            { className: 'grey' },
-                                            'Zealand'
-                                        )
-                                    )
-                                )
-                            ),
-                            ' '
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return HowtobuyDetail;
-}(_react.Component);
-
-exports.default = HowtobuyDetail;
-
-/***/ }),
-/* 434 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var NotFoundPage = function (_Component) {
-  _inherits(NotFoundPage, _Component);
-
-  function NotFoundPage() {
-    _classCallCheck(this, NotFoundPage);
-
-    return _possibleConstructorReturn(this, (NotFoundPage.__proto__ || Object.getPrototypeOf(NotFoundPage)).apply(this, arguments));
-  }
-
-  _createClass(NotFoundPage, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "containerNotFound" },
-        _react2.default.createElement(
-          "div",
-          { className: "content" },
-          "Oops Page Not Found"
-        )
-      );
-    }
-  }]);
-
-  return NotFoundPage;
-}(_react.Component);
-
-exports.default = NotFoundPage;
-
-/***/ }),
-/* 435 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(22);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var appData = __webpack_require__(40);
-var pubsub = new (__webpack_require__(23))();
-var Store = __webpack_require__(28);
-
-var BlockSocialLinks = function (_Component) {
-  _inherits(BlockSocialLinks, _Component);
-
-  function BlockSocialLinks(props) {
-    _classCallCheck(this, BlockSocialLinks);
-
-    var _this = _possibleConstructorReturn(this, (BlockSocialLinks.__proto__ || Object.getPrototypeOf(BlockSocialLinks)).call(this, props));
-
-    _this.state = {
-      showLinks: Store.show_social_link
-    };
-
-    _this.updateState = _this.updateState.bind(_this);
-    pubsub.subscribe('change', _this.updateState);
-    return _this;
-  }
-
-  _createClass(BlockSocialLinks, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      pubsub.unSubscribe('change', this.updateState);
-    }
-  }, {
-    key: 'updateState',
-    value: function updateState() {
-      this.setState({ showLinks: Store.show_social_link });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var className = this.state.showLinks ? 'blockSocialLinks' : 'hide';
-      return _react2.default.createElement(
-        'ul',
-        { className: className },
-        appData.socialLinks.map(function (item, index) {
-          return _react2.default.createElement(
-            'li',
-            { className: 'itemLink', key: index },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'link', to: item.link },
-              item.content
-            )
-          );
-        })
-      );
-    }
-  }]);
-
-  return BlockSocialLinks;
-}(_react.Component);
-
-exports.default = BlockSocialLinks;
-
-/***/ }),
-/* 436 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var pubsub = new (__webpack_require__(23))();
-var Store = __webpack_require__(28);
-
-var Indicator = function (_Component) {
-	_inherits(Indicator, _Component);
-
-	function Indicator(props) {
-		_classCallCheck(this, Indicator);
-
-		var _this = _possibleConstructorReturn(this, (Indicator.__proto__ || Object.getPrototypeOf(Indicator)).call(this, props));
-
-		_this.total_pages = Store.total_pages;
-		_this.total_pages = getArray(_this.total_pages);
-
-		_this.state = {
-			currentPage: Store.index_current_page,
-			showIndicator: Store.show_indicator
-		};
-
-		_this.updateState = _this.updateState.bind(_this);
-		pubsub.subscribe('change', _this.updateState);
-		return _this;
-	}
-
-	_createClass(Indicator, [{
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			pubsub.unSubscribe('change', this.updateState);
-		}
-	}, {
-		key: 'updateState',
-		value: function updateState() {
-			this.setState({
-				currentPage: Store.index_current_page,
-				showIndicator: Store.show_indicator
-			});
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var className = this.state.showIndicator ? 'containerIndicator' : 'hide';
-			var currentPage = this.state.currentPage - 1;
-			var segmentClass = void 0;
-			return _react2.default.createElement(
-				'div',
-				{ className: className },
-				_react2.default.createElement(
-					'ul',
-					{ className: 'listSegments' },
-					this.total_pages.map(function (item, index) {
-						segmentClass = currentPage === index ? 'segment active' : 'segment';
-						return _react2.default.createElement('li', { className: segmentClass, key: index });
-					})
-				)
-			);
-		}
-	}]);
-
-	return Indicator;
-}(_react.Component);
-
-function getArray(num) {
-	var result = [];
-	for (var i = 0; i < num; i++) {
-		result.push(i);
-	}return result;
-}
-
-exports.default = Indicator;
-
-/***/ }),
-/* 437 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var pubsub = new (__webpack_require__(23))();
-var Store = __webpack_require__(28);
-
-var ButtonScroll = function (_Component) {
-    _inherits(ButtonScroll, _Component);
-
-    function ButtonScroll(props) {
-        _classCallCheck(this, ButtonScroll);
-
-        var _this = _possibleConstructorReturn(this, (ButtonScroll.__proto__ || Object.getPrototypeOf(ButtonScroll)).call(this, props));
-
-        _this.state = {
-            showButton: Store.show_button_scroll
-        };
-
-        _this.updateState = _this.updateState.bind(_this);
-        pubsub.subscribe('change', _this.updateState);
-        return _this;
-    }
-
-    _createClass(ButtonScroll, [{
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            pubsub.unSubscribe('change', this.updateState);
-        }
-    }, {
-        key: 'updateState',
-        value: function updateState() {
-            this.setState({ showButton: Store.show_button_scroll });
-        }
-    }, {
-        key: '_clickedButton',
-        value: function _clickedButton() {
-            this.props.clikedHandler();
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var className = this.state.showButton ? 'buttonScroll' : 'hide';
-
-            return _react2.default.createElement(
-                'div',
-                { className: className, onClick: function onClick() {
-                        return _this2._clickedButton();
-                    } },
-                _react2.default.createElement(
-                    'span',
-                    { className: 'content' },
-                    'scroll'
-                )
-            );
-        }
-    }]);
-
-    return ButtonScroll;
-}(_react.Component);
-
-exports.default = ButtonScroll;
-
-/***/ }),
-/* 438 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var pubsub = new (__webpack_require__(23))();
-var actionsApp = __webpack_require__(53);
-var Store = __webpack_require__(28);
-
-var ButtonMenu = function (_Component) {
-	_inherits(ButtonMenu, _Component);
-
-	function ButtonMenu(props) {
-		_classCallCheck(this, ButtonMenu);
-
-		var _this = _possibleConstructorReturn(this, (ButtonMenu.__proto__ || Object.getPrototypeOf(ButtonMenu)).call(this, props));
-
-		_this.state = {
-			currentPage: Store.index_current_page,
-			totalPage: Store.total_pages,
-			showButton: Store.show_button_menu
-		};
-
-		_this.updateState = _this.updateState.bind(_this);
-		pubsub.subscribe('change', _this.updateState);
-		return _this;
-	}
-
-	_createClass(ButtonMenu, [{
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			pubsub.unSubscribe('change', this.updateState);
-		}
-	}, {
-		key: 'updateState',
-		value: function updateState() {
-			this.setState({
-				currentPage: Store.index_current_page,
-				showButton: Store.show_button_menu
-			});
-		}
-	}, {
-		key: '_clickedButton',
-		value: function _clickedButton() {
-			actionsApp.setStateMenu(true);
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
-
-			var className = this.state.showButton ? 'containerButtonMenu' : 'hide';
-			return _react2.default.createElement(
-				'div',
-				{ className: className },
-				_react2.default.createElement(
-					'div',
-					{ className: 'page current' },
-					this.state.currentPage
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'page total' },
-					this.state.totalPage
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'buttonMenu', onClick: function onClick() {
-							return _this2._clickedButton();
-						} },
-					_react2.default.createElement('div', { className: 'line one' }),
-					_react2.default.createElement('div', { className: 'line two' }),
-					_react2.default.createElement('div', { className: 'line three' })
-				)
-			);
-		}
-	}]);
-
-	return ButtonMenu;
-}(_react.Component);
-
-exports.default = ButtonMenu;
-
-/***/ }),
-/* 439 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var pubsub = new (__webpack_require__(23))();
-var Store = __webpack_require__(28);
-
-var ButtonSound = function (_Component) {
-    _inherits(ButtonSound, _Component);
-
-    function ButtonSound(props) {
-        _classCallCheck(this, ButtonSound);
-
-        var _this = _possibleConstructorReturn(this, (ButtonSound.__proto__ || Object.getPrototypeOf(ButtonSound)).call(this, props));
-
-        _this.state = {
-            sound: true,
-            showButton: Store.show_button_sound,
-            muted: false
-        };
-
-        _this.updateState = _this.updateState.bind(_this);
-        pubsub.subscribe('change', _this.updateState);
-        return _this;
-    }
-
-    _createClass(ButtonSound, [{
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            pubsub.unSubscribe('change', this.updateState);
-        }
-    }, {
-        key: 'updateState',
-        value: function updateState() {
-            this.setState({ showButton: Store.show_button_sound });
-        }
-    }, {
-        key: '_clickedButton',
-        value: function _clickedButton() {
-            this.setState({ sound: !this.state.sound, muted: !this.state.muted });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var className = this.state.showButton ? 'containerSound' : 'hide';
-            var is_on = this.state.sound ? "on" : "off";
-            var classes = 'sound ' + is_on;
-
-            return _react2.default.createElement(
-                'div',
-                { className: className },
-                _react2.default.createElement('img', {
-                    src: "src/images/sine.png",
-                    alt: "",
-                    className: classes,
-                    onClick: function onClick() {
-                        return _this2._clickedButton();
-                    } }),
-                _react2.default.createElement('audio', {
-                    ref: 'audio',
-                    src: 'src/audio/bg.mp3',
-                    autoPlay: true,
-                    loop: 'true',
-                    muted: this.state.muted })
-            );
-        }
-    }]);
-
-    return ButtonSound;
-}(_react.Component);
-
-exports.default = ButtonSound;
-
-/***/ }),
-/* 440 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(22);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var pubsub = new (__webpack_require__(23))();
-var Store = __webpack_require__(28);
-
-var FixedLink = function (_Component) {
-    _inherits(FixedLink, _Component);
-
-    function FixedLink(props) {
-        _classCallCheck(this, FixedLink);
-
-        var _this = _possibleConstructorReturn(this, (FixedLink.__proto__ || Object.getPrototypeOf(FixedLink)).call(this, props));
-
-        _this.state = {
-            color: Store.color_fixed_link,
-            isShow: Store.show_fixed_link
-        };
-
-        _this.updateState = _this.updateState.bind(_this);
-        pubsub.subscribe('change', _this.updateState);
-        return _this;
-    }
-
-    _createClass(FixedLink, [{
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            pubsub.unSubscribe('change', this.updateState);
-        }
-    }, {
-        key: 'updateState',
-        value: function updateState() {
-            this.setState({
-                isShow: Store.show_fixed_link,
-                color: Store.color_fixed_link
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var color = this.state.color;
-            var className = this.state.isShow ? this.props.classNameContainer : 'hide';
-            return _react2.default.createElement(
-                'div',
-                { className: className },
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: this.props.href },
-                    _react2.default.createElement('img', { src: this.props.src[color], alt: this.props.alt || "" })
-                )
-            );
-        }
-    }]);
-
-    return FixedLink;
-}(_react.Component);
-
-exports.default = FixedLink;
-
-/***/ }),
-/* 441 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(22);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var pubsub = new (__webpack_require__(23))();
-var Store = __webpack_require__(28);
-
-var FixedButton = function (_Component) {
-    _inherits(FixedButton, _Component);
-
-    function FixedButton(props) {
-        _classCallCheck(this, FixedButton);
-
-        var _this = _possibleConstructorReturn(this, (FixedButton.__proto__ || Object.getPrototypeOf(FixedButton)).call(this, props));
-
-        _this.state = {
-            showButton: Store.show_fixed_button
-        };
-
-        _this.updateState = _this.updateState.bind(_this);
-        pubsub.subscribe('change', _this.updateState);
-        return _this;
-    }
-
-    _createClass(FixedButton, [{
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            pubsub.unSubscribe('change', this.updateState);
-        }
-    }, {
-        key: 'updateState',
-        value: function updateState() {
-            this.setState({ showButton: Store.show_fixed_button });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var className = this.state.showButton ? this.props.classNameContainer : 'hide';
-            return _react2.default.createElement(
-                'div',
-                { className: className },
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: this.props.href, className: this.props.classNameLink },
-                    _react2.default.createElement(
-                        'span',
-                        { className: this.props.classNameContent },
-                        this.props.content
-                    ),
-                    _react2.default.createElement(
-                        'span',
-                        { className: 'mobileContent' },
-                        'Get it'
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: this.props.classNameContainerImg },
-                        _react2.default.createElement('img', { src: this.props.srcImg, alt: this.props.alt || "" })
-                    )
-                )
-            );
-        }
-    }]);
-
-    return FixedButton;
-}(_react.Component);
-
-exports.default = FixedButton;
-
-/***/ }),
-/* 442 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ButtonBack = __webpack_require__(65);
-
-var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Store = __webpack_require__(28);
-var animatedLetters = __webpack_require__(171);
-var ANIMATION_CLASS = 'fadeInUp';
-
-var ContainerTabs = function (_Component) {
-    _inherits(ContainerTabs, _Component);
-
-    function ContainerTabs(props) {
-        _classCallCheck(this, ContainerTabs);
-
-        var _this = _possibleConstructorReturn(this, (ContainerTabs.__proto__ || Object.getPrototypeOf(ContainerTabs)).call(this, props));
-
-        _this.data = props.data.payload;
-
-        _this.state = {
-            activeTab: Store.active_tab
-        };
-
-        _this._clickedBack = _this._clickedBack.bind(_this);
-        return _this;
-    }
-
-    _createClass(ContainerTabs, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this._deleteAnimationClass = this._deleteAnimationClass.bind(this);
-            this.refs.div.addEventListener('animationend', this._deleteAnimationClass);
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.refs.div.removeEventListener('animationend', this._deleteAnimationClass);
-        }
-    }, {
-        key: 'componentDidUpdate',
-        value: function componentDidUpdate() {
-            this.refs.div.classList.add(ANIMATION_CLASS);
-        }
-    }, {
-        key: '_deleteAnimationClass',
-        value: function _deleteAnimationClass() {
-            this.refs.div.classList.remove(ANIMATION_CLASS);
-        }
-    }, {
-        key: '_clickedTab',
-        value: function _clickedTab(index) {
-            this.setState({ activeTab: index });
-        }
-    }, {
-        key: '_isActive',
-        value: function _isActive(index) {
-            if (index === this.state.activeTab) return 'itemTab activeTab';else return 'itemTab';
-        }
-    }, {
-        key: '_clickedBack',
-        value: function _clickedBack() {
-            this.props.history.goBack();
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            return _react2.default.createElement(
-                'section',
-                { className: 'containerTabs' },
-                _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
-                _react2.default.createElement(
-                    'nav',
-                    { className: 'containerNavBar' },
-                    _react2.default.createElement(
-                        'ul',
-                        { className: 'listTabs' },
-                        this.data.map(function (item, index) {
-                            return _react2.default.createElement(
-                                'li',
-                                { key: index, className: _this2._isActive(index),
-                                    onClick: function onClick(item) {
-                                        return _this2._clickedTab(index);
-                                    } },
-                                item.tabName
-                            );
-                        })
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: this.state.activeTab > -1 ? 'containerTabContent' : 'hidden' },
-                    _react2.default.createElement(
-                        'div',
-                        { ref: 'div', className: 'descriptionTab animated ' + ANIMATION_CLASS },
-                        this.data[this.state.activeTab].content.map(function (item, index) {
-                            return _react2.default.createElement(
-                                'p',
-                                { key: index, className: 'paragraph' },
-                                item
-                            );
-                        })
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'containerContentMobile' },
-                    this.data.map(function (item, index) {
-                        return _react2.default.createElement(
-                            'div',
-                            { className: 'blockTabs' },
-                            _react2.default.createElement(
-                                'h1',
-                                { className: 'header', key: index },
-                                item.tabName
-                            ),
-                            item.content.map(function (item, index) {
-                                return _react2.default.createElement(
-                                    'p',
-                                    { className: 'content', key: index },
-                                    item
-                                );
-                            })
-                        );
-                    })
-                )
-            );
-        }
-    }]);
-
-    return ContainerTabs;
-}(_react.Component);
-
-exports.default = ContainerTabs;
-
-/***/ }),
-/* 443 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(22);
-
-var _Video = __webpack_require__(84);
-
-var _Video2 = _interopRequireDefault(_Video);
-
-var _ButtonClose = __webpack_require__(447);
-
-var _ButtonClose2 = _interopRequireDefault(_ButtonClose);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var dataApp = __webpack_require__(40);
-var Store = __webpack_require__(28);
-var actionsApp = __webpack_require__(53);
-var pubsub = new (__webpack_require__(23))();
-var ANIMATION_TIME = 300; // ms
-
-var Menu = function (_Component) {
-	_inherits(Menu, _Component);
-
-	function Menu(props) {
-		_classCallCheck(this, Menu);
-
-		var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
-
-		_this.listMenu = dataApp.pageMenu;
-		_this.state = {
-			showMenu: Store.is_open_menu,
-			activeItem: Store.active_item_menu
-		};
-
-		_this.updateState = _this.updateState.bind(_this);
-		_this._clikedCloseMenu = _this._clikedCloseMenu.bind(_this);
-		pubsub.subscribe('change', _this.updateState);
-		return _this;
-	}
-
-	_createClass(Menu, [{
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			pubsub.unSubscribe('change', this.updateState);
-		}
-	}, {
-		key: 'updateState',
-		value: function updateState() {
-			this.setState({
-				showMenu: Store.is_open_menu,
-				activeItem: Store.active_item_menu
-			});
-		}
-	}, {
-		key: 'closeMenu',
-		value: function closeMenu() {
-			var _this2 = this;
-
-			this.refs.container.style.opacity = '0';
-			setTimeout(function () {
-				_this2.setState({ showMenu: false });
-			}, ANIMATION_TIME);
-		}
-	}, {
-		key: '_clikedCloseMenu',
-		value: function _clikedCloseMenu() {
-			actionsApp.setStateMenu(false);
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this3 = this;
-
-			return _react2.default.createElement(
-				'section',
-				{ className: this.state.showMenu ? 'containerMenu' : 'hide' },
-				_react2.default.createElement('div', { className: 'backgroundLayer' }),
-				_react2.default.createElement(_ButtonClose2.default, { handler: this._clikedCloseMenu }),
-				_react2.default.createElement(
-					'div',
-					{ ref: 'container', className: 'containerContentMenu' },
-					_react2.default.createElement(_Video2.default, { src: 'src/videos/flag_black.mp4' }),
-					_react2.default.createElement(
-						'nav',
-						{ className: 'blockMenu' },
-						_react2.default.createElement(
-							'ul',
-							{ className: 'listMenu' },
-							this.listMenu.map(function (item, index) {
-								return createdItemMenu.call(_this3, item, index);
-							})
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'containerHowtobuy' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'blockHowtobuy animated fadeInUp' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'headerLarge' },
-								'The adidas Consortium x The Good Will Out \u2013 NMD CS1 PK \u201CAnkoku Toshi Jutsu\u201C will be available on September 16th.'
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'headerSmall' },
-								'In store first, remaining stock online.'
-							),
-							_react2.default.createElement(
-								_reactRouterDom.Link,
-								{ to: 'howtobuy', className: 'containerLink' },
-								_react2.default.createElement('img', { src: 'src/images/shop-icon.gif', alt: '' }),
-								_react2.default.createElement(
-									'span',
-									{ className: 'descriptionLink' },
-									'How to buy'
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						'nav',
-						{ className: 'bottomNavigation' },
-						_react2.default.createElement(
-							'ul',
-							null,
-							_react2.default.createElement(
-								'li',
-								{ className: 'itemBottomNavigation' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'credits', className: 'linkBottomNavigation' },
-									'Credits'
-								)
-							),
-							_react2.default.createElement(
-								'li',
-								{ className: 'itemBottomNavigation' },
-								_react2.default.createElement(
-									_reactRouterDom.Link,
-									{ to: 'imprint', className: 'linkBottomNavigation' },
-									'Imprint'
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return Menu;
-}(_react.Component);
-
-function createdItemMenu(item, index) {
-	var list = item.content.split('\n');
-	return _react2.default.createElement(
-		'li',
-		{ className: this.state.activeItem === index ? 'itemMenu active' : 'itemMenu', key: index },
-		_react2.default.createElement(
-			_reactRouterDom.Link,
-			{ to: item.link, className: 'link' },
-			_react2.default.createElement(
-				'span',
-				{ className: 'counterItemMenu' },
-				'.0',
-				index + 1
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'containerContentItemMenu' },
-				list.map(function (item, index) {
-					return _react2.default.createElement(
-						'span',
-						{ key: index },
-						_react2.default.createElement(
-							'span',
-							{ className: 'contentItemMenu' },
-							item
-						),
-						_react2.default.createElement('br', null)
-					);
-				})
-			)
-		)
-	);
-}
-
-exports.default = Menu;
-
-/***/ }),
-/* 444 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return win; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return doc; });
-/**
- * SSR Window 1.0.0
- * Better handling for window object in SSR environment
- * https://github.com/nolimits4web/ssr-window
- *
- * Copyright 2018, Vladimir Kharlampidi
- *
- * Licensed under MIT
- *
- * Released on: February 10, 2018
- */
-var d;
-if (typeof document === 'undefined') {
-  d = {
-    body: {},
-    addEventListener: function addEventListener() {},
-    removeEventListener: function removeEventListener() {},
-    activeElement: {
-      blur: function blur() {},
-      nodeName: '',
-    },
-    querySelector: function querySelector() {
-      return null;
-    },
-    querySelectorAll: function querySelectorAll() {
-      return [];
-    },
-    getElementById: function getElementById() {
-      return null;
-    },
-    createEvent: function createEvent() {
-      return {
-        initEvent: function initEvent() {},
-      };
-    },
-    createElement: function createElement() {
-      return {
-        children: [],
-        childNodes: [],
-        style: {},
-        setAttribute: function setAttribute() {},
-        getElementsByTagName: function getElementsByTagName() {
-          return [];
-        },
-      };
-    },
-    location: { hash: '' },
-  };
-} else {
-  // eslint-disable-next-line
-  d = document;
-}
-
-var doc = d;
-
-var w;
-if (typeof window === 'undefined') {
-  w = {
-    document: doc,
-    navigator: {
-      userAgent: '',
-    },
-    location: {},
-    history: {},
-    CustomEvent: function CustomEvent() {
-      return this;
-    },
-    addEventListener: function addEventListener() {},
-    removeEventListener: function removeEventListener() {},
-    getComputedStyle: function getComputedStyle() {
-      return {
-        getPropertyValue: function getPropertyValue() {
-          return '';
-        },
-      };
-    },
-    Image: function Image() {},
-    Date: function Date() {},
-    screen: {},
-    setTimeout: function setTimeout() {},
-    clearTimeout: function clearTimeout() {},
-  };
-} else {
-  // eslint-disable-next-line
-  w = window;
-}
-
-var win = w;
-
-
-
-
-/***/ }),
-/* 445 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dom7_dist_dom7_modular__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ssr_window__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dom7_dist_dom7_modular__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ssr_window__ = __webpack_require__(172);
 /**
  * Swiper 4.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -45845,7 +41575,7 @@ Swiper.use(components);
 
 
 /***/ }),
-/* 446 */
+/* 433 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45936,7 +41666,7 @@ Swiper.use(components);
 /* unused harmony export touchmove */
 /* unused harmony export resize */
 /* unused harmony export scroll */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ssr_window__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ssr_window__ = __webpack_require__(172);
 /**
  * Dom7 2.0.3
  * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
@@ -47270,7 +43000,2080 @@ function scroll(...args) {
 
 
 /***/ }),
-/* 447 */
+/* 434 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ButtonBack = __webpack_require__(66);
+
+var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ImprintPage = function (_Component) {
+    _inherits(ImprintPage, _Component);
+
+    function ImprintPage(props) {
+        _classCallCheck(this, ImprintPage);
+
+        var _this = _possibleConstructorReturn(this, (ImprintPage.__proto__ || Object.getPrototypeOf(ImprintPage)).call(this, props));
+
+        _this.history = props.history;
+        _this._clickedBack = _this._clickedBack.bind(_this);
+        return _this;
+    }
+
+    _createClass(ImprintPage, [{
+        key: '_clickedBack',
+        value: function _clickedBack() {
+            this.history.goBack();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'section',
+                { className: 'imprintPage' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'containerContent' },
+                    _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
+                    _react2.default.createElement(
+                        'h3',
+                        { className: 'header' },
+                        'Imprint'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        { className: 'content' },
+                        'The Good Will Out ',
+                        _react2.default.createElement('br', null),
+                        'Burmann & Imiela GmbH  ',
+                        _react2.default.createElement('br', null),
+                        'District court K\xF6ln HRB83370  ',
+                        _react2.default.createElement('br', null),
+                        'Registered Office: K\xF6ln  ',
+                        _react2.default.createElement('br', null),
+                        'Managing Directors: Alexander Imiela, Oliver Burmann  ',
+                        _react2.default.createElement('br', null),
+                        'H\xE4ndelstr. 41  ',
+                        _react2.default.createElement('br', null),
+                        '50674 K\xF6ln  ',
+                        _react2.default.createElement('br', null),
+                        'Germany  ',
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        'Phone: 0221 993 907 22 / 10:00-16:30 Uhr (10 am - 4:30 pm)',
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement(
+                            'span',
+                            { style: { display: 'inline-flex' } },
+                            'Email:',
+                            _react2.default.createElement(
+                                'a',
+                                { className: 'link', href: 'mailto:info@thegoodwillout.com' },
+                                ' info@thegoodwillout.com'
+                            )
+                        ),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        'VAT number: DE 298 464 986',
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        'Production, Design and Development:',
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'link', href: 'http://www.dayy.de', target: '_blank' },
+                            'www.dayy.de'
+                        ),
+                        _react2.default.createElement('br', null),
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'link', href: 'mailto:hi@dayy.de' },
+                            'hi@dayy.de'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ImprintPage;
+}(_react.Component);
+
+exports.default = ImprintPage;
+
+/***/ }),
+/* 435 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ButtonBack = __webpack_require__(66);
+
+var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
+
+var _Video = __webpack_require__(58);
+
+var _Video2 = _interopRequireDefault(_Video);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CreditsPage = function (_Component) {
+    _inherits(CreditsPage, _Component);
+
+    function CreditsPage(props) {
+        _classCallCheck(this, CreditsPage);
+
+        var _this = _possibleConstructorReturn(this, (CreditsPage.__proto__ || Object.getPrototypeOf(CreditsPage)).call(this, props));
+
+        _this.history = props.history;
+        _this._clickedBack = _this._clickedBack.bind(_this);
+        return _this;
+    }
+
+    _createClass(CreditsPage, [{
+        key: '_clickedBack',
+        value: function _clickedBack() {
+            this.history.goBack();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'section',
+                { className: 'creditsPage' },
+                _react2.default.createElement(_Video2.default, { src: 'src/videos/credits_page.mp4' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'contentCreditsPage' },
+                    _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
+                    _react2.default.createElement(
+                        'h1',
+                        { className: 'header animated zoomIn' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'animated fadeInDown' },
+                            'Ankokou'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'animated fadeInDown' },
+                            'Toshi Jutsu'
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'listLinks animated zoomIn' },
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'itemListLinks' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'http://www.dayy.de/', className: 'link', target: '_blank' },
+                                _react2.default.createElement('img', { src: 'src/images/dayy-logo.png', alt: '' })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'itemListLinks' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'http://www.adidas.de/', className: 'link', target: '_blank' },
+                                _react2.default.createElement('img', { src: 'src/images/adidas-logo.png', alt: '' })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'itemListLinks' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'https://www.thegoodwillout.de/', className: 'link', target: '_blank' },
+                                _react2.default.createElement('img', { src: 'src/images/tgwo-logo.png', alt: '' })
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'containerDescription' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Client'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'The Good Will Out, adidas'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Agency'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'dayy'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Project Owner TGWO'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Alex Imiela'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Creative Direction'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Oliver Ecker, Robin Gurski'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Producer'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Konstantinos Sampanis'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Executive Producer'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Oliver Ecker, Robin Gurski'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Art Director'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Ren\xE9 Martens'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Project Manager'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Astrid Spiering'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Actor'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Masatoshi Ueno'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Director'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Konstantinos Sampanis'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Assistant Director'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Sina Burmester'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Cameraman/DoP'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Leif Thomas'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Drone Camera Operator'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Sascha Nee\xDFe'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                '1st Assistant Cameraman'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Javier Palicio'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                '2nd Assistant Cameraman'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Christina Chalkidou'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Editor'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Konstantinos Sampanis'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Assistant Editor'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Sina Burmester'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Gaffer'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Andy Stein'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Make-up Artist'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Julia Alexandra Glaser'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Special Effects Supervisor'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Eike von Schlichting'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Sound Editor'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Simon H\xFCging'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Location Scout'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                '\xC1rni T\xF3masson'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Developer'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Christian Ehrhart, Christian Potthast'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Music & Sounddesign Web'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Jonas W\xFCllner'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Drums Web'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Jakob W\xFCllner'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Mastering Web'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Pl\xE4tlin Mastering'
+                            )
+                        ),
+                        _react2.default.createElement('div', { className: 'separator' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Production Company'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'dayy, Moodboard'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Costumes'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'FTA Film- und Theaterausstattung GmbH'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Special Effects'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'CFX Spezialeffekte GbR.'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Camera Equipment'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'well done'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Light Equipment'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Amp-light Film&TV Service GmbH'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Light installation'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Robin Gurski, Ioannis Mihailidis, Rene Martens, Jens Heinen'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'left' },
+                                'Sound (Post Production)'
+                            ),
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'right' },
+                                'Defacto Sound'
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return CreditsPage;
+}(_react.Component);
+
+exports.default = CreditsPage;
+
+{/*<video
+       className="cover-video"
+       preload="auto" loop="" muted="" playsinline=""
+       style={{width: '100%', height: '100%'}} >
+       <source src="https://1626536920.rsc.cdn77.org/assets/videos/05_credits.mp4" type="video/mp4" />
+    </video>*/}
+
+/***/ }),
+/* 436 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(23);
+
+var _AnimatedText = __webpack_require__(53);
+
+var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
+
+var _ButtonBack = __webpack_require__(66);
+
+var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
+
+var _Video = __webpack_require__(58);
+
+var _Video2 = _interopRequireDefault(_Video);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HowToBuyPage = function (_Component) {
+	_inherits(HowToBuyPage, _Component);
+
+	function HowToBuyPage(props) {
+		_classCallCheck(this, HowToBuyPage);
+
+		var _this = _possibleConstructorReturn(this, (HowToBuyPage.__proto__ || Object.getPrototypeOf(HowToBuyPage)).call(this, props));
+
+		_this.history = props.history;
+		_this._clickedBack = _this._clickedBack.bind(_this);
+		return _this;
+	}
+
+	_createClass(HowToBuyPage, [{
+		key: '_clickedBack',
+		value: function _clickedBack() {
+			this.history.goBack();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'HowToBuyPage' },
+				_react2.default.createElement(_Video2.default, { src: 'src/videos/flag_white.mp4' }),
+				_react2.default.createElement(
+					'div',
+					{ className: 'wrapperContentPage' },
+					_react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
+					_react2.default.createElement(
+						'div',
+						{ className: 'mainHeader' },
+						_react2.default.createElement(_AnimatedText2.default, { contents: ['How to buy'] })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'cell animated zoomIn' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent' },
+								'TGWO release'
+							),
+							_react2.default.createElement('div', { className: 'separator' }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'largeContent' },
+								'16 \u2014 09 \u2014 17'
+							),
+							_react2.default.createElement('div', { className: 'separator' }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallerContent' },
+								'In a contemporary homage to the covert agents of feudal Japan, the adidas Consortium x The Good Will Out MO CS1 Ankoku Toshi Jut, arrives in fulPon stealth mode.'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent' },
+								'\u2014 The Art of Seeing through Darkness '
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'cell animated zoomIn' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent' },
+								'worldwide release'
+							),
+							_react2.default.createElement('div', { className: 'separator' }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'largeContent' },
+								'23 \u2014 09 \u2014 17'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'cell animated zoomIn' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent' },
+								'Article ID:'
+							),
+							_react2.default.createElement('div', { className: 'separator' }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent black' },
+								'BB5994'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent black' },
+								'Black'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent black' },
+								'US 4.5-13.0'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent black' },
+								'unisex'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent black' },
+								'Retail price: 220,-\u20AC'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'cell mobile animated zoomIn' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent' },
+								'TGWO release'
+							),
+							_react2.default.createElement('div', { className: 'separator' }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'largeContent' },
+								'16 \u2014 09 \u2014 17'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'cell mobile animated zoomIn' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'smallContent' },
+								'worldwide release'
+							),
+							_react2.default.createElement('div', { className: 'separator' }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'largeContent' },
+								'23 \u2014 09 \u2014 17'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'cell animated zoomIn' },
+							_react2.default.createElement(
+								'p',
+								{ className: 'largeContent' },
+								'The adidas Consortium x The Good Will Out NMD CS1 ,Ankoku Toshi Jutsu\' is available at selected adidas consortium stores worldwide.'
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'containerButtonViewStoreList' },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: 'howtobuy/detail', className: 'buttonViewStoreList' },
+									'View store list'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return HowToBuyPage;
+}(_react.Component);
+
+exports.default = HowToBuyPage;
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _AnimatedText = __webpack_require__(53);
+
+var _AnimatedText2 = _interopRequireDefault(_AnimatedText);
+
+var _ButtonBack = __webpack_require__(66);
+
+var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
+
+var _Video = __webpack_require__(58);
+
+var _Video2 = _interopRequireDefault(_Video);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HowtobuyDetail = function (_Component) {
+    _inherits(HowtobuyDetail, _Component);
+
+    function HowtobuyDetail(props) {
+        _classCallCheck(this, HowtobuyDetail);
+
+        var _this = _possibleConstructorReturn(this, (HowtobuyDetail.__proto__ || Object.getPrototypeOf(HowtobuyDetail)).call(this, props));
+
+        _this.history = props.history;
+        _this._clickedBack = _this._clickedBack.bind(_this);
+        return _this;
+    }
+
+    _createClass(HowtobuyDetail, [{
+        key: '_clickedBack',
+        value: function _clickedBack() {
+            this.history.goBack();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'howtobuyDetailPage' },
+                _react2.default.createElement(_Video2.default, { src: 'src/videos/flag_white.mp4' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'wrapperContent' },
+                    _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'mainHeader' },
+                        _react2.default.createElement(_AnimatedText2.default, { contents: ['adidas'] }),
+                        _react2.default.createElement(_AnimatedText2.default, { contents: ['consortium stores'] })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'containerLists' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'wrapperContainerLists' },
+                            _react2.default.createElement(
+                                'h3',
+                                { className: 'headerMiddle' },
+                                'North America'
+                            ),
+                            _react2.default.createElement(
+                                'ul',
+                                { className: 'listCountries' },
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Haven ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'CAN'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Livestock ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'CAN'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'NRML ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'CAN'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'OTH ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'CAN'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Addict ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'BAIT / Diamond Bar ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Barneys NYC (Madison Ave + ecom) ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Bodega ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Concepts ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Creme ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Dover Street Market NY ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Juice LA ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Kith NYC ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Mr. Porter ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Nice Kicks ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Packer Shoes, Inc. ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Proper ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'RSVP Gallery ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Shoe Gallery ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Sneaker Politics ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Sneakersnstuff  USA',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Social Status ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'St. Alfred ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Ubiq / Mason ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Undefeated ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Wish Atlanta LLC ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Xhibition ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'USA'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Commonwealth US ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Washington'
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'wrapperContainerLists' },
+                            _react2.default.createElement(
+                                'h3',
+                                { className: 'headerMiddle' },
+                                'Europe'
+                            ),
+                            _react2.default.createElement(
+                                'ul',
+                                { className: 'listCountries' },
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Avenue ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Belgium'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Hunting & Collecting ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Belgium'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Footshop Czech ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Republic'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Naked ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Denmark'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Norse Project ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Denmark'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Wood Wood  Denmark',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Denmark'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Beamhill ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Finland'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Acte2 ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'France'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Starcow ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'France'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Summer ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'France'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'No. 74 ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Germany'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Overkill ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Germany'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Solebox ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Germany'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'The Good Will Out ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Germany'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Uebervart ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Germany'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Wood Wood Berlin ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Germany'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Device1 ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Greece'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'PHAT SOLES ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Greece'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Slam Jam ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Italy'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Sneakers 76 ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Italy'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Suede ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Italy'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Patta ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Netherlands'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'YME ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Norway'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'limitEditions ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Spain'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Sivas Des Calzo ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Spain'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Sneakers n Stuff ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Sweden'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Tres Bien Shop ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Sweden'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Titolo ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Switzerland'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Chmielna 20 Lab Store ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Warsaw'
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'wrapperContainerLists' },
+                            _react2.default.createElement(
+                                'h3',
+                                { className: 'headerMiddle' },
+                                'Asia'
+                            ),
+                            _react2.default.createElement(
+                                'ul',
+                                { className: 'listCountries' },
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Juice ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'China'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'CONCEPTS DUBAI ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Dubai'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'THE GOOD LIFE ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Dubai'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Level Shoedistrict ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Emirates'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'THE GOOD LIFE ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Lebanon'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'D-Mop / J-01 Hong ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Kong'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'EXI.T Hong ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Kong'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Dice & Dice ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'JP'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'DSM Ginza ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'JP'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Mita Sneakers ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'JP'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Styles / VA ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'JP'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Undefeated  JP',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'JP'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'United Arrows & Sons ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'JP'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'CDG Seoul ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Korea'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Kasina Korea Commonwealth ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Philippines'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Brandshop ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Russia'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'KM20 ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Russia'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'DSM  Singapore',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Singapore'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'LE Vault/ The Chamber ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Singapore'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Invincible ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Taiwan'
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    { className: 'itemListCountries' },
+                                    'Juice ',
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'grey' },
+                                        'Taiwan'
+                                    )
+                                )
+                            ),
+                            '  ',
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    'h3',
+                                    { className: 'headerMiddle' },
+                                    'South America'
+                                ),
+                                _react2.default.createElement(
+                                    'ul',
+                                    { className: 'listCountries' },
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'itemListCountries' },
+                                        'Cartel ',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: 'grey' },
+                                            'Brazil'
+                                        )
+                                    )
+                                )
+                            ),
+                            ' ',
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    'h3',
+                                    { className: 'headerMiddle' },
+                                    'Africa'
+                                ),
+                                _react2.default.createElement(
+                                    'ul',
+                                    { className: 'listCountries' },
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'itemListCountries' },
+                                        'Shelflife South-',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: 'grey' },
+                                            'Africa'
+                                        )
+                                    )
+                                )
+                            ),
+                            '  ',
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    'h3',
+                                    { className: 'headerMiddle' },
+                                    'Australia'
+                                ),
+                                _react2.default.createElement(
+                                    'ul',
+                                    { className: 'listCountries' },
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'itemListCountries' },
+                                        'Highs & Lows ',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: 'grey' },
+                                            'Australia'
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'itemListCountries' },
+                                        'Sneakerboy ',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: 'grey' },
+                                            'Australia'
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'itemListCountries' },
+                                        'Loaded New ',
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: 'grey' },
+                                            'Zealand'
+                                        )
+                                    )
+                                )
+                            ),
+                            ' '
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return HowtobuyDetail;
+}(_react.Component);
+
+exports.default = HowtobuyDetail;
+
+/***/ }),
+/* 438 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NotFoundPage = function (_Component) {
+  _inherits(NotFoundPage, _Component);
+
+  function NotFoundPage() {
+    _classCallCheck(this, NotFoundPage);
+
+    return _possibleConstructorReturn(this, (NotFoundPage.__proto__ || Object.getPrototypeOf(NotFoundPage)).apply(this, arguments));
+  }
+
+  _createClass(NotFoundPage, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "containerNotFound" },
+        _react2.default.createElement(
+          "div",
+          { className: "content" },
+          "Oops Page Not Found"
+        )
+      );
+    }
+  }]);
+
+  return NotFoundPage;
+}(_react.Component);
+
+exports.default = NotFoundPage;
+
+/***/ }),
+/* 439 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(23);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var appData = __webpack_require__(40);
+var pubsub = new (__webpack_require__(19))();
+var Store = __webpack_require__(28);
+
+var BlockSocialLinks = function (_Component) {
+  _inherits(BlockSocialLinks, _Component);
+
+  function BlockSocialLinks(props) {
+    _classCallCheck(this, BlockSocialLinks);
+
+    var _this = _possibleConstructorReturn(this, (BlockSocialLinks.__proto__ || Object.getPrototypeOf(BlockSocialLinks)).call(this, props));
+
+    _this.state = {
+      showLinks: Store.show_social_link
+    };
+
+    _this.updateState = _this.updateState.bind(_this);
+    pubsub.subscribe('change', _this.updateState);
+    return _this;
+  }
+
+  _createClass(BlockSocialLinks, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      pubsub.unSubscribe('change', this.updateState);
+    }
+  }, {
+    key: 'updateState',
+    value: function updateState() {
+      this.setState({ showLinks: Store.show_social_link });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var className = this.state.showLinks ? 'blockSocialLinks' : 'hide';
+      return _react2.default.createElement(
+        'ul',
+        { className: className },
+        appData.socialLinks.map(function (item, index) {
+          return _react2.default.createElement(
+            'li',
+            { className: 'itemLink', key: index },
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { className: 'link', to: item.link },
+              item.content
+            )
+          );
+        })
+      );
+    }
+  }]);
+
+  return BlockSocialLinks;
+}(_react.Component);
+
+exports.default = BlockSocialLinks;
+
+/***/ }),
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47294,43 +45097,944 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ButtonClose = function (_Component) {
-	_inherits(ButtonClose, _Component);
+var pubsub = new (__webpack_require__(19))();
+var Store = __webpack_require__(28);
 
-	function ButtonClose(props) {
-		_classCallCheck(this, ButtonClose);
+var Indicator = function (_Component) {
+	_inherits(Indicator, _Component);
 
-		return _possibleConstructorReturn(this, (ButtonClose.__proto__ || Object.getPrototypeOf(ButtonClose)).call(this, props));
+	function Indicator(props) {
+		_classCallCheck(this, Indicator);
+
+		var _this = _possibleConstructorReturn(this, (Indicator.__proto__ || Object.getPrototypeOf(Indicator)).call(this, props));
+
+		_this.total_pages = Store.total_pages;
+		_this.total_pages = getArray(_this.total_pages);
+
+		_this.state = {
+			currentPage: Store.index_current_page,
+			showIndicator: Store.show_indicator
+		};
+
+		_this.updateState = _this.updateState.bind(_this);
+		pubsub.subscribe('change', _this.updateState);
+		return _this;
 	}
 
-	_createClass(ButtonClose, [{
-		key: "_clicedButton",
-		value: function _clicedButton() {
-			this.props.handler();
+	_createClass(Indicator, [{
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			pubsub.unSubscribe('change', this.updateState);
 		}
 	}, {
-		key: "render",
+		key: 'updateState',
+		value: function updateState() {
+			this.setState({
+				currentPage: Store.index_current_page,
+				showIndicator: Store.show_indicator
+			});
+		}
+	}, {
+		key: 'render',
 		value: function render() {
-			var _this2 = this;
-
+			var className = this.state.showIndicator ? 'containerIndicator' : 'hide';
+			var currentPage = this.state.currentPage - 1;
+			var segmentClass = void 0;
 			return _react2.default.createElement(
-				"div",
-				{ className: "containerClose", onClick: function onClick() {
-						return _this2._clicedButton();
-					} },
+				'div',
+				{ className: className },
 				_react2.default.createElement(
-					"svg",
-					{ width: "17px", height: "17px", version: "1.1", x: "0px", y: "0px", viewBox: "0 0 371.23 371.23" },
-					_react2.default.createElement("polygon", { fill: "#000", points: "371.23,21.213 350.018,0 185.615,164.402 21.213,0 0,21.213 164.402,185.615 0,350.018 21.213,371.23   185.615,206.828 350.018,371.23 371.23,350.018 206.828,185.615 " })
+					'ul',
+					{ className: 'listSegments' },
+					this.total_pages.map(function (item, index) {
+						segmentClass = currentPage === index ? 'segment active' : 'segment';
+						return _react2.default.createElement('li', { className: segmentClass, key: index });
+					})
 				)
 			);
 		}
 	}]);
 
-	return ButtonClose;
+	return Indicator;
 }(_react.Component);
 
-exports.default = ButtonClose;
+function getArray(num) {
+	var result = [];
+	for (var i = 0; i < num; i++) {
+		result.push(i);
+	}return result;
+}
+
+exports.default = Indicator;
+
+/***/ }),
+/* 441 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pubsub = new (__webpack_require__(19))();
+var Store = __webpack_require__(28);
+
+var ButtonScroll = function (_Component) {
+    _inherits(ButtonScroll, _Component);
+
+    function ButtonScroll(props) {
+        _classCallCheck(this, ButtonScroll);
+
+        var _this = _possibleConstructorReturn(this, (ButtonScroll.__proto__ || Object.getPrototypeOf(ButtonScroll)).call(this, props));
+
+        _this.state = {
+            showButton: Store.show_button_scroll
+        };
+
+        _this.updateState = _this.updateState.bind(_this);
+        pubsub.subscribe('change', _this.updateState);
+        return _this;
+    }
+
+    _createClass(ButtonScroll, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            pubsub.unSubscribe('change', this.updateState);
+        }
+    }, {
+        key: 'updateState',
+        value: function updateState() {
+            this.setState({ showButton: Store.show_button_scroll });
+        }
+    }, {
+        key: '_clickedButton',
+        value: function _clickedButton() {
+            this.props.clikedHandler();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var className = this.state.showButton ? 'buttonScroll' : 'hide';
+
+            return _react2.default.createElement(
+                'div',
+                { className: className, onClick: function onClick() {
+                        return _this2._clickedButton();
+                    } },
+                _react2.default.createElement(
+                    'span',
+                    { className: 'content' },
+                    'scroll'
+                )
+            );
+        }
+    }]);
+
+    return ButtonScroll;
+}(_react.Component);
+
+exports.default = ButtonScroll;
+
+/***/ }),
+/* 442 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pubsub = new (__webpack_require__(19))();
+var actionsApp = __webpack_require__(41);
+var Store = __webpack_require__(28);
+
+var ButtonMenu = function (_Component) {
+	_inherits(ButtonMenu, _Component);
+
+	function ButtonMenu(props) {
+		_classCallCheck(this, ButtonMenu);
+
+		var _this = _possibleConstructorReturn(this, (ButtonMenu.__proto__ || Object.getPrototypeOf(ButtonMenu)).call(this, props));
+
+		_this.state = {
+			currentPage: Store.index_current_page,
+			totalPage: Store.total_pages,
+			showButton: Store.show_button_menu
+		};
+
+		_this.updateState = _this.updateState.bind(_this);
+		pubsub.subscribe('change', _this.updateState);
+		return _this;
+	}
+
+	_createClass(ButtonMenu, [{
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			pubsub.unSubscribe('change', this.updateState);
+		}
+	}, {
+		key: 'updateState',
+		value: function updateState() {
+			this.setState({
+				currentPage: Store.index_current_page,
+				showButton: Store.show_button_menu
+			});
+		}
+	}, {
+		key: '_clickedButton',
+		value: function _clickedButton() {
+			actionsApp.setStateMenu(true);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var className = this.state.showButton ? 'containerButtonMenu' : 'hide';
+			return _react2.default.createElement(
+				'div',
+				{ className: className },
+				_react2.default.createElement(
+					'div',
+					{ className: 'page current' },
+					this.state.currentPage
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'page total' },
+					this.state.totalPage
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'buttonMenu', onClick: function onClick() {
+							return _this2._clickedButton();
+						} },
+					_react2.default.createElement('div', { className: 'line one' }),
+					_react2.default.createElement('div', { className: 'line two' }),
+					_react2.default.createElement('div', { className: 'line three' })
+				)
+			);
+		}
+	}]);
+
+	return ButtonMenu;
+}(_react.Component);
+
+exports.default = ButtonMenu;
+
+/***/ }),
+/* 443 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pubsub = new (__webpack_require__(19))();
+var Store = __webpack_require__(28);
+
+var ButtonSound = function (_Component) {
+    _inherits(ButtonSound, _Component);
+
+    function ButtonSound(props) {
+        _classCallCheck(this, ButtonSound);
+
+        var _this = _possibleConstructorReturn(this, (ButtonSound.__proto__ || Object.getPrototypeOf(ButtonSound)).call(this, props));
+
+        _this.state = {
+            sound: true,
+            showButton: Store.show_button_sound,
+            muted: false
+        };
+
+        _this.updateState = _this.updateState.bind(_this);
+        pubsub.subscribe('change', _this.updateState);
+        return _this;
+    }
+
+    _createClass(ButtonSound, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            pubsub.unSubscribe('change', this.updateState);
+        }
+    }, {
+        key: 'updateState',
+        value: function updateState() {
+            this.setState({ showButton: Store.show_button_sound });
+        }
+    }, {
+        key: '_clickedButton',
+        value: function _clickedButton() {
+            this.setState({ sound: !this.state.sound, muted: !this.state.muted });
+        }
+    }, {
+        key: '_checkIsAudio',
+        value: function _checkIsAudio() {
+            return window.screen.width > 800 ? true : false;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var className = this.state.showButton ? 'containerSound' : 'hide';
+            var is_on = this.state.sound ? "on" : "off";
+            var classes = 'sound ' + is_on;
+
+            if (this._checkIsAudio()) {
+                return _react2.default.createElement(
+                    'div',
+                    { className: className },
+                    _react2.default.createElement('img', {
+                        src: "src/images/sine.png",
+                        alt: "",
+                        className: classes,
+                        onClick: function onClick() {
+                            return _this2._clickedButton();
+                        } }),
+                    _react2.default.createElement('audio', {
+                        ref: 'audio',
+                        src: 'src/audio/bg.mp3',
+                        autoPlay: true,
+                        loop: 'true',
+                        muted: this.state.muted })
+                );
+            } else {
+
+                return _react2.default.createElement(
+                    'div',
+                    { className: className },
+                    _react2.default.createElement('img', {
+                        src: "src/images/sine.png",
+                        alt: "",
+                        className: classes,
+                        onClick: function onClick() {
+                            return _this2._clickedButton();
+                        } })
+                );
+            }
+        }
+    }]);
+
+    return ButtonSound;
+}(_react.Component);
+
+exports.default = ButtonSound;
+
+/***/ }),
+/* 444 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(23);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pubsub = new (__webpack_require__(19))();
+var Store = __webpack_require__(28);
+
+var FixedLink = function (_Component) {
+    _inherits(FixedLink, _Component);
+
+    function FixedLink(props) {
+        _classCallCheck(this, FixedLink);
+
+        var _this = _possibleConstructorReturn(this, (FixedLink.__proto__ || Object.getPrototypeOf(FixedLink)).call(this, props));
+
+        _this.state = {
+            color: Store.color_fixed_link,
+            isShow: Store.show_fixed_link
+        };
+
+        _this.updateState = _this.updateState.bind(_this);
+        pubsub.subscribe('change', _this.updateState);
+        return _this;
+    }
+
+    _createClass(FixedLink, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            pubsub.unSubscribe('change', this.updateState);
+        }
+    }, {
+        key: 'updateState',
+        value: function updateState() {
+            this.setState({
+                isShow: Store.show_fixed_link,
+                color: Store.color_fixed_link
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var color = this.state.color;
+            var className = this.state.isShow ? this.props.classNameContainer : 'hide';
+            return _react2.default.createElement(
+                'div',
+                { className: className },
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: this.props.href },
+                    _react2.default.createElement('img', { src: this.props.src[color], alt: this.props.alt || "" })
+                )
+            );
+        }
+    }]);
+
+    return FixedLink;
+}(_react.Component);
+
+exports.default = FixedLink;
+
+/***/ }),
+/* 445 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(23);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var pubsub = new (__webpack_require__(19))();
+var Store = __webpack_require__(28);
+
+var FixedButton = function (_Component) {
+    _inherits(FixedButton, _Component);
+
+    function FixedButton(props) {
+        _classCallCheck(this, FixedButton);
+
+        var _this = _possibleConstructorReturn(this, (FixedButton.__proto__ || Object.getPrototypeOf(FixedButton)).call(this, props));
+
+        _this.state = {
+            showButton: Store.show_fixed_button
+        };
+
+        _this.updateState = _this.updateState.bind(_this);
+        pubsub.subscribe('change', _this.updateState);
+        return _this;
+    }
+
+    _createClass(FixedButton, [{
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            pubsub.unSubscribe('change', this.updateState);
+        }
+    }, {
+        key: 'updateState',
+        value: function updateState() {
+            this.setState({ showButton: Store.show_fixed_button });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var className = this.state.showButton ? this.props.classNameContainer : 'hide';
+            return _react2.default.createElement(
+                'div',
+                { className: className },
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: this.props.href, className: this.props.classNameLink },
+                    _react2.default.createElement(
+                        'span',
+                        { className: this.props.classNameContent },
+                        this.props.content
+                    ),
+                    _react2.default.createElement(
+                        'span',
+                        { className: 'mobileContent' },
+                        'Get it'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: this.props.classNameContainerImg },
+                        _react2.default.createElement('img', { src: this.props.srcImg, alt: this.props.alt || "" })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return FixedButton;
+}(_react.Component);
+
+exports.default = FixedButton;
+
+/***/ }),
+/* 446 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ButtonBack = __webpack_require__(66);
+
+var _ButtonBack2 = _interopRequireDefault(_ButtonBack);
+
+var _Video = __webpack_require__(58);
+
+var _Video2 = _interopRequireDefault(_Video);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Store = __webpack_require__(28);
+var pubsub = new (__webpack_require__(19))();
+var ANIMATION_CLASS = 'fadeInUp';
+
+var ContainerTabs = function (_Component) {
+    _inherits(ContainerTabs, _Component);
+
+    function ContainerTabs(props) {
+        _classCallCheck(this, ContainerTabs);
+
+        var _this = _possibleConstructorReturn(this, (ContainerTabs.__proto__ || Object.getPrototypeOf(ContainerTabs)).call(this, props));
+
+        _this.data = props.data.payload;
+
+        _this.state = {
+            bg_class: Store.name_current_page.replace('/', ''),
+            activeTab: Store.active_tab
+        };
+
+        _this._clickedBack = _this._clickedBack.bind(_this);
+        _this.updateState = _this.updateState.bind(_this);
+        pubsub.subscribe('change', _this.updateState);
+        return _this;
+    }
+
+    _createClass(ContainerTabs, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this._deleteAnimationClass = this._deleteAnimationClass.bind(this);
+            this.refs.div.addEventListener('animationend', this._deleteAnimationClass);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.refs.div.removeEventListener('animationend', this._deleteAnimationClass);
+            pubsub.unSubscribe('change', this.updateState);
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            this.refs.div.classList.add(ANIMATION_CLASS);
+        }
+    }, {
+        key: 'updateState',
+        value: function updateState() {
+            var key = Store.name_current_page.replace('/', '');
+            this.setState({ bg_class: key });
+        }
+    }, {
+        key: '_deleteAnimationClass',
+        value: function _deleteAnimationClass() {
+            this.refs.div.classList.remove(ANIMATION_CLASS);
+        }
+    }, {
+        key: '_clickedTab',
+        value: function _clickedTab(index) {
+            this.setState({ activeTab: index });
+        }
+    }, {
+        key: '_isActive',
+        value: function _isActive(index) {
+            if (index === this.state.activeTab) return 'itemTab activeTab';else return 'itemTab';
+        }
+    }, {
+        key: '_clickedBack',
+        value: function _clickedBack() {
+            this.props.history.goBack();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var className = this.state.bg_class ? 'containerTabs ' + this.state.bg_class : 'containerTabs';
+            var videoSrs = 'src/videos/' + this.state.bg_class + '.mp4';
+            return _react2.default.createElement(
+                'section',
+                { className: className },
+                _react2.default.createElement(_Video2.default, { src: videoSrs }),
+                _react2.default.createElement(_ButtonBack2.default, { clickedHandler: this._clickedBack }),
+                _react2.default.createElement(
+                    'nav',
+                    { className: 'containerNavBar' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'listTabs' },
+                        this.data.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index, className: _this2._isActive(index),
+                                    onClick: function onClick(item) {
+                                        return _this2._clickedTab(index);
+                                    } },
+                                item.tabName
+                            );
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: this.state.activeTab > -1 ? 'containerTabContent' : 'hidden' },
+                    _react2.default.createElement(
+                        'div',
+                        { ref: 'div', className: 'descriptionTab animated ' + ANIMATION_CLASS },
+                        this.data[this.state.activeTab].content.map(function (item, index) {
+                            return _react2.default.createElement(
+                                'p',
+                                { key: index, className: 'paragraph' },
+                                item
+                            );
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'containerContentMobile' },
+                    this.data.map(function (item, index) {
+                        return _react2.default.createElement(
+                            'div',
+                            { className: 'blockTabs', key: index },
+                            _react2.default.createElement(
+                                'h1',
+                                { className: 'header', key: index },
+                                item.tabName
+                            ),
+                            item.content.map(function (item, index) {
+                                return _react2.default.createElement(
+                                    'p',
+                                    { className: 'content', key: index },
+                                    item
+                                );
+                            })
+                        );
+                    })
+                )
+            );
+        }
+    }]);
+
+    return ContainerTabs;
+}(_react.Component);
+
+exports.default = ContainerTabs;
+
+/***/ }),
+/* 447 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(23);
+
+var _Video = __webpack_require__(58);
+
+var _Video2 = _interopRequireDefault(_Video);
+
+var _ButtonClose = __webpack_require__(171);
+
+var _ButtonClose2 = _interopRequireDefault(_ButtonClose);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var dataApp = __webpack_require__(40);
+var Store = __webpack_require__(28);
+var actionsApp = __webpack_require__(41);
+var pubsub = new (__webpack_require__(19))();
+var ANIMATION_TIME = 300; // ms
+
+var Menu = function (_Component) {
+	_inherits(Menu, _Component);
+
+	function Menu(props) {
+		_classCallCheck(this, Menu);
+
+		var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
+
+		_this.listMenu = dataApp.pageMenu;
+		_this.state = {
+			showMenu: Store.is_open_menu,
+			activeItem: Store.active_item_menu
+		};
+
+		_this.updateState = _this.updateState.bind(_this);
+		_this._clikedCloseMenu = _this._clikedCloseMenu.bind(_this);
+		pubsub.subscribe('change', _this.updateState);
+		return _this;
+	}
+
+	_createClass(Menu, [{
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			pubsub.unSubscribe('change', this.updateState);
+		}
+	}, {
+		key: 'updateState',
+		value: function updateState() {
+			this.setState({
+				showMenu: Store.is_open_menu,
+				activeItem: Store.active_item_menu
+			});
+		}
+	}, {
+		key: 'closeMenu',
+		value: function closeMenu() {
+			var _this2 = this;
+
+			this.refs.container.style.opacity = '0';
+			setTimeout(function () {
+				_this2.setState({ showMenu: false });
+			}, ANIMATION_TIME);
+		}
+	}, {
+		key: '_clikedCloseMenu',
+		value: function _clikedCloseMenu() {
+			actionsApp.setStateMenu(false);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this3 = this;
+
+			return _react2.default.createElement(
+				'section',
+				{ className: this.state.showMenu ? 'containerMenu' : 'hide' },
+				_react2.default.createElement('div', { className: 'backgroundLayer' }),
+				_react2.default.createElement(_ButtonClose2.default, { handler: this._clikedCloseMenu }),
+				_react2.default.createElement(
+					'div',
+					{ ref: 'container', className: 'containerContentMenu' },
+					_react2.default.createElement(_Video2.default, { src: 'src/videos/flag_black.mp4' }),
+					_react2.default.createElement(
+						'nav',
+						{ className: 'blockMenu' },
+						_react2.default.createElement(
+							'ul',
+							{ className: 'listMenu' },
+							this.listMenu.map(function (item, index) {
+								return createdItemMenu.call(_this3, item, index);
+							})
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'containerHowtobuy' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'blockHowtobuy animated fadeInUp' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'headerLarge' },
+								'The adidas Consortium x The Good Will Out \u2013 NMD CS1 PK \u201CAnkoku Toshi Jutsu\u201C will be available on September 16th.'
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'headerSmall' },
+								'In store first, remaining stock online.'
+							),
+							_react2.default.createElement(
+								_reactRouterDom.Link,
+								{ to: 'howtobuy', className: 'containerLink' },
+								_react2.default.createElement('img', { src: 'src/images/shop-icon.gif', alt: '' }),
+								_react2.default.createElement(
+									'span',
+									{ className: 'descriptionLink' },
+									'How to buy'
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						'nav',
+						{ className: 'bottomNavigation' },
+						_react2.default.createElement(
+							'ul',
+							null,
+							_react2.default.createElement(
+								'li',
+								{ className: 'itemBottomNavigation' },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: 'credits', className: 'linkBottomNavigation' },
+									'Credits'
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ className: 'itemBottomNavigation' },
+								_react2.default.createElement(
+									_reactRouterDom.Link,
+									{ to: 'imprint', className: 'linkBottomNavigation' },
+									'Imprint'
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Menu;
+}(_react.Component);
+
+function createdItemMenu(item, index) {
+	var list = item.content.split('\n');
+	return _react2.default.createElement(
+		'li',
+		{ className: this.state.activeItem === index ? 'itemMenu active' : 'itemMenu', key: index },
+		_react2.default.createElement(
+			_reactRouterDom.Link,
+			{ to: item.link, className: 'link' },
+			_react2.default.createElement(
+				'span',
+				{ className: 'counterItemMenu' },
+				'.0',
+				index + 1
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'containerContentItemMenu' },
+				list.map(function (item, index) {
+					return _react2.default.createElement(
+						'span',
+						{ key: index },
+						_react2.default.createElement(
+							'span',
+							{ className: 'contentItemMenu' },
+							item
+						),
+						_react2.default.createElement('br', null)
+					);
+				})
+			)
+		)
+	);
+}
+
+exports.default = Menu;
 
 /***/ })
 /******/ ]);

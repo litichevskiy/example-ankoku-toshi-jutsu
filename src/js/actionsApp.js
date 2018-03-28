@@ -14,8 +14,12 @@ const actionsApp = {
     	pubsub.publish( 'change-location', { path: path });
     },
 
-    clickedScroll( data ) {
-    	pubsub.publish( 'clicked-scroll', data );
+    historyStepForward( data ) {
+        pubsub.publish( 'next-page', data );
+    },
+
+    historyStepBack( data ) {
+    	pubsub.publish( 'previous-page', data );
     },
 
     sliderFullScreen( data ) {

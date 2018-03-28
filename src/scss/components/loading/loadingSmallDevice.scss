@@ -1,0 +1,27 @@
+@media screen and (max-width:800px) {
+	.containerLoading{
+		background-color: black;
+
+		.blockcontent{
+			background-image: none;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: column;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+		}
+
+		.containerLoder{
+			margin: 20px 0 50px 0;
+		}
+
+		.content.desctop{
+			display: none;
+		}
+
+		.content.mobile{
+			display: inline-block;
+			bottom: -15px;
+		}
+	}
+}

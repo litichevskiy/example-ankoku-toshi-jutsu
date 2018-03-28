@@ -132,9 +132,14 @@ const Store = {
 			pubsub.publish('change');
 		});
 
-		pubsub.subscribe('clicked-scroll', ( data ) => {
+		pubsub.subscribe('next-page', ( data ) => {
 			let next_page = pages[this.index_current_page];
 			data.history.push( next_page );
+			pubsub.publish('change');
+		});
+
+		pubsub.subscribe('previous-page', ( data ) => {
+			data.history.goBack();
 			pubsub.publish('change');
 		});
 

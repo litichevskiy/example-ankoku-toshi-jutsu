@@ -1,0 +1,46 @@
+.containerApp{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1;
+
+	.messageUser{
+		position: fixed;
+	    width: 100%;
+	    height: 100%;
+	    background: black;
+	    z-index: 10;
+	    display: none;
+	    -webkit-box-align: center;
+	    -webkit-align-items: center;
+	        -ms-flex-align: center;
+	            align-items: center;
+	    -webkit-box-pack: center;
+	    -webkit-justify-content: center;
+	        -ms-flex-pack: center;
+	            justify-content: center;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+
+	    img{
+	    	max-width: 170px;
+	    }
+
+	    .content{
+	    	font-size: 16px;
+	    	@include white;
+	    	margin-top: 17px;
+	    }
+	}
+}
+
+.letter{
+	opacity: 0;
+}
+
+.hide{
+	display: none;
+}

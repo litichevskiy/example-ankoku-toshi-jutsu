@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ButtonBack from './ButtonBack';
+import Video from './Video.jsx';
 const Store = require('../Store');
-const animatedLetters = require('../utils/animatedLetters.js');
+const pubsub = new ( require('../utils/PubSub.js') );
 const ANIMATION_CLASS = 'fadeInUp';
 
 class ContainerTabs extends Component {
@@ -12,10 +13,13 @@ class ContainerTabs extends Component {
         this.data = props.data.payload;
 
         this.state = {
+            bg_class: Store.name_current_page.replace('/', ''),
             activeTab: Store.active_tab,
         };
 
         this._clickedBack = this._clickedBack.bind( this );
+        this.updateState = this.updateState.bind( this );
+        pubsub.subscribe('change', this.updateState );
   	}
 
     componentDidMount() {
@@ -25,10 +29,16 @@ class ContainerTabs extends Component {
 
     componentWillUnmount() {
         this.refs.div.removeEventListener('animationend', this._deleteAnimationClass );
+        pubsub.unSubscribe('change', this.updateState );
     }
 
     componentDidUpdate() {
         this.refs.div.classList.add( ANIMATION_CLASS );
+    }
+
+    updateState() {
+        let key = Store.name_current_page.replace('/', '');
+        this.setState({bg_class: key});
     }
 
     _deleteAnimationClass() {
@@ -49,9 +59,11 @@ class ContainerTabs extends Component {
     }
 
   	render() {
-
+        let className = ( this.state.bg_class ) ? 'containerTabs ' + this.state.bg_class : 'containerTabs';
+        let videoSrs = `src/videos/${this.state.bg_class}.mp4`;
         return (
-            <section className="containerTabs">
+            <section className={className}>
+                <Video src={videoSrs} />
                 <ButtonBack clickedHandler={this._clickedBack} />
                 <nav className="containerNavBar" >
                     <ul className="listTabs">
@@ -80,7 +92,7 @@ class ContainerTabs extends Component {
                     {
                         this.data.map( ( item, index ) => {
                             return(
-                                <div className="blockTabs" >
+                                <div className="blockTabs" key={index} >
                                     <h1 className="header" key={index}>{item.tabName}</h1>
                                     {
                                         item.content.map( ( item, index ) => {

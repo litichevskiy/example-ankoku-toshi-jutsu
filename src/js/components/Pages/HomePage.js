@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import SvgButton from '../SvgButton';
+import Video from './../Video.jsx';
 const appData = require('../../../appData');
 
 class HomePage extends Component {
@@ -15,6 +16,7 @@ class HomePage extends Component {
 
 	    return (
 	    	<div className="homePage">
+	    		<Video src={'src/videos/home_page.mp4'} />
 	    		<div className="wrapperContentPage">
 	    			<div className="blockTop animated fadeInDown">
     					<div className="contentMedium white">暗黒透視術</div>

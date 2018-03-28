@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, Switch, HashRouter } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Route, Switch, HashRouter } from 'react-router-dom';
 
+const MIN_TIME_TO_NEXT_SCROLL = 750; // ms
 const pubsub = new ( require('./utils/PubSub.js') );
 const actionsApp = require('./actionsApp');
 const dataApp = require('../appData/index.js');
@@ -40,36 +40,61 @@ class App extends Component {
 	constructor( props ) {
 		super( props )
 
-		this.state = {};
-		this.min_width = 800;
-		this.max_width = 800;
-		this.key_width;
+		this.state = {
+			load: false,
+		};
+		// this.min_width = 800;
+		// this.max_width = 800;
+		// this.key_width;
+		this.time_last_scroll = 0;
+		this.index_current_page;
+		this.total_pages = Store.total_pages;
 		this.changeLocation = this.changeLocation.bind( this );
-		this.resize = this.resize.bind( this );
-		window.addEventListener('resize', this.resize);
+		// this.resize = this.resize.bind( this );
+		// window.addEventListener('resize', this.resize);
+
+		window.addEventListener('load', () => {
+			let loader = document.querySelector('.containerLoading');
+			loader.style.opacity = '0';
+			setTimeout(() => {loader.classList.add('hide');}, 300);
+		});
+
+		this.updateState = this.updateState.bind( this );
+		this.scrollHandler = this.scrollHandler.bind( this );
+		pubsub.subscribe('change', this.updateState );
 	}
 
 	componentDidMount() {
 		actionsApp.changeLocation( this.refs._ROUTER.history.location.pathname );
    		this.refs._ROUTER.history.listen( this.changeLocation );
+		this.refs.container.addEventListener("wheel", this.scrollHandler );
 	}
 
-	resize() {
-		let window_width = document.body.clientWidth;
+	componentWillUnmount() {
+		pubsub.unSubscribe('change', this.updateState );
+		this.refs.container.removeEventListener("wheel", this.scrollHandler );
+	}
 
-		if( window_width < this.min_width ) {
-			if( this.key_width != 'min' ) {
-				this.key_width = 'min';
-				console.log('min');
-			}
-		}
-		else
-			if( window_width > this.min_width ) {
-				if( this.key_width != 'max' ) {
-					this.key_width = 'max';
-					console.log('max');
-				}
-			}
+	// resize() {
+	// 	let window_width = document.body.clientWidth;
+
+	// 	if( window_width < this.min_width ) {
+	// 		if( this.key_width != 'min' ) {
+	// 			this.key_width = 'min';
+	// 			console.log('min');
+	// 		}
+	// 	}
+	// 	else
+	// 		if( window_width > this.min_width ) {
+	// 			if( this.key_width != 'max' ) {
+	// 				this.key_width = 'max';
+	// 				console.log('max');
+	// 			}
+	// 		}
+	// }
+
+	updateState() {
+		this.index_current_page = Store.index_current_page;
 	}
 
 	changeLocation( location ) {
@@ -77,13 +102,35 @@ class App extends Component {
 	}
 
 	clickedButtonScroll() {
-		actionsApp.clickedScroll({history: this.refs._ROUTER.history});
+		actionsApp.historyStepForward({history: this.refs._ROUTER.history});
+	}
+
+	scrollHandler( event ) {
+	    let currentTime = Date.now();
+	    let total = this.time_last_scroll + MIN_TIME_TO_NEXT_SCROLL;
+
+	    if( currentTime > total ) {
+	    	this.time_last_scroll = currentTime;
+
+		    if( event.deltaY > 0 ) {
+		        if( this.index_current_page < this.total_pages ) {
+		        	console.log('next')
+		        	actionsApp.historyStepForward({history: this.refs._ROUTER.history});
+		        }
+		    }
+		    else {
+		    	if( this.index_current_page > 0 ) {
+		        	console.log('previous')
+		        	actionsApp.historyStepBack({history: this.refs._ROUTER.history});
+		        }
+		    }
+	    }
 	}
 
   	render() {
 
 	    return (
-	    	<main className="containerApp" >
+	    	<main ref="container" className="containerApp" >
 		    	<HashRouter ref="_ROUTER" getUserConfirmation={getConfirmation}>
 				    <div>
 				    	<Menu />

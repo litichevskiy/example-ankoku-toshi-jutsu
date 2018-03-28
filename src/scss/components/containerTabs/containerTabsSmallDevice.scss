@@ -1,9 +1,22 @@
 @media screen and (max-width:800px) {
 	.containerTabs{
-		background-image: url(../images/pages/details_page_bg_mobile.jpg);
 		background-repeat: no-repeat;
    		-webkit-background-size: cover;
     	       background-size: cover;
+
+
+    	&.items_detail{
+			background-image: url(../images/pages/items_detail_bg_mobili.jpg);
+
+    	}
+
+    	&.product_detail{
+    		background-image: url(../images/pages/details_page_bg_mobile.jpg);
+    	}
+
+    	&.journey_details{
+    		background-image: url(../images/pages/journey_detail_bg_mobile.jpg);
+    	}
 
 		.containerTabContent, .containerNavBar{
 			display: none;

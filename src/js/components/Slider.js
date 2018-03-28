@@ -50,6 +50,7 @@ class Slider extends Component {
 
 		if( targetName === 'IMG' ) {
 			actionsApp.sliderFullScreen({fullScreen:true});
+			this.swiper.params.slidesPerView = 1;
 			this.refs.container.classList.add('fullScreen');
 			this.props.handler( true );
 			this._resize();
@@ -61,6 +62,7 @@ class Slider extends Component {
 		this.refs.container.classList.remove('fullScreen');
 		this.props.handler( false );
 		this._resize();
+		this._windowResize();
 	}
 
 	_windowResize() {

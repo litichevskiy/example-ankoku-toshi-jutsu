@@ -1,39 +1,55 @@
 @media screen and (max-width: 1070px){
-	.journeyPage{
+    .journeyPage{
 
-		.blockBottomLeft{
-			font-size: 19px;
-		}
+        .blockBottomLeft{
+            font-size: 19px;
+        }
 
-		.blockBottomRight{
-			bottom: 35%;
-		}
-	}
+        .blockBottomRight{
+            bottom: 35%;
+        }
+    }
 }
 
 @media screen and (max-width: 800px){
-	.journeyPage{
-		background-image: url(../images/pages/journey_page_bg_mobile.jpg);
-		background-repeat: no-repeat;
-    	-webkit-background-size: cover;
-    	        background-size: cover;
+    .journeyPage{
+        background-image: url(../images/pages/journey_page_bg_mobile.jpg);
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+                background-size: cover;
 
-    	.blockBottomLeft, .blockTopLeft{
-    		display: none;
-    	}
+        .blockBottomLeft, .blockTopLeft{
+            display: none;
+        }
 
-    	.headerLarge{
-    		margin: 0;
-    		position: absolute;
-    		top: 30%;
-    		left: 10%;
-    	}
+        .headerLarge{
+            margin: 0;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+        }
 
-    	.blockBottomRight{
-    		left: 10%;
-    		bottom: 18%;
-    		top: initial;
-    		right: initial;
-    	}
-	}
+        .blockBottomRight{
+            left: 10%;
+            bottom: 18%;
+            top: initial;
+            right: initial;
+        }
+    }
+}
+
+@media screen and (max-height: 590px) {
+    .journeyPage{
+        .blockBottomLeft{
+            font-size: 18px;
+        }
+
+        .containerAnimatedText{
+            font-size: 50px;
+        }
+
+        .headerLarge{
+            margin-top: 4em;
+        }
+    }
 }
