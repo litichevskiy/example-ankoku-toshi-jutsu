@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
+const Hammer = require('./../lib/hammer.min.js')
+
 const MIN_TIME_TO_NEXT_SCROLL = 750; // ms
 const pubsub = new ( require('./utils/PubSub.js') );
 const actionsApp = require('./actionsApp');
@@ -17,7 +19,7 @@ import GalleryPage from './components/Pages/GalleryPage';
 import ImprintPage from './components/Pages/ImprintPage';
 import CreditsPage from './components/Pages/CreditsPage';
 import HowToBuyPage from './components/Pages/HowToBuyPage';
-import HowtobuyDetail from './components/Pages/HowtobuyDetail.jsx';
+import HowtobuyDetail from './components/Pages/HowtobuyDetail';
 import NotFoundPage from './components/Pages/NotFoundPage';
 //helpers
 import BlockSocialLinks from './components/BlockSocialLinks';
@@ -53,10 +55,13 @@ class App extends Component {
 		// this.resize = this.resize.bind( this );
 		// window.addEventListener('resize', this.resize);
 
+		// this.data = 0;
+
 		window.addEventListener('load', () => {
 			let loader = document.querySelector('.containerLoading');
-			loader.style.opacity = '0';
-			setTimeout(() => {loader.classList.add('hide');}, 300);
+			// loader.style.opacity = '0';
+			setTimeout(() => {loader.style.opacity = '0';}, 100);
+			setTimeout(() => {loader.classList.add('hide');}, 200);
 		});
 
 		this.updateState = this.updateState.bind( this );
@@ -68,6 +73,13 @@ class App extends Component {
 		actionsApp.changeLocation( this.refs._ROUTER.history.location.pathname );
    		this.refs._ROUTER.history.listen( this.changeLocation );
 		this.refs.container.addEventListener("wheel", this.scrollHandler );
+
+		let hammer = new Hammer.Manager(this.refs.container);
+		let swipe = new Hammer.Swipe();
+
+		hammer.add(swipe);
+		hammer.on('swipeup', () => this.nextStep() );
+		hammer.on('swipedown', () => this.previousStep());
 	}
 
 	componentWillUnmount() {
@@ -105,6 +117,18 @@ class App extends Component {
 		actionsApp.historyStepForward({history: this.refs._ROUTER.history});
 	}
 
+	nextStep() {
+		if( this.index_current_page < this.total_pages ) {
+		    actionsApp.historyStepForward({history: this.refs._ROUTER.history});
+		}
+	}
+
+	previousStep() {
+		if( this.index_current_page > 0 ) {
+			actionsApp.historyStepBack({history: this.refs._ROUTER.history});
+		}
+	}
+
 	scrollHandler( event ) {
 	    let currentTime = Date.now();
 	    let total = this.time_last_scroll + MIN_TIME_TO_NEXT_SCROLL;
@@ -112,18 +136,8 @@ class App extends Component {
 	    if( currentTime > total ) {
 	    	this.time_last_scroll = currentTime;
 
-		    if( event.deltaY > 0 ) {
-		        if( this.index_current_page < this.total_pages ) {
-		        	console.log('next')
-		        	actionsApp.historyStepForward({history: this.refs._ROUTER.history});
-		        }
-		    }
-		    else {
-		    	if( this.index_current_page > 0 ) {
-		        	console.log('previous')
-		        	actionsApp.historyStepBack({history: this.refs._ROUTER.history});
-		        }
-		    }
+		    if( event.deltaY > 0 ) this.nextStep();
+		    else this.previousStep();
 	    }
 	}
 

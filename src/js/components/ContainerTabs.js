@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ButtonBack from './ButtonBack';
-import Video from './Video.jsx';
+import Video from './Video';
 const Store = require('../Store');
 const pubsub = new ( require('../utils/PubSub.js') );
 const ANIMATION_CLASS = 'fadeInUp';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ButtonBack from '../ButtonBack';
-import Video from './../Video.jsx';
+import Video from './../Video';
 
 class CreditsPage extends Component {
 

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ButtonClose from './ButtonClose.js';
 const actionsApp = require('../actionsApp');
+const Swiper = require('./../../lib/swiper.js');
 const TIME_SET_FULLSCREEN = 350; //ms
-
-
-import Swiper from 'swiper';
 
 class Slider extends Component {
 
@@ -21,6 +19,7 @@ class Slider extends Component {
 	}
 
 	componentDidMount() {
+
   		this.swiper = new Swiper('.swiper-container', {
   			direction: 'horizontal',
   			speed: 400,

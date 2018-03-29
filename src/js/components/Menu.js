@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Video from './Video.jsx';
+import Video from './Video';
 import ButtonClose from './ButtonClose.js';
 const dataApp = require('../../appData/index.js');
 const Store = require('../Store');
@@ -29,16 +29,13 @@ class Menu extends Component {
 	}
 
 	updateState() {
-		this.setState({
-			showMenu: Store.is_open_menu,
-			activeItem: Store.active_item_menu
-		});
-	}
-
-	closeMenu() {
-		this.refs.container.style.opacity = '0';
+		if( !Store.is_open_menu ) this.refs.container.style.opacity = '0';
+		else this.refs.container.style.opacity = '1';
 		setTimeout(() => {
-			this.setState({showMenu: false});
+			this.setState({
+				showMenu: Store.is_open_menu,
+				activeItem: Store.active_item_menu
+			});
 		}, ANIMATION_TIME );
 	}
 

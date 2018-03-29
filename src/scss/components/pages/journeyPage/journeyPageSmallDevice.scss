@@ -53,3 +53,12 @@
         }
     }
 }
+
+@media screen and (max-device-width: 768px) {
+    .journeyPage{
+        .headerLarge{
+            margin-top: 0;
+            top: 20%;
+        }
+    }
+}

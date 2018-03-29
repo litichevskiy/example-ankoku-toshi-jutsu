@@ -39,3 +39,11 @@
         }
     }
 }
+
+@media screen and (max-device-width: 768px) {
+    .itemsPage{
+        .headerLarge{
+            margin-left: 0;
+        }
+    }
+}

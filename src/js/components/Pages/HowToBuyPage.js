@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import ButtonBack from '../ButtonBack';
-import Video from './../Video.jsx';
+import Video from './../Video';
 
 class HowToBuyPage extends Component {
 

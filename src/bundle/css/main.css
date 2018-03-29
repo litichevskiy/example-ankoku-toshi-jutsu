@@ -117,7 +117,8 @@ a{
     -ms-flex-direction: column;
     flex-direction: column; } }
 
-@media screen and (max-device-width: 760px) {
+/*@media screen and (max-device-width: 760px){*/
+@media screen and (max-width: 768px) and (orientation: landscape) {
   .containerApp .messageUser {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -985,7 +986,8 @@ a{
   background-color: #171717;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
-  transition: 0.3s; }
+  transition: 0.3s;
+  z-index: 1; }
   .containerLoading .blockcontent {
     position: relative;
     width: 100%;
@@ -1807,6 +1809,10 @@ a{
   .itemsPage .headerLarge {
     margin-left: 5em; } }
 
+@media screen and (max-device-width: 768px) {
+  .itemsPage .headerLarge {
+    margin-left: 0; } }
+
 @media screen and (max-width: 1070px) {
   .journeyPage .blockBottomLeft {
     font-size: 19px; }
@@ -1839,6 +1845,11 @@ a{
     font-size: 50px; }
   .journeyPage .headerLarge {
     margin-top: 4em; } }
+
+@media screen and (max-device-width: 768px) {
+  .journeyPage .headerLarge {
+    margin-top: 0;
+    top: 20%; } }
 
 @media screen and (max-width: 1050px) {
   .galleryPage .blockBottomLeft {

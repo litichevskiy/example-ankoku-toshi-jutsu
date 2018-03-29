@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import SvgButton from '../SvgButton';
+import Video from './../Video';
 const appData = require('../../../appData');
 const actionsApp = require('../../actionsApp');
 
@@ -19,11 +20,11 @@ class ProductPage extends Component {
   		let buttonDesign = appData.productPage.svgButtonDesign;
   		let buttonDetails = appData.productPage.svgButtonDetails;
   		let buttonMaterials = appData.productPage.svgButtonMaterials;
-
   		let buttonMobile  = appData.productPage.svgButtonMobile;
 
 	    return (
 	    	<div className="productPage">
+	    		<Video src={'src/videos/product_page.mp4'} />
 	    		<div className="wrapperContentPage">
 	    			<div className="blockTop">
 	    				<div className="animated fadeInDown">

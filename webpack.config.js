@@ -17,24 +17,24 @@ module.exports = [
           use: {
             loader: 'babel-loader',
             options: {
-                presets: ['es2015', 'stage-0']
+                presets: ['es2015','stage-0','env','react']
             }
           }
         }
       ]
     },
-    module: {
-      rules:[
-        {
-          test: /\.jsx?$/,
-          exclude: /(node_modules)/,
-          loader: "babel-loader",
-          options:{
-              presets:["env", "react"]
-          }
-        }
-      ]
-    },
+    // module: {
+    //   rules:[
+    //     {
+    //       test: /\.jsx?$/,
+    //       exclude: /(node_modules)/,
+    //       loader: "babel-loader",
+    //       options:{
+    //           presets:["env", "react"]
+    //       }
+    //     }
+    //   ]
+    // },
     watch: WATCH,
     watchOptions: {
       ignored: /node_modules/
@@ -82,5 +82,3 @@ module.exports = [
     ]
   }
 ];
-
-

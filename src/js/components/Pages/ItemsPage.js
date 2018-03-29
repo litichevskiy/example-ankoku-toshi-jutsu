@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import SvgButton from '../SvgButton';
+import Video from './../Video';
 const appData = require('../../../appData');
 const actionsApp = require('../../actionsApp');
 
@@ -22,6 +23,7 @@ class ItemsPage extends Component {
 
 	    return (
 	    	<div className="itemsPage">
+	    		<Video src={'src/videos/items_page.mp4'} />
 	    		<div className="wrapperContentPage">
 	    			<div className="blockLeftTop">
 	    				<div className="animated fadeInDown">

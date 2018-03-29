@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AnimatedText from '../AnimatedText'
 import ButtonBack from '../ButtonBack';
-import Video from './../Video.jsx';
+import Video from './../Video';
 
 class HowtobuyDetail extends Component {
 
