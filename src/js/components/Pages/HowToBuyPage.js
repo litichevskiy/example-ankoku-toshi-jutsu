@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import ButtonBack from '../ButtonBack';
 import Video from './../Video';
+const appData = require('../../../appData');
 
 class HowToBuyPage extends Component {
 
@@ -21,7 +22,7 @@ class HowToBuyPage extends Component {
 
 	    return (
 	    	<div className="HowToBuyPage">
-	    		<Video src={'src/videos/flag_white.mp4'} />
+	    		<Video data={appData.howToBuyPage.video} />
 	    		<div className="wrapperContentPage">
 	    			<ButtonBack clickedHandler={this._clickedBack} />
 	    			<div className="mainHeader">

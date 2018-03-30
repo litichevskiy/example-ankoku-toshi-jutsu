@@ -21,7 +21,7 @@ class JourneyPage extends Component {
 
 	    return (
 	    	<div className="journeyPage">
-	    		<Video src={'src/videos/journey_page.mp4'} />
+	    		<Video data={appData.journeyPaje.video} />
 	    		<div className="wrapperContentPage">
 	    			<div className="blockTopLeft animated fadeInDown">
 	    				<div className="topContentSmall white">Trained in being deprived</div>

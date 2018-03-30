@@ -23,7 +23,7 @@ class ItemsPage extends Component {
 
 	    return (
 	    	<div className="itemsPage">
-	    		<Video src={'src/videos/items_page.mp4'} />
+	    		<Video data={appData.itemsPage.video} />
 	    		<div className="wrapperContentPage">
 	    			<div className="blockLeftTop">
 	    				<div className="animated fadeInDown">

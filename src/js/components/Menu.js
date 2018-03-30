@@ -7,13 +7,14 @@ const Store = require('../Store');
 const actionsApp = require('../actionsApp');
 const pubsub = new ( require('../utils/PubSub.js') );
 const ANIMATION_TIME = 300; // ms
+const PRESS_ESC = 27; // keyCode
 
 class Menu extends Component {
 
 	constructor( props ) {
 		super( props )
 
-		this.listMenu = dataApp.pageMenu;
+		this.listMenu = dataApp.pageMenu.listMenu;
 		this.state = {
 			showMenu: Store.is_open_menu,
 			activeItem: Store.active_item_menu,
@@ -21,11 +22,18 @@ class Menu extends Component {
 
 		this.updateState = this.updateState.bind( this );
 		this._clikedCloseMenu = this._clikedCloseMenu.bind( this );
+		this._isCloseMenu = this._isCloseMenu.bind( this );
 		pubsub.subscribe('change', this.updateState );
+		pubsub.subscribe('keydown', this._isCloseMenu );
 	}
 
 	componentWillUnmount() {
 		pubsub.unSubscribe('change', this.updateState );
+		pubsub.unSubscribe('keydown', this._isCloseMenu );
+	}
+
+	_isCloseMenu( event ) {
+		if( this.state.showMenu && event.keyCode === PRESS_ESC ) this._clikedCloseMenu();
 	}
 
 	updateState() {
@@ -50,7 +58,7 @@ class Menu extends Component {
     		<div className="backgroundLayer"></div>
 	    	<ButtonClose handler={this._clikedCloseMenu} />
     		<div ref="container" className="containerContentMenu">
-    			<Video src={'src/videos/flag_black.mp4'} />
+    			<Video data={dataApp.pageMenu.video} />
 	    		<nav className="blockMenu">
 	    			<ul className="listMenu" >
 	    				{this.listMenu.map( ( item, index ) => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnimatedText from '../AnimatedText'
 import ButtonBack from '../ButtonBack';
 import Video from './../Video';
+const appData = require('../../../appData');
 
 class HowtobuyDetail extends Component {
 
@@ -20,7 +21,7 @@ class HowtobuyDetail extends Component {
 
         return (
             <div className="howtobuyDetailPage" >
-                <Video src={'src/videos/flag_white.mp4'} />
+                <Video data={appData.howtobuyDetail.video} />
                 <div className="wrapperContent">
                     <ButtonBack clickedHandler={this._clickedBack} />
                     <div className="mainHeader">

@@ -7,39 +7,39 @@ class Video extends Component {
     constructor( props ) {
         super( props )
 
-        // this.is_play = Store.is_play_video;
-        // this.updateState = this.updateState.bind( this );
-        // pubsub.subscribe('change', this.updateState );
+        this.state = {
+            video_ready: false,
+        }
+
+        this._videoReady = this._videoReady.bind( this );
     }
 
-    // componentWillUnmount() {
-    //     pubsub.unSubscribe('change', this.updateState );
-    // }
+    componentDidMount() {
+        this.refs.video.addEventListener('canplay', this._videoReady );
+    }
 
-    // updateState() {
-    //     this.is_play = Store.is_play_video;
-
-    //     if( Store.is_play_video && this.is_play ) return;
-    //         else if( !Store.is_play_video && !this.is_play ) return;
-    //             else{
-    //                 if( Store.is_play_video ) this.refs.video.play();
-    //                 else this.refs.video.pause();
-    //             }
-    // }
+    _videoReady() {
+        this.refs.video.removeEventListener('canplay', this._videoReady );
+        this.setState({video_ready: true});
+    }
 
   	render() {
+        let data = this.props.data;
+        let className = ( this.state.video_ready ) ? 'video ready' : 'video';
+
     	return (
     		<div className="containerVideo">
     			<video
                     ref="video"
-    				className="video"
+    				className={className}
     			 	preload="auto"
     			 	loop="true"
-    			 	controls=""
-    			 	muted=""
-    			 	playsInline=""
     			 	autoPlay="autoplay" >
-            		<source src={this.props.src} type="video/mp4" />
+                    {
+                        data.source.map( ( item, index ) => {
+                            return <source key={index} src={item.src} type={item.type} />
+                        })
+                    }
         		</video>
             </div>
     	);

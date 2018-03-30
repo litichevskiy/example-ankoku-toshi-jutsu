@@ -1,21 +1,11 @@
 .containerSlider{
 	position: absolute;
 	bottom: 15%;
-	right: 0;
-	width: 50%;
+	right: 2%;
+	width: 55%;
 	height: 50%;
 	min-height: 320px;
 	z-index: 1;
-	-webkit-transition: 0.25s linear;
-	-o-transition: 0.25s linear;
-	transition: 0.25s linear;
-
-	&.active{
-		width: 100%;
-		-webkit-transition-delay: 0.2s;
-		     -o-transition-delay: 0.2s;
-		        transition-delay: 0.2s;
-	}
 
 	&.fullScreen{
 		position: fixed;

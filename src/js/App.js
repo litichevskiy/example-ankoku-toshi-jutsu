@@ -45,23 +45,17 @@ class App extends Component {
 		this.state = {
 			load: false,
 		};
-		// this.min_width = 800;
-		// this.max_width = 800;
-		// this.key_width;
 		this.time_last_scroll = 0;
 		this.index_current_page;
 		this.total_pages = Store.total_pages;
 		this.changeLocation = this.changeLocation.bind( this );
-		// this.resize = this.resize.bind( this );
-		// window.addEventListener('resize', this.resize);
-
-		// this.data = 0;
 
 		window.addEventListener('load', () => {
 			let loader = document.querySelector('.containerLoading');
-			// loader.style.opacity = '0';
 			setTimeout(() => {loader.style.opacity = '0';}, 100);
-			setTimeout(() => {loader.classList.add('hide');}, 200);
+			setTimeout(() => {
+				document.body.removeChild(loader)
+			}, 200);
 		});
 
 		this.updateState = this.updateState.bind( this );
@@ -86,24 +80,6 @@ class App extends Component {
 		pubsub.unSubscribe('change', this.updateState );
 		this.refs.container.removeEventListener("wheel", this.scrollHandler );
 	}
-
-	// resize() {
-	// 	let window_width = document.body.clientWidth;
-
-	// 	if( window_width < this.min_width ) {
-	// 		if( this.key_width != 'min' ) {
-	// 			this.key_width = 'min';
-	// 			console.log('min');
-	// 		}
-	// 	}
-	// 	else
-	// 		if( window_width > this.min_width ) {
-	// 			if( this.key_width != 'max' ) {
-	// 				this.key_width = 'max';
-	// 				console.log('max');
-	// 			}
-	// 		}
-	// }
 
 	updateState() {
 		this.index_current_page = Store.index_current_page;
@@ -144,7 +120,7 @@ class App extends Component {
   	render() {
 
 	    return (
-	    	<main ref="container" className="containerApp" >
+	    	<section ref="container" className="containerApp" >
 		    	<HashRouter ref="_ROUTER" getUserConfirmation={getConfirmation}>
 				    <div>
 				    	<Menu />
@@ -204,7 +180,7 @@ class App extends Component {
 				    	</div>
 				    </div>
 			  	</HashRouter>
-	    	</main>
+	    	</section>
 	    );
   	}
 }

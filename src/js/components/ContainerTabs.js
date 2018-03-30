@@ -60,10 +60,10 @@ class ContainerTabs extends Component {
 
   	render() {
         let className = ( this.state.bg_class ) ? 'containerTabs ' + this.state.bg_class : 'containerTabs';
-        let videoSrs = `src/videos/${this.state.bg_class}.mp4`;
+
         return (
             <section className={className}>
-                <Video src={videoSrs} />
+                <Video data={this.props.data.video} />
                 <ButtonBack clickedHandler={this._clickedBack} />
                 <nav className="containerNavBar" >
                     <ul className="listTabs">

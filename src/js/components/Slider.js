@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import ButtonClose from './ButtonClose.js';
 const actionsApp = require('../actionsApp');
 const Swiper = require('./../../lib/swiper.js');
-const TIME_SET_FULLSCREEN = 350; //ms
+const pubsub = new ( require('../utils/PubSub.js') );
+const PRESS_FULLSCREEN = 70; // keyCode
+const PRESS_ESC = 27; // keyCode
+const PRESS_LEFT = 37; // keyCode
+const PRESS_RIGHT = 39; // keyCode
 
 class Slider extends Component {
 
@@ -10,50 +14,47 @@ class Slider extends Component {
 		super( props )
 
 		this.swiper;
-		this.key_width;
-		this.isChangeImg = false;
-		this.min_width = 1000; // px
-		this._windowResize = this._windowResize.bind( this );
 		this.closeSlider = this.closeSlider.bind( this );
-		window.addEventListener( 'resize', this._windowResize );
+		this._checkKeyCode = this._checkKeyCode.bind( this );
+		pubsub.subscribe('keydown', this._checkKeyCode );
 	}
 
 	componentDidMount() {
-
   		this.swiper = new Swiper('.swiper-container', {
   			direction: 'horizontal',
-  			speed: 400,
+  			speed: 600,
+  			slidesPerView: 1,
       		navigation: {
         		nextEl: '.swiper-button-next',
         		prevEl: '.swiper-button-prev',
       		},
   		});
-
-  		_initSlideChange = _initSlideChange.bind( this );
-		this.swiper.on('slideChange', _initSlideChange );
 	}
 
 	componentWillUnmount() {
 		this.swiper.destroy( true, true );
-		window.removeEventListener( 'resize', this._windowResize );
+		pubsub.unSubscribe('keydown', this._checkKeyCode );
+	}
+
+	_checkKeyCode( event ) {
+		let code = event.keyCode;
+		if( code === PRESS_ESC ) this.closeSlider();
+		  else
+		    if( code === PRESS_LEFT ) this.swiper.slidePrev();
+		  	else
+		        if( code === PRESS_RIGHT ) this.swiper.slideNext();
+		  		else
+		  		  if( code === PRESS_FULLSCREEN ) this.openSlider();
+
 	}
 
 	_resize() {
-		setTimeout(() => {
-			this.swiper.resize.resizeHandler()
-		}, TIME_SET_FULLSCREEN );
+		this.swiper.resize.resizeHandler();
 	}
 
-	_changeSizeSlider( event ) {
+	_iSchangeSizeSlider( event ) {
 		let targetName = event.target.tagName;
-
-		if( targetName === 'IMG' ) {
-			actionsApp.sliderFullScreen({fullScreen:true});
-			this.swiper.params.slidesPerView = 1;
-			this.refs.container.classList.add('fullScreen');
-			this.props.handler( true );
-			this._resize();
-		}
+		if( targetName === 'IMG' ) this.openSlider();
 	}
 
 	closeSlider() {
@@ -61,27 +62,13 @@ class Slider extends Component {
 		this.refs.container.classList.remove('fullScreen');
 		this.props.handler( false );
 		this._resize();
-		this._windowResize();
 	}
 
-	_windowResize() {
-		if( !this.isChangeImg ) return;
-
-		let window_width = document.body.clientWidth;
-
-		if( window_width < this.min_width ) {
-			if( this.key_width != 'min' ) {
-				this.key_width = 'min';
-				this.swiper.params.slidesPerView = 1;
-			}
-		}
-		else
-			if( window_width > this.min_width ) {
-				if( this.key_width != 'max' ) {
-					this.key_width = 'max';
-					this.swiper.params.slidesPerView = 2;
-				}
-			}
+	openSlider() {
+		actionsApp.sliderFullScreen({fullScreen:true});
+		this.refs.container.classList.add('fullScreen');
+		this.props.handler( true );
+		this._resize();
 	}
 
   	render() {
@@ -89,7 +76,7 @@ class Slider extends Component {
     	return (
     			<div ref="container" className="containerSlider animated fadeInRight">
     				<ButtonClose handler={this.closeSlider} />
-	    			<div className="swiper-container" onClick={( event ) => this._changeSizeSlider( event )}>
+	    			<div className="swiper-container" onClick={( event ) => this._iSchangeSizeSlider( event )}>
 					    <div className="swiper-wrapper">
 					    	{
 					    		this.props.list.map( ( item, index ) => {
@@ -112,12 +99,5 @@ class Slider extends Component {
     	);
   	}
 }
-
-function _initSlideChange() {
-	this.refs.container.classList.add('active');
-	this.swiper.off('slideChange', _initSlideChange );
-	this.swiper.params.slidesPerView = 2;
-	this.isChangeImg = true;
-};
 
 export default Slider;

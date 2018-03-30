@@ -88,6 +88,7 @@ const Store = {
 	show_fixed_link: true,
 	color_fixed_link: 'white',
 	is_play_video: true,
+	slider_full_screen: false,
 
 	setStateButtons() {
 		let index;
@@ -104,7 +105,21 @@ const Store = {
 		this.color_fixed_link = ( index > -1 ) ? 'black' : 'white';
 	},
 
+	checkIsChangePage() {
+		let index;
+		if( this.slider_full_screen || this.is_open_menu ) return false;
+			else
+				index = pages.indexOf( this.name_current_page );
+				if( index < 0 ) return false;
+
+		else return true
+	},
+
 	init() {
+
+		document.addEventListener('keydown', ( event ) => {
+			pubsub.publish('keydown', event );
+		});
 
 		pubsub.subscribe('set-active-tab', ( data ) => {
 			this.active_tab = data.index;
@@ -133,18 +148,28 @@ const Store = {
 		});
 
 		pubsub.subscribe('next-page', ( data ) => {
+			let is_change = this.checkIsChangePage();
+
+			if( !is_change ) return;
+
 			let next_page = pages[this.index_current_page];
 			data.history.push( next_page );
 			pubsub.publish('change');
 		});
 
 		pubsub.subscribe('previous-page', ( data ) => {
+			let is_change = this.checkIsChangePage();
+
+			if( !is_change ) return;
+
 			data.history.goBack();
 			pubsub.publish('change');
 		});
 
 		pubsub.subscribe('slider-full-screen', ( data ) => {
-			if( data.fullScreen ) {
+			this.slider_full_screen = data.fullScreen;
+
+			if( this.slider_full_screen ) {
 				this.show_indicator = false;
 				this.show_fixed_button = false;
 				this.show_button_sound = false;

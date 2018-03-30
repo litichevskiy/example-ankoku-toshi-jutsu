@@ -16,7 +16,7 @@ class HomePage extends Component {
 
 	    return (
 	    	<div className="homePage">
-	    		<Video src={'src/videos/home_page.webm'} />
+	    		<Video data={appData.homePage.video} />
 	    		<div className="wrapperContentPage">
 	    			<div className="blockTop animated fadeInDown">
     					<div className="contentMedium white">暗黒透視術</div>

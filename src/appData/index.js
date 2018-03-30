@@ -28,19 +28,49 @@
 			}
 		],
 
-		pageMenu : [
+		pageMenu : {
 
-			{ link : '', content: '— Ankoku \n Toshi Jutsu'},
-			{ link : 'product', content: 'the \n artefact'},
-			{ link : 'items', content: '_items'},
-			{ link : 'journey', content: 'the journey_'},
-			{ link : 'gallery', content: 'g-llery'},
-			{ link : 'howtobuy', content: 'how to buy'},
-			{ link : 'credits', content: 'credits'},
-			{ link : 'imprint', content: 'imprint'},
-		],
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/flag_black.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/flag_black.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
+
+			listMenu:[
+				{ link : '', content: '— Ankoku \n Toshi Jutsu'},
+				{ link : 'product', content: 'the \n artefact'},
+				{ link : 'items', content: '_items'},
+				{ link : 'journey', content: 'the journey_'},
+				{ link : 'gallery', content: 'g-llery'},
+				{ link : 'howtobuy', content: 'how to buy'},
+				{ link : 'credits', content: 'credits'},
+				{ link : 'imprint', content: 'imprint'},
+			]
+		},
 
 		homePage: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/home_page.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/home_page.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
 
 			svgButton : {
 				title: 'Explore the sneaker',
@@ -59,6 +89,20 @@
 		},
 
 		productPage: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/product_page.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/product_page.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
 
 			svgButtonDesign: {
 				title: 'Design',
@@ -116,6 +160,20 @@
 
 		productDetailPage: {
 
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/product_detail.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/product_detail.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
+
 			payload: [
 				{
 			        tabName: 'Design',
@@ -133,6 +191,20 @@
 		},
 
 		itemsPage: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/items_page.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/items_page.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
 
 			svgButtonKimoto: {
 				title: 'Kimoto Jacket',
@@ -176,6 +248,20 @@
 
 		itemsDetailPage: {
 
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/items_detail.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/items_detail.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
+
 			payload: [
 				{
 			        tabName: 'Kimoto Jacket',
@@ -189,6 +275,20 @@
 		},
 
 		journeyPaje: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/journey_page.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/journey_page.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
 
 			svgButtonExplore: {
 				title: 'Explore the story',
@@ -206,6 +306,20 @@
 		},
 
 		journeyDetailsPage: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/journey_details.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/journey_details.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
 
 			payload: [
 				{
@@ -226,6 +340,57 @@
 			    },
 			]
 		},
+
+		howToBuyPage: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/flag_white.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/flag_white.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
+		},
+
+		howtobuyDetail: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/flag_white.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/flag_white.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
+		},
+
+		creditsPage: {
+
+			video: {
+				poster: '',
+				source: [
+					{
+						src: 'src/videos/credits_page.mp4',
+						type: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2'
+					},
+					{
+						src: 'src/videos/credits_page.webm',
+						type: 'video/webm; codecs="vp8, vorbis'
+					},
+				]
+			},
+		}
 };
 
 module.exports = data;
