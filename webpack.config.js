@@ -1,14 +1,20 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WATCH = !(process.env.WEBPACK_BUILD_DO_WATCH === 'false');
 const extractSass = new ExtractTextPlugin('[name].css');
+const webpack = require('webpack');
+const NODE_ENV = process.env.NODE_ENV || "production";
 
 module.exports = [
   {
     entry:['babel-polyfill', 'classlist-polyfill', './src/js/init.js'],
     output:{
-        filename:'./src/bundle/js/bundle.js'
+        filename:'dist/js/bundle.js'
     },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: ( NODE_ENV === "production" ) ? true : false
+      })
+    ],
     module: {
       rules: [
         {
@@ -23,19 +29,7 @@ module.exports = [
         }
       ]
     },
-    // module: {
-    //   rules:[
-    //     {
-    //       test: /\.jsx?$/,
-    //       exclude: /(node_modules)/,
-    //       loader: "babel-loader",
-    //       options:{
-    //           presets:["env", "react"]
-    //       }
-    //     }
-    //   ]
-    // },
-    watch: WATCH,
+    watch: ( NODE_ENV === "production" ) ? false : true,
     watchOptions: {
       ignored: /node_modules/
     },
@@ -47,7 +41,7 @@ module.exports = [
       modules: ['node_modules']
     },
     devtool: 'source-map',
-    watch: WATCH,
+    watch: ( NODE_ENV === "production" ) ? false : true,
     watchOptions: {
       ignored: /node_modules/
     },
@@ -57,19 +51,29 @@ module.exports = [
           test: /\.scss$/,
           use: extractSass.extract({
             use: [
-              {loader: 'css-loader', options: {sourceMap: true}},
-              {loader: 'sass-loader', options: {sourceMap: true}}
+              {loader: 'css-loader',
+                options: {
+                    sourceMap: ( NODE_ENV === "production" ) ? false : true,
+                    minimize:  ( NODE_ENV === "production" ) ? true : false
+                }
+              },
+              {loader: 'sass-loader',
+                options: {
+                    sourceMap: ( NODE_ENV === "production" ) ? false : true,
+                    minimize:  ( NODE_ENV === "production" ) ? true : false
+                }
+              }
             ]
           })
         },
         {
-            test: /\.(png|jp(e*)g|svg)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    name: 'images/[hash]-[name].[ext]'
-                }
-            }]
+          test: /\.(png|jp(e*)g|svg)$/,
+          use: [{
+            loader: 'url-loader',
+            options: {
+                name: 'images/[hash]-[name].[ext]'
+            }
+          }]
         },
         {
           test: /\.(ttf|eot|woff|woff2)$/,
@@ -82,10 +86,10 @@ module.exports = [
     },
     output: {
       filename: '[name].css',
-      path: path.resolve(__dirname, './src/bundle/css')
+      path: path.resolve(__dirname, 'dist/css')
     },
     plugins: [
-      extractSass
+        extractSass
     ]
   }
 ];

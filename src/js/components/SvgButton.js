@@ -6,8 +6,6 @@ class SvgButton extends Component {
 		super( props )
 	}
 
-    // style={{position:'absolute', zIndex: 2, top: '10px', left: this.props.left }}
-                // className="containerSvgButton animated fadeInUp"
   	render() {
 
     	return (

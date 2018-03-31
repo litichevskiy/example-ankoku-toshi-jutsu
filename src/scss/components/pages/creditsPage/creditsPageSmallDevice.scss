@@ -8,6 +8,11 @@
 
 		.header{
 			font-size: 3em;
+
+			.animated, .zoomIn{
+				-webkit-animation: none;
+				        animation: none;
+			}
 		}
 
 		.listLinks{

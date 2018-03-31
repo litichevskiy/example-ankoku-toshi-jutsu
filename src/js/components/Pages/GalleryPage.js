@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import AnimatedText from '../AnimatedText'
 import Slider from './../Slider.js';
 const appData = require('../../../appData');

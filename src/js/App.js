@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
-
 const Hammer = require('./../lib/hammer.min.js')
-
 const MIN_TIME_TO_NEXT_SCROLL = 750; // ms
 const pubsub = new ( require('./utils/PubSub.js') );
 const actionsApp = require('./actionsApp');
 const dataApp = require('../appData/index.js');
 const Store = require('./Store');
-Store.init();
-
+	  Store.init();
 // pages
 import HomePage from './components/Pages/HomePage';
 import ProductPage from './components/Pages/ProductPage';
@@ -33,8 +30,8 @@ import ContainerTabs from './components/ContainerTabs';
 import Menu from './components/Menu';
 
 const getConfirmation = (message, callback) => {
-  const allowTransition = window.confirm( message );
-  callback( allowTransition );
+  	const allowTransition = window.confirm( message );
+  	callback( allowTransition );
 }
 
 class App extends Component {

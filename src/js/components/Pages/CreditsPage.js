@@ -17,33 +17,35 @@ class CreditsPage extends Component {
     }
 
   	render() {
-
+        //animated zoomIn
         return(
             <section className="creditsPage">
                 <Video data={appData.creditsPage.video} />
                 <div className="contentCreditsPage">
                     <ButtonBack clickedHandler={this._clickedBack} />
-                    <h1 className="header animated zoomIn">
-                        <div className="animated fadeInDown">Ankokou</div>
-                        <div className="animated fadeInDown">Toshi Jutsu</div>
-                    </h1>
-                    <ul className="listLinks animated zoomIn">
-                        <li className="itemListLinks">
-                            <a href={'http://www.dayy.de/'} className="link" target="_blank">
-                                <img src={'src/images/dayy-logo.png'} alt="" />
-                            </a>
-                        </li>
-                        <li className="itemListLinks">
-                            <a href={'http://www.adidas.de/'} className="link" target="_blank" >
-                                <img src={'src/images/adidas-logo.png'} alt="" />
-                            </a>
-                        </li>
-                        <li className="itemListLinks">
-                            <a href={'https://www.thegoodwillout.de/'} className="link" target="_blank">
-                                <img src={'src/images/tgwo-logo.png'} alt="" />
-                            </a>
-                        </li>
-                    </ul>
+                    <div className="">
+                        <h1 className="header">
+                            <div className="animated zoomIn">Ankokou</div>
+                            <div className="animated zoomIn">Toshi Jutsu</div>
+                        </h1>
+                        <ul className="listLinks">
+                            <li className="itemListLinks">
+                                <a href={'http://www.dayy.de/'} className="link" target="_blank">
+                                    <img src={'src/images/dayy-logo.png'} alt="" />
+                                </a>
+                            </li>
+                            <li className="itemListLinks">
+                                <a href={'http://www.adidas.de/'} className="link" target="_blank" >
+                                    <img src={'src/images/adidas-logo.png'} alt="" />
+                                </a>
+                            </li>
+                            <li className="itemListLinks">
+                                <a href={'https://www.thegoodwillout.de/'} className="link" target="_blank">
+                                    <img src={'src/images/tgwo-logo.png'} alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="containerDescription">
                         <div className="row">
                             <p className="left">Client</p>
@@ -192,9 +194,3 @@ class CreditsPage extends Component {
 }
 
 export default CreditsPage;
-                {/*<video
-                    className="cover-video"
-                    preload="auto" loop="" muted="" playsinline=""
-                    style={{width: '100%', height: '100%'}} >
-                    <source src="https://1626536920.rsc.cdn77.org/assets/videos/05_credits.mp4" type="video/mp4" />
-                </video>*/}

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-const Store = require('../Store');
-const pubsub = new ( require('../utils/PubSub.js') );
 
 class Video extends Component {
 
