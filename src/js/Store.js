@@ -105,12 +105,14 @@ const Store = {
 		this.color_fixed_link = ( index > -1 ) ? 'black' : 'white';
 	},
 
-	checkIsChangePage() {
+	checkIsChangePage( data ) {
 		let index;
 		if( this.slider_full_screen || this.is_open_menu ) return false;
 			else
 				index = pages.indexOf( this.name_current_page );
 				if( index < 0 ) return false;
+					else
+						if( data && data.history.location.pathname === '/' ) return false;
 
 		else return true
 	},
@@ -158,10 +160,9 @@ const Store = {
 		});
 
 		pubsub.subscribe('previous-page', ( data ) => {
-			let is_change = this.checkIsChangePage();
+			let is_change = this.checkIsChangePage( data );
 
 			if( !is_change ) return;
-
 			data.history.goBack();
 			pubsub.publish('change');
 		});

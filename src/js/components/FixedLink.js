@@ -28,11 +28,12 @@ class FixedLink extends Component {
     }
 
   	render() {
+
         let color = this.state.color;
         let className = ( this.state.isShow ) ? this.props.classNameContainer : 'hide';
         return (
             <div className={className}>
-                <Link to={this.props.href}>
+                <Link to={this.props.href} >
                     <img src={this.props.src[color]} alt={this.props.alt || ""} />
                 </Link>
             </div>

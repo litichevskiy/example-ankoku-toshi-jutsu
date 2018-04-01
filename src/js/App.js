@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 const Hammer = require('./../lib/hammer.min.js')
-const MIN_TIME_TO_NEXT_SCROLL = 750; // ms
+const MIN_TIME_TO_NEXT_SCROLL = 500; // ms
 const pubsub = new ( require('./utils/PubSub.js') );
 const actionsApp = require('./actionsApp');
 const dataApp = require('../appData/index.js');
@@ -42,7 +42,7 @@ class App extends Component {
 		this.state = {
 			load: false,
 		};
-		this.time_last_scroll = 0;
+		this.storage_last_time_scroll = [Date.now()];
 		this.index_current_page;
 		this.total_pages = Store.total_pages;
 		this.changeLocation = this.changeLocation.bind( this );
@@ -104,12 +104,11 @@ class App extends Component {
 
 	scrollHandler( event ) {
 	    let currentTime = Date.now();
-	    let total = this.time_last_scroll + MIN_TIME_TO_NEXT_SCROLL;
+	    let time = this.storage_last_time_scroll.pop();
+	    this.storage_last_time_scroll.push( currentTime );
 
-	    if( currentTime > total ) {
-	    	this.time_last_scroll = currentTime;
-
-		    if( event.deltaY > 0 ) this.nextStep();
+	    if( (currentTime - time) > MIN_TIME_TO_NEXT_SCROLL ) {
+	    	if( event.deltaY > 0 ) this.nextStep();
 		    else this.previousStep();
 	    }
 	}

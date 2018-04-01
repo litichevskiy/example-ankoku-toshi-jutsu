@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSass = new ExtractTextPlugin('[name].css');
 const webpack = require('webpack');
 const NODE_ENV = process.env.NODE_ENV || "production";
+const IS_PRODUCTION = NODE_ENV === "production";
 
 module.exports = [
   {
@@ -12,7 +13,7 @@ module.exports = [
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
-            minimize: ( NODE_ENV === "production" ) ? true : false
+            minimize: IS_PRODUCTION
       })
     ],
     module: {
@@ -29,7 +30,7 @@ module.exports = [
         }
       ]
     },
-    watch: ( NODE_ENV === "production" ) ? false : true,
+    watch: !IS_PRODUCTION,
     watchOptions: {
       ignored: /node_modules/
     },
@@ -41,7 +42,7 @@ module.exports = [
       modules: ['node_modules']
     },
     devtool: 'source-map',
-    watch: ( NODE_ENV === "production" ) ? false : true,
+    watch: !IS_PRODUCTION,
     watchOptions: {
       ignored: /node_modules/
     },
@@ -53,14 +54,14 @@ module.exports = [
             use: [
               {loader: 'css-loader',
                 options: {
-                    sourceMap: ( NODE_ENV === "production" ) ? false : true,
-                    minimize:  ( NODE_ENV === "production" ) ? true : false
+                    sourceMap: !IS_PRODUCTION,
+                    minimize:  IS_PRODUCTION
                 }
               },
               {loader: 'sass-loader',
                 options: {
-                    sourceMap: ( NODE_ENV === "production" ) ? false : true,
-                    minimize:  ( NODE_ENV === "production" ) ? true : false
+                    sourceMap: !IS_PRODUCTION,
+                    minimize:  IS_PRODUCTION
                 }
               }
             ]
