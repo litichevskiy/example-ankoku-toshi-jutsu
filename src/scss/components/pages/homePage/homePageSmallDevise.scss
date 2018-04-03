@@ -1,5 +1,6 @@
-.homePage{
-	@media screen and (max-width:1150px) {
+@media screen and (max-width:1150px) {
+	.homePage{
+
 		.headermiddle{
 			font-size: 15px;
 		}
@@ -12,14 +13,18 @@
 			margin-top: 15px;
 		}
 	}
+}
 
-	@media screen and (max-width:950px) {
+@media screen and (max-width:950px) {
+	.homePage{
 		.blockBottomRight{
 			right: -10%;
 		}
 	}
+}
 
-	@media screen and (max-width:800px) {
+@media screen and (max-width:800px) {
+	.homePage{
 		.blockBottom{
 			top: 30%;
 			left: 10%;

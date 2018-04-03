@@ -40,9 +40,15 @@
 
 @media screen and (max-width:800px){
 	.containerMenu{
-		.containerVideo{
-			display: initial;
-		}
+		background-image: url(../images/pages/flag_black_mobile.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+   		-webkit-background-size: cover;
+    	    background-size: cover;
+
+    	.backgroundLayer, .containerContentMenu{
+    		background-color: transparent;
+    	}
 
 		.bottomNavigation, .containerHowtobuy{
 			display: none;

@@ -373,6 +373,117 @@ const data = {
 				},
 			]
 		},
+
+		list:[
+
+			{
+
+	        	"North America" : [
+		            "Haven CAN",
+		            "Livestock CAN",
+		            "NRML CAN",
+		            "OTH CAN",
+		            "Addict USA",
+		            "BAIT / Diamond Bar USA",
+		            "Barneys NYC (Madison Ave + ecom) USA",
+		            "Bodega USA",
+		            "Concepts USA",
+		            "Creme USA",
+		            "Dover Street Market NY USA",
+		            "Juice LA USA",
+		            "Kith NYC USA",
+		            "Mr. Porter USA",
+		            "Nice Kicks USA",
+		            "Packer Shoes, Inc. USA",
+		            "Proper USA",
+		            "RSVP Gallery USA",
+		            "Shoe Gallery USA",
+		            "Sneaker Politics USA",
+		            "Sneakersnstuff USA USA",
+		            "Social Status USA",
+		            "St. Alfred USA",
+		            "Ubiq / Mason USA",
+		            "Undefeated USA",
+		            "Wish Atlanta LLC USA",
+		            "Xhibition USA",
+		            "Commonwealth US Washington",
+	        	]
+    		},
+    		{
+		        "Europe" : [
+		            "Avenue Belgium",
+		            "Hunting & Collecting Belgium",
+		            "Footshop Czech Republic",
+		            "Naked Denmark",
+		            "Norse Project Denmark",
+		            "Wood Wood DenmarkDenmark",
+		            "Beamhill Finland",
+		            "Acte2 France",
+		            "Starcow France",
+		            "Summer France",
+		            "No. 74 Germany",
+		            "Overkill Germany",
+		            "Solebox Germany",
+		            "The Good Will Out Germany",
+		            "Uebervart Germany",
+		            "Wood Wood Berlin Germany",
+		            "Device1 Greece",
+		            "PHAT SOLES Greece",
+		            "Slam Jam Italy",
+		            "Sneakers 76 Italy",
+		            "Suede Italy",
+		            "Patta Netherlands",
+		            "YME Norway",
+		            "limitEditions Spain",
+		            "Sivas Des Calzo Spain",
+		            "Sneakers n Stuff Sweden",
+		            "Tres Bien Shop Sweden",
+		            "Titolo Switzerland",
+		            "Chmielna 20 Lab Store Warsaw",
+
+		        ]
+    		},
+    		{
+		        "Asia" : [
+		            "Juice China",
+		            "CONCEPTS DUBAI Dubai",
+		            "THE GOOD LIFE Dubai",
+		            "Level Shoedistrict Emirates",
+		            "THE GOOD LIFE Lebanon",
+		            "D-Mop / J-01 Hong Kong",
+		            "EXI.T Hong Kong",
+		            "Dice & Dice JP",
+		            "DSM Ginza JP",
+		            "Mita Sneakers JP",
+		            "Styles / VA JP",
+		            "Undefeated JPJP",
+		            "United Arrows & Sons JP",
+		            "CDG Seoul Korea",
+		            "Kasina Korea Commonwealth Philippines",
+		            "Brandshop Russia",
+		            "KM20 Russia",
+		            "DSM SingaporeSingapore",
+		            "LE Vault/ The Chamber Singapore",
+		            "Invincible Taiwan",
+		            "Juice Taiwan",
+
+		        ],
+
+		        "South America":[
+		            "Cartel Brazil",
+		        ],
+
+		        "Africa":[
+		            "Shelflife South-Africa",
+		        ],
+
+		        "Australia": [
+		            "Highs & Lows Australia",
+		            "Sneakerboy Australia",
+		            "Loaded New Zealand",
+		        ]
+    		}
+		]
 	},
 
 	creditsPage: {
@@ -390,6 +501,49 @@ const data = {
 				},
 			]
 		},
+
+		list: [
+			"Client:The Good Will Out, adidas",
+			"Agency:dayy",
+			"",
+			"Project Owner TGWO:Alex Imiela",
+			"",
+			"Creative Direction:Oliver Ecker, Robin Gurski",
+			"Producer:Konstantinos Sampanis",
+			"Executive Producer:Oliver Ecker, Robin Gurski",
+			"Art Director:René Martens",
+			"Project Manager:Astrid Spiering",
+			"",
+			"Actor:Masatoshi Ueno",
+			"",
+			"Director:Konstantinos Sampanis",
+			"Assistant Director:Sina Burmester",
+			"Cameraman/DoP:Leif Thomas",
+			"Drone Camera Operator:Sascha Neeße",
+			"1st Assistant Cameraman:Javier Palicio",
+			"2nd Assistant Cameraman:Christina Chalkidou",
+			"Editor:Konstantinos Sampanis",
+			"Assistant Editor:Sina Burmester",
+			"",
+			"Gaffer:Andy Stein",
+			"Make-up Artist:Julia Alexandra Glaser",
+			"Special Effects Supervisor:Eike von Schlichting",
+			"Sound Editor:Simon Hüging",
+			"Location Scout:Árni Tómasson",
+			"",
+			"Developer:Christian Ehrhart, Christian Potthast",
+			"Music & Sounddesign Web:Jonas Wüllner",
+			"Drums Web:Jakob Wüllner",
+			"Mastering Web:Plätlin Mastering",
+			"",
+			"Production Company:dayy, Moodboard",
+			"Costumes:FTA Film- und Theaterausstattung GmbH",
+			"Special Effects:CFX Spezialeffekte GbR.",
+			"Camera Equipment:well done",
+			"Light Equipment:Amp-light Film&TV Service GmbH",
+			"Light installation:Robin Gurski, Ioannis Mihailidis, Rene Martens, Jens Heinen",
+			"Sound (Post Production):Sound",
+		]
 	}
 };
 

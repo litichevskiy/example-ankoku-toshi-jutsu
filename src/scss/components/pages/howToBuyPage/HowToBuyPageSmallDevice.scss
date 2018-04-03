@@ -70,8 +70,12 @@
 }
 
 @media screen and (max-width: 800px){
-	.HowToBuyPage .containerVideo{
-		display: block;
+	.HowToBuyPage{
+		background-image: url(../images/pages/flag_white_mobile.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+   		-webkit-background-size: cover;
+    	    background-size: cover;
 	}
 }
 

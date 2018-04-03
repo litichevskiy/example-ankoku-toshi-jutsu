@@ -1,3 +1,4 @@
+const MIN_DESKTOP_WIDTH = 800; //px
 const pubsub = new ( require('./utils/PubSub.js') );
 const pages = ['/','/product','/items','/journey','/gallery'];
 const linksColors = ['/howtobuy','/howtobuy/detail','/credits'];
@@ -89,6 +90,7 @@ const Store = {
 	color_fixed_link: 'white',
 	is_play_video: true,
 	slider_full_screen: false,
+	device: ( document.body.clientWidth > MIN_DESKTOP_WIDTH ) ? 'desktop' : 'mobile',
 
 	setStateButtons() {
 		let index;
@@ -118,6 +120,24 @@ const Store = {
 	},
 
 	init() {
+
+		window.addEventListener('resize', ( event ) => {
+			let window_width = document.body.clientWidth;
+
+			if( window_width < MIN_DESKTOP_WIDTH ) {
+				if( this.device != 'mobile' ) {
+					this.device = 'mobile';
+					pubsub.publish('change');
+				}
+			}
+			else
+				if( window_width > MIN_DESKTOP_WIDTH ) {
+					if( this.device != 'desktop' ) {
+						this.device = 'desktop';
+						pubsub.publish('change');
+					}
+				}
+		});
 
 		document.addEventListener('keydown', ( event ) => {
 			pubsub.publish('keydown', event );

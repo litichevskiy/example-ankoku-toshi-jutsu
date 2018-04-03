@@ -18,7 +18,7 @@ class HowtobuyDetail extends Component {
 	}
 
     render() {
-
+        let list = appData.howtobuyDetail.list;
         return (
             <div className="howtobuyDetailPage" >
                 <Video data={appData.howtobuyDetail.video} />
@@ -29,15 +29,48 @@ class HowtobuyDetail extends Component {
                         <AnimatedText contents={['consortium stores']}/>
                     </div>
                     <div className="containerLists">
-                        <div className="wrapperContainerLists"><h3 className="headerMiddle">North America</h3><ul className="listCountries"><li className="itemListCountries">Haven <span className="grey">CAN</span></li><li className="itemListCountries">Livestock <span className="grey">CAN</span></li><li className="itemListCountries">NRML <span className="grey">CAN</span></li><li className="itemListCountries">OTH <span className="grey">CAN</span></li><li className="itemListCountries">Addict <span className="grey">USA</span></li><li className="itemListCountries">BAIT / Diamond Bar <span className="grey">USA</span></li><li className="itemListCountries">Barneys NYC (Madison Ave + ecom) <span className="grey">USA</span></li><li className="itemListCountries">Bodega <span className="grey">USA</span></li><li className="itemListCountries">Concepts <span className="grey">USA</span></li><li className="itemListCountries">Creme <span className="grey">USA</span></li><li className="itemListCountries">Dover Street Market NY <span className="grey">USA</span></li><li className="itemListCountries">Juice LA <span className="grey">USA</span></li><li className="itemListCountries">Kith NYC <span className="grey">USA</span></li><li className="itemListCountries">Mr. Porter <span className="grey">USA</span></li><li className="itemListCountries">Nice Kicks <span className="grey">USA</span></li><li className="itemListCountries">Packer Shoes, Inc. <span className="grey">USA</span></li><li className="itemListCountries">Proper <span className="grey">USA</span></li><li className="itemListCountries">RSVP Gallery <span className="grey">USA</span></li><li className="itemListCountries">Shoe Gallery <span className="grey">USA</span></li><li className="itemListCountries">Sneaker Politics <span className="grey">USA</span></li><li className="itemListCountries">Sneakersnstuff  USA<span className="grey">USA</span></li><li className="itemListCountries">Social Status <span className="grey">USA</span></li><li className="itemListCountries">St. Alfred <span className="grey">USA</span></li><li className="itemListCountries">Ubiq / Mason <span className="grey">USA</span></li><li className="itemListCountries">Undefeated <span className="grey">USA</span></li><li className="itemListCountries">Wish Atlanta LLC <span className="grey">USA</span></li><li className="itemListCountries">Xhibition <span className="grey">USA</span></li><li className="itemListCountries">Commonwealth US <span className="grey">Washington</span></li></ul></div>
-                        <div className="wrapperContainerLists"><h3 className="headerMiddle">Europe</h3><ul className="listCountries"><li className="itemListCountries">Avenue <span className="grey">Belgium</span></li><li className="itemListCountries">Hunting &amp; Collecting <span className="grey">Belgium</span></li><li className="itemListCountries">Footshop Czech <span className="grey">Republic</span></li><li className="itemListCountries">Naked <span className="grey">Denmark</span></li><li className="itemListCountries">Norse Project <span className="grey">Denmark</span></li><li className="itemListCountries">Wood Wood  Denmark<span className="grey">Denmark</span></li><li className="itemListCountries">Beamhill <span className="grey">Finland</span></li><li className="itemListCountries">Acte2 <span className="grey">France</span></li><li className="itemListCountries">Starcow <span className="grey">France</span></li><li className="itemListCountries">Summer <span className="grey">France</span></li><li className="itemListCountries">No. 74 <span className="grey">Germany</span></li><li className="itemListCountries">Overkill <span className="grey">Germany</span></li><li className="itemListCountries">Solebox <span className="grey">Germany</span></li><li className="itemListCountries">The Good Will Out <span className="grey">Germany</span></li><li className="itemListCountries">Uebervart <span className="grey">Germany</span></li><li className="itemListCountries">Wood Wood Berlin <span className="grey">Germany</span></li><li className="itemListCountries">Device1 <span className="grey">Greece</span></li><li className="itemListCountries">PHAT SOLES <span className="grey">Greece</span></li><li className="itemListCountries">Slam Jam <span className="grey">Italy</span></li><li className="itemListCountries">Sneakers 76 <span className="grey">Italy</span></li><li className="itemListCountries">Suede <span className="grey">Italy</span></li><li className="itemListCountries">Patta <span className="grey">Netherlands</span></li><li className="itemListCountries">YME <span className="grey">Norway</span></li><li className="itemListCountries">limitEditions <span className="grey">Spain</span></li><li className="itemListCountries">Sivas Des Calzo <span className="grey">Spain</span></li><li className="itemListCountries">Sneakers n Stuff <span className="grey">Sweden</span></li><li className="itemListCountries">Tres Bien Shop <span className="grey">Sweden</span></li><li className="itemListCountries">Titolo <span className="grey">Switzerland</span></li><li className="itemListCountries">Chmielna 20 Lab Store <span className="grey">Warsaw</span></li></ul></div>
-                        <div className="wrapperContainerLists"><h3 className="headerMiddle">Asia</h3><ul className="listCountries"><li className="itemListCountries">Juice <span className="grey">China</span></li><li className="itemListCountries">CONCEPTS DUBAI <span className="grey">Dubai</span></li><li className="itemListCountries">THE GOOD LIFE <span className="grey">Dubai</span></li><li className="itemListCountries">Level Shoedistrict <span className="grey">Emirates</span></li><li className="itemListCountries">THE GOOD LIFE <span className="grey">Lebanon</span></li><li className="itemListCountries">D-Mop / J-01 Hong <span className="grey">Kong</span></li><li className="itemListCountries">EXI.T Hong <span className="grey">Kong</span></li><li className="itemListCountries">Dice &amp; Dice <span className="grey">JP</span></li><li className="itemListCountries">DSM Ginza <span className="grey">JP</span></li><li className="itemListCountries">Mita Sneakers <span className="grey">JP</span></li><li className="itemListCountries">Styles / VA <span className="grey">JP</span></li><li className="itemListCountries">Undefeated  JP<span className="grey">JP</span></li><li className="itemListCountries">United Arrows &amp; Sons <span className="grey">JP</span></li><li className="itemListCountries">CDG Seoul <span className="grey">Korea</span></li><li className="itemListCountries">Kasina Korea Commonwealth <span className="grey">Philippines</span></li><li className="itemListCountries">Brandshop <span className="grey">Russia</span></li><li className="itemListCountries">KM20 <span className="grey">Russia</span></li><li className="itemListCountries">DSM  Singapore<span className="grey">Singapore</span></li><li className="itemListCountries">LE Vault/ The Chamber <span className="grey">Singapore</span></li><li className="itemListCountries">Invincible <span className="grey">Taiwan</span></li><li className="itemListCountries">Juice <span className="grey">Taiwan</span></li></ul>  <div><h3 className="headerMiddle">South America</h3><ul className="listCountries"><li className="itemListCountries">Cartel <span className="grey">Brazil</span></li></ul></div> <div><h3 className="headerMiddle">Africa</h3><ul className="listCountries"><li className="itemListCountries">Shelflife South-<span className="grey">Africa</span></li></ul></div>  <div><h3 className="headerMiddle">Australia</h3><ul className="listCountries"><li className="itemListCountries">Highs &amp; Lows <span className="grey">Australia</span></li><li className="itemListCountries">Sneakerboy <span className="grey">Australia</span></li><li className="itemListCountries">Loaded New <span className="grey">Zealand</span></li></ul></div> </div>
+                        {
+                            list.map( ( item, index ) => {
+                                return createList( item, index );
+                            })
+                        }
                     </div>
 
                 </div>
             </div>
         );
     }
+}
+
+function createList( data, index ) {
+    let countries = Object.keys( data );
+    return(
+        <div className="wrapperContainerLists" key={index}>
+            {
+                countries.map( ( country, index ) => {
+                    return (
+                        <div key={index}>
+                            <h3 className="headerMiddle" key={index}>{country}</h3>
+                            <ul className="listCountries" key={index + 1}>
+                                {
+                                    data[country].map( ( item, index ) => {
+                                        let key = ( item.match( /\w+$/ig ) )[0];
+                                        item = item.replace( key, '' );
+                                        return (
+                                            <li className="itemListCountries" key={index}>
+                                                {item}
+                                                <span className="grey">{key}</span>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
 }
 
 export default HowtobuyDetail;
