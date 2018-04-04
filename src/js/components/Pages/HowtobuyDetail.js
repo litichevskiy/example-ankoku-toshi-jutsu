@@ -31,7 +31,7 @@ class HowtobuyDetail extends Component {
                     <div className="containerLists">
                         {
                             list.map( ( item, index ) => {
-                                return createList( item, index );
+                                return createListCountries( item, index );
                             })
                         }
                     </div>
@@ -42,7 +42,7 @@ class HowtobuyDetail extends Component {
     }
 }
 
-function createList( data, index ) {
+function createListCountries( data, index ) {
     let countries = Object.keys( data );
     return(
         <div className="wrapperContainerLists" key={index}>

@@ -23,7 +23,7 @@ class ButtonScroll extends Component {
         this.setState({showButton:Store.show_button_scroll});
     }
 
-	_clickedButton() {
+	goNextPage() {
         this.props.clikedHandler();
 	}
 
@@ -31,7 +31,7 @@ class ButtonScroll extends Component {
         let className = ( this.state.showButton ) ? 'buttonScroll' : 'hide';
 
     	return (
-                <div className={className} onClick={() => this._clickedButton()}>
+                <div className={className} onClick={() => this.goNextPage()}>
                     <span className="content">scroll</span>
                 </div>
     	);

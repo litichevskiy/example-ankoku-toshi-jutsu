@@ -21,7 +21,7 @@ class Menu extends Component {
 		}
 
 		this.updateState = this.updateState.bind( this );
-		this._clikedCloseMenu = this._clikedCloseMenu.bind( this );
+		this._replaceStateMenu = this._replaceStateMenu.bind( this );
 		this._isCloseMenu = this._isCloseMenu.bind( this );
 		pubsub.subscribe('change', this.updateState );
 		pubsub.subscribe('keydown', this._isCloseMenu );
@@ -33,7 +33,7 @@ class Menu extends Component {
 	}
 
 	_isCloseMenu( event ) {
-		if( this.state.showMenu && event.keyCode === PRESS_ESC ) this._clikedCloseMenu();
+		if( this.state.showMenu && event.keyCode === PRESS_ESC ) this._replaceStateMenu();
 	}
 
 	updateState() {
@@ -47,7 +47,7 @@ class Menu extends Component {
 		}, ANIMATION_TIME );
 	}
 
-	_clikedCloseMenu() {
+	_replaceStateMenu() {
 		actionsApp.setStateMenu( false );
 	}
 
@@ -56,7 +56,7 @@ class Menu extends Component {
     return (
     	<section className={( this.state.showMenu ) ? 'containerMenu' : 'hide'}>
     		<div className="backgroundLayer"></div>
-	    	<ButtonClose handler={this._clikedCloseMenu} />
+	    	<ButtonClose handler={this._replaceStateMenu} />
     		<div ref="container" className="containerContentMenu">
     			<Video data={dataApp.pageMenu.video} />
 	    		<nav className="blockMenu">

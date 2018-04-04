@@ -25,6 +25,10 @@ const actionsApp = {
     sliderFullScreen( data ) {
         pubsub.publish( 'slider-full-screen', data );
     },
+
+    replaceStateSound( data ) {
+        pubsub.publish( 'replace-state-sound', data );
+    },
 };
 
 module.exports = actionsApp;

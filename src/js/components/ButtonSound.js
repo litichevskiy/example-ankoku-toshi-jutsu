@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 const pubsub = new ( require('../utils/PubSub.js') );
 const Store = require('../Store');
+const actionsApp = require('../actionsApp');
 
 class ButtonSound extends Component {
 
@@ -8,9 +9,8 @@ class ButtonSound extends Component {
         super( props )
 
         this.state = {
-            sound: true,
+            sound: Store.sound,
             showButton: Store.show_button_sound,
-            muted: false,
         }
 
         this.updateState = this.updateState.bind( this );
@@ -22,36 +22,32 @@ class ButtonSound extends Component {
     }
 
     updateState() {
-        this.setState({showButton:Store.show_button_sound});
+        this.setState({ showButton:Store.show_button_sound, sound: Store.sound });
     }
 
-	_clickedButton() {
-        this.setState({sound: !this.state.sound, muted: !this.state.muted})
+	updateStateSound() {
+        actionsApp.replaceStateSound({sound: this.state.sound});
 	}
-
-    _checkIsAudio() {
-        return ( window.screen.width > 800 ) ? true : false;
-    }
 
   	render() {
         let className = ( this.state.showButton ) ? 'containerSound' : 'hide';
         let is_on = ( this.state.sound ) ? "on" : "off";
         let classes = `sound ${is_on}`;
 
-        if( this._checkIsAudio() ) {
+        if( Store.is_desktop ) {
             return(
                 <div className={className}>
                     <img
                         src={"src/images/sine.png"}
                         alt={""}
                         className={classes}
-                        onClick={() => this._clickedButton()} />
+                        onClick={() => this.updateStateSound()} />
                     <audio
                         ref="audio"
                         src="src/audio/bg.mp3"
                         autoPlay
                         loop="true"
-                        muted={this.state.muted} >
+                        muted={!this.state.sound} >
                     </audio>
                 </div>
             )
@@ -65,7 +61,7 @@ class ButtonSound extends Component {
                         src={"src/images/sine.png"}
                         alt={""}
                         className={classes}
-                        onClick={() => this._clickedButton()} />
+                        onClick={() => this.updateStateSound()} />
                 </div>
             )
         }

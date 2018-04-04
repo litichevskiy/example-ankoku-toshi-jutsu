@@ -7,20 +7,14 @@ class Video extends Component {
     constructor( props ) {
         super( props )
 
+        this.is_subscribe_canplay = false;
+
         this.state = {
-            video_ready: false,
-            device: Store.device,
+            is_desktop: Store.is_desktop,
         }
 
-        this._videoReady = this._videoReady.bind( this );
         this.updateState = this.updateState.bind( this );
         pubsub.subscribe('change', this.updateState );
-    }
-
-    componentDidMount() {
-        if( this.refs.video ) {
-            this.refs.video.addEventListener('canplay', this._videoReady );
-        }
     }
 
     componentWillUnmount() {
@@ -28,27 +22,19 @@ class Video extends Component {
     }
 
     updateState() {
-        this.setState({device: Store.device});
-    }
-
-    _videoReady() {
-        if( this.refs.video ) {
-            this.refs.video.removeEventListener('canplay', this._videoReady );
-        }
-        this.setState({video_ready: true});
+        this.setState({is_desktop: Store.is_desktop});
     }
 
   	render() {
 
-        if( this.state.device === 'desktop' ) {
+        if( this.state.is_desktop ) {
             let data = this.props.data;
-            let className = ( this.state.video_ready ) ? 'video ready' : 'video';
 
             return (
                 <div className="containerVideo">
                     <video
                         ref="video"
-                        className={className}
+                        className="video"
                         preload="auto"
                         loop="true"
                         autoPlay="autoplay" >

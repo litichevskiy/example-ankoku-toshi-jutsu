@@ -29,7 +29,7 @@ class ButtonMenu extends Component {
 		});
 	}
 
-	_clickedButton() {
+	openMenu() {
 		actionsApp.setStateMenu( true );
 	}
 
@@ -39,7 +39,7 @@ class ButtonMenu extends Component {
     		<div className={className} >
 	    		<div className="page current">{this.state.currentPage}</div>
 	    		<div className="page total">{this.state.totalPage}</div>
-	    		<div className="buttonMenu" onClick={() => this._clickedButton()}>
+	    		<div className="buttonMenu" onClick={() => this.openMenu()}>
 	    			<div className="line one"></div>
 	    			<div className="line two"></div>
 	    			<div className="line three"></div>

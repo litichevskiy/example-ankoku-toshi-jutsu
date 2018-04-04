@@ -17,7 +17,7 @@ class CreditsPage extends Component {
     }
 
   	render() {
-
+        let listParticipants = appData.creditsPage.listParticipants
         return(
             <section className="creditsPage">
                 <Video data={appData.creditsPage.video} />
@@ -46,25 +46,20 @@ class CreditsPage extends Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="containerDescription">
+                    <ul className="listParticipantsProject">
                         {
-                            appData.creditsPage.list.map( ( item, index ) => {
-                                if( item ) {
-                                    item = item.split(':')
-                                    return(
-                                        <div className="row" key={index}>
-                                            <p className="left">{item[0]}</p>
-                                            <p className="right">{item[1]}</p>
-                                        </div>
-                                    )
-                                }
+                            listParticipants.map( ( item, index ) => {
+                                item = item.split('::');
 
-                                else {
-                                    return( <div className="separator" key={index}></div> )
-                                }
+                                return(
+                                    <li className="row" key={index}>
+                                        <p className="left">{item[0]}</p>
+                                        <p className="right">{item[1]}</p>
+                                    </li>
+                                )
                             })
                         }
-                    </div>
+                    </ul>
                 </div>
             </section>
         );

@@ -47,14 +47,9 @@
 		}
 	}
 
-	.containerDescription{
+	.listParticipantsProject{
 		font-size: 20px;
     	width: 100%;
-
-
-    	.separator{
-    		margin: 2.3em 0;
-    	}
 
     	.row{
     		width: 100%;
@@ -82,6 +77,28 @@
     			width: 49%;
 				@include white;
     		}
+    	}
+
+    	.row:nth-child(2){
+    		margin: 2.3em 0;
+    	}
+    	.row:nth-child(3){
+    		margin: 2.3em 0;
+    	}
+    	.row:nth-child(8){
+    		margin: 2.3em 0;
+    	}
+    	.row:nth-child(9){
+    		margin: 2.3em 0;
+    	}
+    	.row:nth-child(17){
+    		margin: 2.3em 0;
+    	}
+    	.row:nth-child(22){
+    		margin: 2.3em 0;
+    	}
+    	.row:nth-child(26){
+    		margin: 2.3em 0;
     	}
 	}
 }

@@ -2,8 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSass = new ExtractTextPlugin('[name].css');
 const webpack = require('webpack');
-// const NODE_ENV = process.env.NODE_ENV || "production";
-const NODE_ENV = process.env.NODE_ENV || "dev";
+const NODE_ENV = process.env.NODE_ENV || "production";
 const IS_PRODUCTION = NODE_ENV === "production";
 
 module.exports = [
@@ -12,11 +11,11 @@ module.exports = [
     output:{
         filename:'dist/js/bundle.js'
     },
-    // plugins: [
-    //     new webpack.optimize.UglifyJsPlugin({
-    //         minimize: IS_PRODUCTION
-    //   })
-    // ],
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: IS_PRODUCTION
+      })
+    ],
     module: {
       rules: [
         {

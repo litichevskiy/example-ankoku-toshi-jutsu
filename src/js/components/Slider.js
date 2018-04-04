@@ -52,7 +52,7 @@ class Slider extends Component {
 		this.swiper.resize.resizeHandler();
 	}
 
-	_iSchangeSizeSlider( event ) {
+	_isOpenSlider( event ) {
 		let targetName = event.target.tagName;
 		if( targetName === 'IMG' ) this.openSlider();
 	}
@@ -76,7 +76,7 @@ class Slider extends Component {
     	return (
     			<div ref="container" className="containerSlider animated fadeInRight">
     				<ButtonClose handler={this.closeSlider} />
-	    			<div className="swiper-container" onClick={( event ) => this._iSchangeSizeSlider( event )}>
+	    			<div className="swiper-container" onClick={( event ) => this._isOpenSlider( event )}>
 					    <div className="swiper-wrapper">
 					    	{
 					    		this.props.list.map( ( item, index ) => {

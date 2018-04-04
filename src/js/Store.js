@@ -90,7 +90,8 @@ const Store = {
 	color_fixed_link: 'white',
 	is_play_video: true,
 	slider_full_screen: false,
-	device: ( document.body.clientWidth > MIN_DESKTOP_WIDTH ) ? 'desktop' : 'mobile',
+	sound: true,
+	is_desktop: ( document.body.clientWidth > MIN_DESKTOP_WIDTH ) ? true : false,
 
 	setStateButtons() {
 		let index;
@@ -119,23 +120,22 @@ const Store = {
 		else return true
 	},
 
+	deviceChanged() {
+		this.is_desktop = !this.is_desktop;
+		pubsub.publish('change');
+	},
+
 	init() {
 
 		window.addEventListener('resize', ( event ) => {
 			let window_width = document.body.clientWidth;
 
 			if( window_width < MIN_DESKTOP_WIDTH ) {
-				if( this.device != 'mobile' ) {
-					this.device = 'mobile';
-					pubsub.publish('change');
-				}
+				if( this.is_desktop ) this.deviceChanged();
 			}
 			else
 				if( window_width > MIN_DESKTOP_WIDTH ) {
-					if( this.device != 'desktop' ) {
-						this.device = 'desktop';
-						pubsub.publish('change');
-					}
+					if( !this.is_desktop ) this.deviceChanged();
 				}
 		});
 
@@ -210,6 +210,11 @@ const Store = {
 				this.show_fixed_link = true;
 			}
 
+			pubsub.publish('change');
+		});
+
+		pubsub.subscribe('replace-state-sound', ( data ) => {
+			this.sound = !data.sound;
 			pubsub.publish('change');
 		});
 	}

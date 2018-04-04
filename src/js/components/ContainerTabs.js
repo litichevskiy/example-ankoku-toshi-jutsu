@@ -17,7 +17,7 @@ class ContainerTabs extends Component {
             activeTab: Store.active_tab,
         };
 
-        this._clickedBack = this._clickedBack.bind( this );
+        this._goBack = this._goBack.bind( this );
         this.updateState = this.updateState.bind( this );
         pubsub.subscribe('change', this.updateState );
   	}
@@ -45,16 +45,16 @@ class ContainerTabs extends Component {
         this.refs.div.classList.remove( ANIMATION_CLASS );
     }
 
-    _clickedTab( index ) {
+    _replaceSelectedTab( index ) {
         this.setState({activeTab: index});
     }
 
-    _isActive( index ) {
+    _isActiveClass( index ) {
         if( index === this.state.activeTab ) return 'itemTab activeTab';
         else return 'itemTab';
     }
 
-    _clickedBack() {
+    _goBack() {
         this.props.history.goBack();
     }
 
@@ -64,14 +64,14 @@ class ContainerTabs extends Component {
         return (
             <section className={className}>
                 <Video data={this.props.data.video} />
-                <ButtonBack clickedHandler={this._clickedBack} />
+                <ButtonBack clickedHandler={this._goBack} />
                 <nav className="containerNavBar" >
                     <ul className="listTabs">
                     {
                         this.data.map( ( item, index ) => {
                             return(
-                                <li key={index} className={this._isActive( index )}
-                                    onClick={( item ) => this._clickedTab( index )}>
+                                <li key={index} className={this._isActiveClass( index )}
+                                    onClick={( item ) => this._replaceSelectedTab( index )}>
                                     {item.tabName}
                                 </li>
                             )
