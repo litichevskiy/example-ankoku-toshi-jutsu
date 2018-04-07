@@ -7,17 +7,14 @@
 	z-index: 5;
 
 	.containerContentMenu{
-		background-color: #524949;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		-webkit-transition: 0.3s opacity linear;
-		-o-transition: 0.3s opacity linear;
-		transition: 0.3s opacity linear;
-		-webkit-animation: opacity 1s linear;
-		        animation: opacity 1s linear;
+		-webkit-transition: 1s linear opacity;
+		-o-transition: 1s linear opacity;
+		transition: 1s linear opacity;
 	}
 
 	.blockMenu{
@@ -54,13 +51,9 @@
 	}
 
 	.itemMenu{
-    	-webkit-transition: 0.35s;
-    	-o-transition: 0.35s;
-    	transition: 0.35s;
     	@include grey;
     	font-family: 'rajdhani', sans-serif;
     	position: relative;
-    	left: -300%;
     	opacity: 0;
 
     	&:hover{
@@ -187,17 +180,6 @@
 	display: none;
 }
 
-/* animaton container menu */
-@-webkit-keyframes opacity {
-	from { opacity: 0; }
-	to   { opacity: 1 }
-}
-@keyframes opacity {
-	from { opacity: 0; }
-	to   { opacity: 1 }
-}
-
-
 /* animation itemMenu */
 .itemMenu:nth-child(1) {
 	@include animationItemMenu( 0.5s )
@@ -237,13 +219,13 @@
 	display: none;
 }
 
-@-webkit-keyframes itemMenu {
-	from { opacity: 0; left: -300%; }
-	60%  {opacity: 0.3;}
-	to   { opacity: 1; left: 0; }
+@-webkit-keyframes itemMenu_show {
+	from { opacity: 0; -webkit-transform: translateX(-300px); transform: translateX(-300px); }
+	to   { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
 }
-@keyframes itemMenu {
-	from { opacity: 0; left: -300%; }
-	60%  {opacity: 0.3;}
-	to   { opacity: 1; left: 0; }
+
+
+@keyframes itemMenu_show {
+	from { opacity: 0; -webkit-transform: translateX(-300px); transform: translateX(-300px); }
+	to   { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
 }

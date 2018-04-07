@@ -23,6 +23,9 @@ class Video extends Component {
 
     updateState() {
         this.setState({is_desktop: Store.is_desktop});
+        if( this.state.is_desktop && Store.is_open_menu ) this.refs.video.pause();
+          else
+            if( this.state.is_desktop && !Store.is_open_menu ) this.refs.video.play();
     }
 
   	render() {

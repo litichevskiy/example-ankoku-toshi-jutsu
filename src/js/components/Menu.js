@@ -37,8 +37,9 @@ class Menu extends Component {
 	}
 
 	updateState() {
-		if( !Store.is_open_menu ) this.refs.container.style.opacity = '0';
+		if( !Store.is_open_menu ) this.refs.container.style.opacity = '0.1';
 		else this.refs.container.style.opacity = '1';
+
 		setTimeout(() => {
 			this.setState({
 				showMenu: Store.is_open_menu,
@@ -53,46 +54,59 @@ class Menu extends Component {
 
   	render() {
 
-    return (
-    	<section className={( this.state.showMenu ) ? 'containerMenu' : 'hide'}>
-    		<div className="backgroundLayer"></div>
-	    	<ButtonClose handler={this._replaceStateMenu} />
-    		<div ref="container" className="containerContentMenu">
-    			<Video data={dataApp.pageMenu.video} />
-	    		<nav className="blockMenu">
-	    			<ul className="listMenu" >
-	    				{this.listMenu.map( ( item, index ) => {
-	    					return createdItemMenu.call( this, item, index )
-	    				})}
-	    			</ul>
-	    		</nav>
-	    		<div className="containerHowtobuy">
-		    		<div className="blockHowtobuy animated fadeInUp">
-		    			<div className="headerLarge">
-		    				The adidas Consortium x The Good Will Out – NMD CS1 PK “Ankoku Toshi Jutsu“ will be available on September 16th.
-		    			</div>
-		    			<div className="headerSmall">
-		    				In store first, remaining stock online.
-		    			</div>
-		    			<Link to='howtobuy' className="containerLink">
-		    				<img src={'src/images/shop-icon.gif'} alt="" />
-		    				<span className="descriptionLink">How to buy</span>
-		    			</Link>
+  		if( !this.state.showMenu ) {
+  			return (
+  				<div className="containerMenu hide">
+  					<div className="backgroundLayer"></div>
+  					<div ref="container" className="containerContentMenu"></div>
+  				</div>
+  			);
+  		}
+
+  		else{
+		    return (
+		    	<section className="containerMenu">
+		    		<div className="backgroundLayer"></div>
+			    	<ButtonClose handler={this._replaceStateMenu} />
+		    		<div ref="container" className="containerContentMenu">
+		    			<Video data={dataApp.pageMenu.video} />
+			    		<nav className="blockMenu">
+			    			<ul className="listMenu" >
+			    				{this.listMenu.map( ( item, index ) => {
+			    					return createdItemMenu.call( this, item, index )
+			    				})}
+			    			</ul>
+			    		</nav>
+			    		<div className="containerHowtobuy">
+				    		<div className="blockHowtobuy animated fadeInUp">
+				    			<div className="headerLarge">
+				    				The adidas Consortium x
+				    				The Good Will Out – NMD CS1 PK “Ankoku Toshi Jutsu“
+				    				will be available on September 16th.
+				    			</div>
+				    			<div className="headerSmall">
+				    				In store first, remaining stock online.
+				    			</div>
+				    			<Link to='howtobuy' className="containerLink">
+				    				<img src={'src/images/shop-icon.gif'} alt="" />
+				    				<span className="descriptionLink">How to buy</span>
+				    			</Link>
+				    		</div>
+			    		</div>
+			    		<nav className="bottomNavigation">
+			    			<ul>
+			    				<li className="itemBottomNavigation">
+			    					<Link to='credits' className="linkBottomNavigation">Credits</Link>
+			    				</li>
+			    				<li className="itemBottomNavigation">
+			    					<Link to='imprint' className="linkBottomNavigation">Imprint</Link>
+			    				</li>
+			    			</ul>
+			    		</nav>
 		    		</div>
-	    		</div>
-	    		<nav className="bottomNavigation">
-	    			<ul>
-	    				<li className="itemBottomNavigation">
-	    					<Link to='credits' className="linkBottomNavigation">Credits</Link>
-	    				</li>
-	    				<li className="itemBottomNavigation">
-	    					<Link to='imprint' className="linkBottomNavigation">Imprint</Link>
-	    				</li>
-	    			</ul>
-	    		</nav>
-    		</div>
-    	</section>
-    );
+		    	</section>
+		    );
+  		}
   }
 }
 

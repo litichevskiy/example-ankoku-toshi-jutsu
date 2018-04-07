@@ -78,9 +78,8 @@
 }
 
 @mixin animationItemMenu( $transition ) {
-	-webkit-animation: itemMenu $transition ease;
-	        animation: itemMenu $transition ease;
-	left: 0;
+	-webkit-animation: itemMenu_show $transition ease;
+	        animation: itemMenu_show $transition ease;
 	opacity: 1;
 }
 
