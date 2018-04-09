@@ -52,8 +52,7 @@ module.exports = {
     },
     devtool: !IS_PRODUCTION ? 'source-map' : 'null',
     plugins: [
-        new ExtractTextPlugin('../css/main.css'),
-        new webpack.EnvironmentPlugin('NODE_ENV')
+        new ExtractTextPlugin('../css/main.css')
     ],
     watch: !IS_PRODUCTION,
 }

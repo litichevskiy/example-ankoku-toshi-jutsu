@@ -1,5 +1,5 @@
 .containerSound{
-	@include fixed_link('', '', 4%, 6%, 25px, 45px);
+	@include fixed_link(initial, initial, 4%, 6%, 25px, 45px);
 	overflow: hidden;
 
 	.sound{

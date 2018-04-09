@@ -1,5 +1,5 @@
 .containerTgwoLogo{
-	@include fixed_link(4%, 6%, '', '', 60px, 60px);
+	@include fixed_link(4%, 6%, initial, initial, 60px, 60px);
 
 	img{
 		width: 100%;
@@ -8,7 +8,7 @@
 }
 
 .containerAdidasLogo{
-	@include fixed_link(4%, '', '', 6%, 60px, 60px);
+	@include fixed_link(4%, initial, initial, 6%, 60px, 60px);
 
 	img{
 		width: 100%;
@@ -17,7 +17,7 @@
 }
 
 .containerShop{
-	@include fixed_link('', 6%, 4%, '', '', '');
+	@include fixed_link(initial, 6%, 4%, initial, initial, initial);
 
 	.link{
 		display: -webkit-inline-box;
