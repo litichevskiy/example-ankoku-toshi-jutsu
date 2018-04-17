@@ -24,10 +24,12 @@
 	-o-transition: 0.35s;
 	transition: 0.35s;
 	z-index: 3;
+	-webkit-transform: translateZ(0);
+	        transform: translateZ(0);
 
 	&:hover{
-	 	-webkit-transform: scale(1.15);
-	 	    -ms-transform: scale(1.15);
-	 	        transform: scale(1.15);
+	 	-webkit-transform: translateZ(0) scale(1.15);
+	 	    -ms-transform: translateZ(0) scale(1.15);
+	 	        transform: translateZ(0) scale(1.15);
 	}
 }

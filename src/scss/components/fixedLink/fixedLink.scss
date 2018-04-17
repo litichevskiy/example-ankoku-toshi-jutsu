@@ -66,6 +66,9 @@
 		img{
 			width: 25px;
 			height: 25px;
+			will-change: transform;
+			-webkit-transform: translateZ(0);
+		        transform: translateZ(0);
 		}
 	}
 }

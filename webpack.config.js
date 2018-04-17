@@ -8,8 +8,8 @@ const IS_PRODUCTION = NODE_ENV === "production";
 module.exports = {
     entry: ['./src/js/init.js', './src/scss/index.scss'],
     output: {
+        path: __dirname + '/dist/js',
         filename: 'bundle.js',
-        path: path.resolve('./dist/js')
     },
 
     module: {
@@ -25,10 +25,20 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jp(e*)g|svg|ttf|eot|woff|woff2)$/,
+                test: /\.(png|jp(e*)g|svg)$/,
                 exclude: /\/node_modules\//,
                 use: [{
                     loader: 'url-loader',
+                }]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: '../fonts/'
+                    }
                 }]
             },
             {
@@ -39,11 +49,13 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                minimize:  IS_PRODUCTION
+                                minimize:  IS_PRODUCTION,
+                                sourceMap: !IS_PRODUCTION
                             }
                         },
                         {
                             loader: 'sass-loader',
+                            options: { sourceMap: !IS_PRODUCTION }
                         }
                     ]
                 })
@@ -52,7 +64,10 @@ module.exports = {
     },
     devtool: !IS_PRODUCTION ? 'source-map' : 'null',
     plugins: [
-        new ExtractTextPlugin('../css/main.css')
+        new ExtractTextPlugin('../css/main.css'),
+        new webpack.DefinePlugin ({
+            'process.env.NODE_ENV': JSON.stringify ( NODE_ENV )
+        })
     ],
     watch: !IS_PRODUCTION,
 }

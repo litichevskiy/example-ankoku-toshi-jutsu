@@ -1,0 +1,20 @@
+@media screen and (max-device-width:480px){
+	.containerSvgButton{
+
+		.wrapperSvgButton{
+			&:hover{
+				-webkit-transform: none;
+				    -ms-transform: none;
+				        transform: none;
+			}
+
+			&:hover .svgContent{
+		    	fill: white;
+			}
+		}
+
+		.animationLayer{
+			display: none;
+		}
+	}
+}

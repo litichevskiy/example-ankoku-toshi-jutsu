@@ -1,8 +1,4 @@
 @font-face {
-    font-family: "TitilliumWeb-Regular";
-    src: url("../fonts/TitilliumWeb-Regular.ttf") format("ttf");
-}
-@font-face {
     font-family: "DINNextLTPro-Medium";
     src: url("../fonts/DINNextLTPro-Medium.woff2") format("woff2");
 }

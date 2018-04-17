@@ -28,6 +28,10 @@ class Video extends Component {
             if( this.state.is_desktop && !Store.is_open_menu ) this.refs.video.play();
     }
 
+    _videoLoaded() {
+        if( this.refs.video ) this.refs.video.style.opacity = 1;
+    }
+
   	render() {
 
         if( this.state.is_desktop ) {
@@ -38,6 +42,7 @@ class Video extends Component {
                     <video
                         ref="video"
                         className="video"
+                        onCanPlay={() => this._videoLoaded()}
                         preload="auto"
                         loop="true"
                         autoPlay="autoplay" >

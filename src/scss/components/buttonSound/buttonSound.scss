@@ -7,14 +7,18 @@
 		position: absolute;
 		-webkit-transition: 0.6s left, right;
 		-o-transition: 0.6s left, right;
-		transition: 0.6s left, right;
+		-webkit-transition: 0.6s;
+		-o-transition: 0.6s;
+		transition: 0.6s;
 
 		&.on{
-			left: 0;
+			-webkit-transform: translateZ(0) translate(-20px, 0);
+			        transform: translateZ(0) translate(-20px, 0);
 		}
 
 		&.off{
-			left: -90px;
+			-webkit-transform: translateZ(0) translate(-110px, 0);
+			        transform: translateZ(0) translate(-110px, 0);
 		}
 	}
 }

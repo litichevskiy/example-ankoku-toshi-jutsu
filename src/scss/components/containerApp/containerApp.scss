@@ -6,6 +6,7 @@
 	height: 100%;
 	background-color: black;
 	z-index: 1;
+	display: none;
 
 	.messageUser{
 		position: fixed;
@@ -39,6 +40,9 @@
 
 .letter{
 	opacity: 0;
+	display: inline-block;
+	-webkit-transform: translateZ(0);
+	        transform: translateZ(0);
 }
 
 .hide{

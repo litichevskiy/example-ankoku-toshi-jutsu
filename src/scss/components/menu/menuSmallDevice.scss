@@ -50,6 +50,10 @@
     		background-color: transparent;
     	}
 
+    	.counterItemMenu{
+    		margin-right: 30px;
+    	}
+
 		.bottomNavigation, .containerHowtobuy{
 			display: none;
 		}
@@ -68,8 +72,8 @@
 		}
 
 		.itemMenu .link{
-			font-size: 2.1em;
-			padding: 0.55em 0;
+			font-size: 1.85em;
+			padding: 0.75em 0;
 		}
 
 		.itemMenu:nth-child(6),

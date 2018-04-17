@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
-const Hammer = require('./../lib/hammer.min.js')
 const MIN_TIME_TO_NEXT_SCROLL = 500; // ms
 const pubsub = new ( require('./utils/PubSub.js') );
 const actionsApp = require('./actionsApp');
@@ -18,7 +17,7 @@ import CreditsPage from './components/Pages/CreditsPage';
 import HowToBuyPage from './components/Pages/HowToBuyPage';
 import HowtobuyDetail from './components/Pages/HowtobuyDetail';
 import NotFoundPage from './components/Pages/NotFoundPage';
-//helpers
+//components
 import BlockSocialLinks from './components/BlockSocialLinks';
 import Indicator from './components/Indicator';
 import ButtonScroll from './components/ButtonScroll';
@@ -52,6 +51,7 @@ class App extends Component {
 			setTimeout(() => {loader.style.opacity = '0';}, 100);
 			setTimeout(() => {
 				document.body.removeChild(loader)
+				this.refs.container.style.display = 'block';
 			}, 200);
 		});
 

@@ -2,9 +2,20 @@
 
 	.buttonScroll{
 		bottom: -35px;
+		left: -webkit-calc(50% - 10px);
+		left: calc(50% - 10px);
 
 		.content{
 			font-size: 15px;
+		}
+	}
+}
+
+@media screen and (max-device-width:480px){
+	.buttonScroll{
+		&:hover{
+			-webkit-transform: translateZ(0) translate(-20px, 0);
+	        	transform: translateZ(0) translate(-20px, 0);
 		}
 	}
 }

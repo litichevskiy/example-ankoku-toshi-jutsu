@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-const anime = require('../../lib/anime.min.js');
 
 let animationLetters = {
 
 	animated( key ) {
-
 		setTimeout(() => {
 			anime.timeline({loop: false})
 		    .add({
@@ -18,7 +16,7 @@ let animationLetters = {
 		    }).add({
 		      	targets: key,
 		    });
-		}, 0)
+		}, 0 );
 	},
 
 	wrapLetters( list ) {

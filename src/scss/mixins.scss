@@ -68,7 +68,6 @@
 	position: fixed;
 	z-index: 3;
 	cursor: pointer;
-
 	left: $left;
 	right: $right;
 	top: $top;
@@ -91,17 +90,20 @@
 		content: '';
 		position: absolute;
 		bottom: 0;
-		left: -100%;
+		left: 0;
 		width: 100%;
 		height: $height;
 		background-color: $bg_color;
 		-webkit-transition: 0.3s;
 		-o-transition: 0.3s;
 		transition: 0.3s;
+		-webkit-transform: translateZ(0) translate(-200px, 0);
+		        transform: translateZ(0) translate(-200px, 0);
 	}
 
 	&:hover:after{
-		left: 0;
+		-webkit-transform: translateZ(0) translate(0, 0);
+		        transform: translateZ(0) translate(0, 0);
 	}
 }
 

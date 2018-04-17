@@ -6,21 +6,15 @@
 	height: 100%;
 
 	.video{
-	    -webkit-animation: opacity_video 1s linear;
-	            animation: opacity_video 1s linear;
+	    -webkit-transition: 0.8s linear;
+	    -o-transition: 0.8s linear;
+	    transition: 0.8s linear;
 	    width: 100%;
     	height: 100%;
+    	opacity: 0;
+    	-webkit-transform: translateZ(0);
+    	        transform: translateZ(0);
     	-o-object-fit: cover;
     	   object-fit: cover;
 	}
-}
-
-@-webkit-keyframes opacity_video {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
-
-@keyframes opacity_video {
-	from { opacity: 0; }
-	to   { opacity: 1; }
 }

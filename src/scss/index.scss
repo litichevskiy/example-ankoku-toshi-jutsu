@@ -4,7 +4,7 @@
 /*app container*/
 @import 'components/containerApp/containerApp.scss';
 @import 'components/containerApp/containerAppSmallDevice.scss';
-/*helpers*/
+/*components*/
 @import 'components/blockSocialLinks/blockSocialLinks.scss';
 @import 'components/buttonScroll/buttonScroll.scss';
 @import 'components/buttonMenu/buttonMenu.scss';
@@ -41,7 +41,7 @@
 @import 'components/pages/itemsPage/itemsPageSmallDevice.scss';
 @import 'components/pages/journeyPage/journeyPageSmallDevice.scss';
 @import 'components/pages/galleryPage/galleryPageSmallDevice.scss';
-/*helpers small device*/
+/*components small device*/
 @import 'components/fixedLink/fixedLinkSmallDevice.scss';
 @import 'components/blockSocialLinks/blockSocialLinksSmallDevice.scss';
 @import 'components/buttonSound/containerSoundSmalldevice.scss';
@@ -54,6 +54,6 @@
 @import 'components/containerTabs/containerTabsSmallDevice.scss';
 @import 'components/slider/sliderSmallDevice.scss';
 @import 'components/loading/loadingSmallDevice.scss';
+@import 'components/svgButton/svgButtonSmallDevice.scss';
 /*lib*/
-@import 'lib/swiper_4.2.0_swiper.min.css';
 @import 'lib/animate_css_v_3.5.2animate.min.css';

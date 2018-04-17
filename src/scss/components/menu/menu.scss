@@ -5,6 +5,8 @@
 	width: 100%;
 	height: 100%;
 	z-index: 5;
+	-webkit-transform: translateZ(0);
+	    -webkit-transform: translateZ(0);transform: translateZ(0);
 
 	.containerContentMenu{
 		position: absolute;
@@ -55,6 +57,8 @@
     	font-family: 'rajdhani', sans-serif;
     	position: relative;
     	opacity: 0;
+    	-webkit-transform: translateZ(0);
+    	    transform: translateZ(0);
 
     	&:hover{
     		@include white;
@@ -125,18 +129,22 @@
     	        align-items: center;
     	padding: 12px 15px;
     	text-decoration: none;
+    	-webkit-transform: translateZ(0);
+    	        transform: translateZ(0);
 
     	img{
     		width: 25px;
     		height: 25px;
     		margin-right: 15px;
+    		-webkit-transform: translateZ(0);
+    		        transform: translateZ(0);
     	}
 	}
 
 	.containerLink:hover .descriptionLink{
-    		-webkit-transform: scale(1.1);
-    		    -ms-transform: scale(1.1);
-    		        transform: scale(1.1);
+    		-webkit-transform: translateZ(0) scale(1.1);
+    		    -ms-transform: translateZ(0) scale(1.1);
+    		        transform: translateZ(0) scale(1.1);
     }
 
 	.descriptionLink{
@@ -145,6 +153,8 @@
     	-webkit-transition: 0.15s linear;
     	-o-transition: 0.15s linear;
     	transition: 0.15s linear;
+    	-webkit-transform: translateZ(0);
+    	        transform: translateZ(0);
 	}
 
 	.bottomNavigation{
@@ -169,6 +179,8 @@
 		position: relative;
 		overflow: hidden;
 		@include animation_bottom_border( 1px );
+		-webkit-transform: translateZ(0);
+		        transform: translateZ(0);
 	}
 
 	.active{

@@ -1,5 +1,5 @@
-$width_animation_layer: 300%;
-$height_animation_layer: 300%;
+$width_animation_layer: 200px;
+$height_animation_layer: 200px;
 
 .containerSvgButton{
 
@@ -28,20 +28,17 @@ $height_animation_layer: 300%;
 		width: $width_animation_layer;
 	    height: $height_animation_layer;
 	    position: absolute;
-	    top: -100%;
-	    left: -400%;
-	    -webkit-transition: 0.75s left, right, top, bottom;
-	    -o-transition: 0.75s left, right, top, bottom;
-	    transition: 0.75s left, right, top, bottom;
+	    -webkit-transform: translateZ(0) translate(-30px ,-250px) rotate(15deg);
+	            transform: translateZ(0) translate(-30px ,-250px) rotate(15deg);
+	    -webkit-transition: 0.35s;
+	    -o-transition: 0.35s;
+	    transition: 0.35s;
 	    background-color: white;
-	    -webkit-transform: rotate(15deg);
-	        -ms-transform: rotate(15deg);
-	            transform: rotate(15deg);
 	}
 
 	.wrapperSvgButton:hover .animationLayer{
-		left: -100%;
-		top: -100%;
+		-webkit-transform: translateZ(0) translate(-30px, -30px) rotate(15deg);
+		        transform: translateZ(0) translate(-30px, -30px) rotate(15deg);
 	}
 
 	.svg{

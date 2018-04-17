@@ -9,10 +9,15 @@
 
 	.containerNavBar{
 		padding: 40px 50px;
+		-webkit-transform: translateZ(0);
+		        transform: translateZ(0);
+		position: relative;
 	}
 
 	.listTabs{
 		display: inline-block;
+		-webkit-transform: translateZ(0);
+		        transform: translateZ(0);
 	}
 
 	.containerContentMobile{
@@ -32,6 +37,8 @@
 		-o-transition: 0.3s;
 		transition: 0.3s;
 		overflow: hidden;
+		-webkit-transform: translateZ(0);
+		        transform: translateZ(0);
 		-webkit-box-shadow: 0px -2px 0px 0px grey inset;
 		        box-shadow: 0px -2px 0px 0px grey inset;
 
@@ -66,6 +73,8 @@
 	.descriptionTab{
 		max-height: 100%;
 		overflow: auto;
+		-webkit-transform: translateZ(0);
+		        transform: translateZ(0);
 	}
 
 	.paragraph{
