@@ -38,7 +38,7 @@ class ContainerTabs extends Component {
 
     updateState() {
         let key = Store.name_current_page.replace('/', '');
-        this.setState({bg_class: key});
+        if( key !== this.state.bg_class ) this.setState({bg_class: key});
     }
 
     _deleteAnimationClass() {
