@@ -49,10 +49,10 @@ class App extends Component {
 		window.addEventListener('load', () => {
 			let loader = document.querySelector('.containerLoading');
 			setTimeout(() => {loader.style.opacity = '0';}, 100);
-			setTimeout(() => {
-				document.body.removeChild(loader)
-				this.refs.container.style.display = 'block';
-			}, 200);
+			this.refs.container.style.display = 'block';
+      setTimeout(() => {
+        document.body.removeChild(loader)
+			}, 1000);
 		});
 
 		this.updateState = this.updateState.bind( this );

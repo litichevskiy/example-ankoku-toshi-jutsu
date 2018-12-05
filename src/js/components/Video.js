@@ -45,6 +45,7 @@ class Video extends Component {
                         onCanPlay={() => this._videoLoaded()}
                         preload="auto"
                         loop="true"
+                        muted
                         autoPlay="autoplay" >
                         {
                             data.source.map( ( item, index ) => {

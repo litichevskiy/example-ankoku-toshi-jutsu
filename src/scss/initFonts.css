@@ -1,8 +1,17 @@
 @font-face {
-    font-family: "DINNextLTPro-Medium";
-    src: url("../fonts/DINNextLTPro-Medium.woff2") format("woff2");
+  font-family: 'rajdhani';
+  src: url("../fonts/rajdhani-bold-webfont.eot");
+  src: url("../fonts/rajdhani-bold-webfont.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/rajdhani-bold-webfont.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
 }
+
 @font-face {
-    font-family: "rajdhani";
-    src: url("../fonts/rajdhani-bold-webfont.woff2") format("woff2");
+  font-family: 'DINNextLTPro-Medium';
+  src: url("../fonts/DINNextLTPro-Medium.eot");
+  src: url("../fonts/DINNextLTPro-Medium.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/DINNextLTPro-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
