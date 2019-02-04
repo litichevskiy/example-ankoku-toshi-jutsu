@@ -5,8 +5,7 @@
 
 оригинал: [https://www.ankoku-toshi-jutsu.com/](https://www.ankoku-toshi-jutsu.com/).
 
-оригинал: [https://litichevskiy.github.io/example-ankoku-toshi-jutsu](https://litichevskiy.github.io/example-ankoku-toshi-jutsu).
-
+посмотреть: [https://litichevskiy.github.io/example-ankoku-toshi-jutsu](https://litichevskiy.github.io/example-ankoku-toshi-jutsu).
 
 # Installation
   npm install
