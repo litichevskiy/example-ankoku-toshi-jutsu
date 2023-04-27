@@ -1,14 +1,16 @@
-# example-ankoku-toshi-jutsu
+## example-ankoku-toshi-jutsu
+
+This is copy site, written for the purpose to learn React.
+
+original: [https://www.ankoku-toshi-jutsu.com](https://www.ankoku-toshi-jutsu.com)
 
 
-Копия рекламного сайта, написана с целью изучения React.
-
-оригинал: [https://www.ankoku-toshi-jutsu.com/](https://www.ankoku-toshi-jutsu.com/).
-
-посмотреть: [https://litichevskiy.github.io/example-ankoku-toshi-jutsu](https://litichevskiy.github.io/example-ankoku-toshi-jutsu).
-
-# Installation
+### Installation
   npm install
 
-# Build
-  npm run build
+### Start
+  npm run dev
+
+or see:
+
+[https://litichevskiy.github.io/example-ankoku-toshi-jutsu](https://litichevskiy.github.io/example-ankoku-toshi-jutsu)
